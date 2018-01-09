@@ -31,6 +31,20 @@ export class MainNewProjectComponent implements OnInit {
                         Validators.required,
                     ]),
                 ],
+                budgetGenPlanUsd: [
+                    '',
+                    Validators.compose([
+                        Validators.required,
+                        Validators.minLength(500),
+                        Validators.maxLength(1000000),
+                    ]),
+                ],
+                weddingDate: [
+                    '',
+                    Validators.compose([
+                        Validators.required,
+                    ]),
+                ],
                 /*password: [
                     '',
                     Validators.compose([

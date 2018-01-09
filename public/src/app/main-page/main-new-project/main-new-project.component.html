@@ -4,6 +4,7 @@
             <header>
                 <h3>CREATE NEW PROJECT</h3>
             </header>
+
             <div class="form-container">
                 <form class="project-form"
                       novalidate
@@ -15,6 +16,7 @@
                         <div class="col-4">
                             <!--FIANCE-->
                             <div class="form-group">
+                                <h5>{{ "MAIN.new.form.fiance.pl" | translate }}</h5>
                                 <input type="text"
                                        formControlName="fiance"
                                        class="form-control "
@@ -49,6 +51,7 @@
 
                             <!--FIANCEE-->
                             <div class="form-group">
+                                <h5>{{ "MAIN.new.form.fiancee.pl" | translate }}</h5>
                                 <input type="text"
                                        formControlName="fiancee"
                                        class="form-control"
@@ -68,8 +71,32 @@
 
                             </div>
 
-                            <!--FIANCE-->
+                            <!--BUDGET-->
                             <div class="form-group">
+                                <h5>{{ "MAIN.new.form.budget.pl" | translate }}</h5>
+                                <input type="number"
+                                       min="100"
+                                       max="1000000"
+                                       formControlName="budgetGenPlanUsd"
+                                       class="form-control"
+                                       placeholder='{{ "MAIN.new.form.budget.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
+                           newProjectForm.get('fiancee').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
+                           newProjectForm.get('fiancee').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
+                         newProjectForm.get('fiancee').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                </div>
+
+                            </div>
+
+                            <!--DATE-->
+                            <div class="form-group">
+                                <h5>Wedding date</h5>
                                 <input type="text"
                                        formControlName="fiance"
                                        class="form-control "
@@ -102,26 +129,7 @@
                                 </div>
                             </div>
 
-                            <!--FIANCEE-->
-                            <div class="form-group">
-                                <input type="text"
-                                       formControlName="fiancee"
-                                       class="form-control"
-                                       maxlength="25"
-                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
-                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
-                           newProjectForm.get('fiancee').touched"
-                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
-                           newProjectForm.get('fiancee').touched">
 
-                                <div class="alert alert-danger-wed text-center mt-3"
-                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
-                         newProjectForm.get('fiancee').touched"
-                                     role="alert">
-                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
-                                </div>
-
-                            </div>
                         </div>
 
                         <!--RIGHT SECTION-->
@@ -241,8 +249,8 @@
 
                 </form>
             </div>
-            <footer>
 
+            <footer>
                 <nav class="col-12">
                     <button class="wed-btn-success wed-btn-md"
                             routerLink="new-project">
@@ -254,7 +262,6 @@
                         {{ "MAIN.pr-panel.nav.arch" | translate}}
                     </a>
                 </nav>
-
             </footer>
         </div>
     </div>
