@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {BsDatepickerConfig, BsLocaleService} from 'ngx-bootstrap';
+import {BsLocaleService} from 'ngx-bootstrap';
 import {defineLocale} from 'ngx-bootstrap/chronos';
 import {ruLocale} from 'ngx-bootstrap/locale';
 defineLocale('ru', ruLocale);
@@ -24,7 +24,7 @@ export class MainNewProjectComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._localeService.use('ru');
+        // this._localeService.use('ru');
     }
 
     createForm() {
