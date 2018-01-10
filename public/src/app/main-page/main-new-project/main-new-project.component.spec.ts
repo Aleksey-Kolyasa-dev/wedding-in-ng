@@ -3,6 +3,8 @@ import {MainNewProjectComponent} from './main-new-project.component';
 import {SharedModule} from '../../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('MainNewProjectComponent', () => {
     let component: MainNewProjectComponent;
@@ -15,8 +17,10 @@ describe('MainNewProjectComponent', () => {
                 TranslateModule.forChild(),
                 FormsModule,
                 ReactiveFormsModule,
+                BsDatepickerModule.forRoot(),
             ],
-            declarations: [MainNewProjectComponent]
+            declarations: [MainNewProjectComponent],
+            schemas: [NO_ERRORS_SCHEMA]
         })
             .compileComponents();
     }));

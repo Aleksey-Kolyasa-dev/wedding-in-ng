@@ -21,7 +21,6 @@
                                        formControlName="fiance"
                                        class="form-control "
                                        maxlength="25"
-                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
                                        [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
                            newProjectForm.get('fiance').touched"
                                        [class.form-control-success]="newProjectForm.get('fiance').valid &&
@@ -56,7 +55,6 @@
                                        formControlName="fiancee"
                                        class="form-control"
                                        maxlength="25"
-                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
                                        [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
                            newProjectForm.get('fiancee').touched"
                                        [class.form-control-success]="newProjectForm.get('fiancee').valid &&
@@ -75,57 +73,57 @@
                             <div class="form-group">
                                 <h5>{{ "MAIN.new.form.budget.pl" | translate }}</h5>
                                 <input type="number"
-                                       min="100"
-                                       max="1000000"
                                        formControlName="budgetGenPlanUsd"
                                        class="form-control"
-                                       placeholder='{{ "MAIN.new.form.budget.pl" | translate }}'
-                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
-                           newProjectForm.get('fiancee').touched"
-                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
-                           newProjectForm.get('fiancee').touched">
+                                       [class.form-control-danger]="newProjectForm.get('budgetGenPlanUsd').invalid &&
+                                       newProjectForm.get('budgetGenPlanUsd').touched"
+                                       [class.form-control-success]="newProjectForm.get('budgetGenPlanUsd').valid &&
+                                       newProjectForm.get('budgetGenPlanUsd').touched">
 
                                 <div class="alert alert-danger-wed text-center mt-3"
-                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
-                         newProjectForm.get('fiancee').touched"
+                                     *ngIf="newProjectForm.get('budgetGenPlanUsd').hasError('required') &&
+                                     newProjectForm.get('budgetGenPlanUsd').touched"
                                      role="alert">
-                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                    <span>{{ "MAIN.new.form.budget.err.req" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('budgetGenPlanUsd').hasError('min') &&
+                                     newProjectForm.get('budgetGenPlanUsd').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.budget.err.min" | translate }}</span>
                                 </div>
 
                             </div>
 
                             <!--DATE-->
                             <div class="form-group">
-                                <h5>Wedding date</h5>
+                                <h5>{{ "MAIN.new.form.date.pl" | translate }}</h5>
                                 <input type="text"
-                                       formControlName="fiance"
-                                       class="form-control "
-                                       maxlength="25"
-                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
-                                       [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
-                           newProjectForm.get('fiance').touched"
-                                       [class.form-control-success]="newProjectForm.get('fiance').valid &&
-                           newProjectForm.get('fiance').touched">
+                                       formControlName="weddingDate"
+                                       class="form-control"
+                                       [minDate]="minDate"
+                                       [bsConfig]="bsConfig"
+                                       [placement]="'top'"
+                                       #dp="bsDatepicker"
+                                       bsDatepicker [(bsValue)]="selectedStartDate"
+                                       [class.form-control-danger]="newProjectForm.get('weddingDate').invalid &&
+                           newProjectForm.get('weddingDate').touched"
+                                       [class.form-control-success]="newProjectForm.get('weddingDate').valid &&
+                           newProjectForm.get('weddingDate').touched">
 
                                 <div class="alert alert-danger-wed text-center mt-3"
-                                     *ngIf="newProjectForm.get('fiance').hasError('required') &&
-                         newProjectForm.get('fiance').touched"
+                                     *ngIf="newProjectForm.get('weddingDate').hasError('required') &&
+                         newProjectForm.get('weddingDate').touched"
                                      role="alert">
-                                    <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                                    <span>{{ "MAIN.new.form.date.err.req" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
-                                     *ngIf="newProjectForm.get('fiance').touched &&
-                         newProjectForm.get('fiance').hasError('minlength')"
+                                     *ngIf="newProjectForm.get('weddingDate').touched &&
+                         newProjectForm.get('weddingDate').hasError('pattern')"
                                      role="alert">
-                                    <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
-                                </div>
-
-                                <div class="alert alert-danger-wed text-center mt-3"
-                                     *ngIf="newProjectForm.get('fiance').touched &&
-                         newProjectForm.get('fiance').hasError('pattern')"
-                                     role="alert">
-                                    <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                                    <span>{{ "MAIN.new.form.date.err.pattern" | translate }}</span>
                                 </div>
                             </div>
 
@@ -258,7 +256,7 @@
                     </button>
 
                     <a class="wed-btn-primary wed-btn-md"
-                            routerLink="../">
+                       routerLink="../">
                         {{ "MAIN.pr-panel.nav.arch" | translate}}
                     </a>
                 </nav>

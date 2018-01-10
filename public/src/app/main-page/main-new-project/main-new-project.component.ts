@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {BsDatepickerConfig, BsLocaleService} from 'ngx-bootstrap';
+import {defineLocale} from 'ngx-bootstrap/chronos';
+import {ruLocale} from 'ngx-bootstrap/locale';
+defineLocale('ru', ruLocale);
 
 @Component({
     selector: 'app-main-new-project',
@@ -9,11 +13,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class MainNewProjectComponent implements OnInit {
     newProjectForm: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    minDate: Date = new Date();
+    selectedStartDate: Date = new Date();
+    bsConfig = {dateInputFormat: 'DD.MM.YYYY'};
+    dp: any;
+    locale = 'en';
+
+    constructor(private fb: FormBuilder, private _localeService: BsLocaleService) {
         this.createForm();
     }
 
     ngOnInit() {
+        this._localeService.use('ru');
     }
 
     createForm() {
@@ -35,14 +46,14 @@ export class MainNewProjectComponent implements OnInit {
                     '',
                     Validators.compose([
                         Validators.required,
-                        Validators.minLength(500),
-                        Validators.maxLength(1000000),
+                        Validators.min(500),
                     ]),
                 ],
                 weddingDate: [
                     '',
                     Validators.compose([
                         Validators.required,
+                        // Validators.pattern(DATE_PATTERN),
                     ]),
                 ],
                 /*password: [

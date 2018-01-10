@@ -40,8 +40,16 @@
           "pl": "Planning budged in USD",
           "err": {
             "req": "Planning budged field is required!",
-            "min": "500 - 1 000 000",
+            "min": "Not less than 500",
             "pattern": null
+          }
+        },
+        "date": {
+          "pl": "Wedding date",
+          "err": {
+            "req": "Wedding date field is required!",
+            "min": null,
+            "pattern": "date format: dd.mm.yyyy"
           }
         },
         

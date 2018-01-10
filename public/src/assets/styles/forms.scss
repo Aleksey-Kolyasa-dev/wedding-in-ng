@@ -59,6 +59,9 @@
     div.form-content {
       display: flex;
       justify-content: space-around;
+      h5 {
+        color: $wed-text-header;
+      }
       input {
         font-size: 120%;
         font-weight: 600;

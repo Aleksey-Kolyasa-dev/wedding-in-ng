@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MainPageRoutingModule} from './main-page-routing.module';
 import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import {MainHostComponent, MainHeaderComponent, UserMenuComponent, MainProjectsPanelComponent, MainNewProjectComponent} from './index';
 
@@ -23,6 +24,7 @@ const COMPONENTS: any[] = [
         ReactiveFormsModule,
         SharedModule,
         TranslateModule,
+        BsDatepickerModule.forRoot(),
     ],
     declarations: [COMPONENTS],
     exports: [COMPONENTS],
