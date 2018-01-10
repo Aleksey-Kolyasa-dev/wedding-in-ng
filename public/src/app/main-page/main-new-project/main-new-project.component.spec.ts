@@ -31,6 +31,7 @@ describe('MainNewProjectComponent', () => {
         fixture.detectChanges();
     });
 
+    // TODO: check why failed
     // it('should create', () => {
     //     expect(component).toBeTruthy();
     // });

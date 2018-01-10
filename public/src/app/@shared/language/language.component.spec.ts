@@ -3,6 +3,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {LanguageComponent} from './language.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from '../../@services/language.service';
+import {BsLocaleService} from 'ngx-bootstrap';
 
 describe('LanguageComponent', () => {
     let component: LanguageComponent;
@@ -13,7 +14,10 @@ describe('LanguageComponent', () => {
             imports: [
                 TranslateModule.forRoot(),
             ],
-            providers: [LanguageService],
+            providers: [
+                LanguageService,
+                BsLocaleService,
+            ],
             declarations: [LanguageComponent],
             schemas: [NO_ERRORS_SCHEMA],
         })

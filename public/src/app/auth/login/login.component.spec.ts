@@ -12,6 +12,7 @@ import {AuthService} from '../../@services/auth/auth.service';
 import {ToasterService} from 'angular2-toaster';
 import {ToastService} from '../../@services/toast.service';
 import {TokenService} from '../../@services/auth/token.service';
+import {BsLocaleService} from 'ngx-bootstrap';
 
 
 describe('LoginComponent', () => {
@@ -36,6 +37,7 @@ describe('LoginComponent', () => {
                 ToasterService,
                 ToastService,
                 TokenService,
+                BsLocaleService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         })

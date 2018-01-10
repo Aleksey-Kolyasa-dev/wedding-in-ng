@@ -2,7 +2,7 @@
     <div class="pr-list-panel container">
         <div class="col-12">
             <header>
-                <h3>CREATE NEW PROJECT</h3>
+                <h3>{{ "MAIN.new.header" | translate }}</h3>
             </header>
 
             <div class="form-container">
@@ -106,7 +106,8 @@
                                        [bsConfig]="bsConfig"
                                        [placement]="'top'"
                                        #dp="bsDatepicker"
-                                       bsDatepicker [(bsValue)]="selectedStartDate"
+                                       bsDatepicker
+                                       [(bsValue)]="selectedDate"
                                        [class.form-control-danger]="newProjectForm.get('weddingDate').invalid &&
                            newProjectForm.get('weddingDate').touched"
                                        [class.form-control-success]="newProjectForm.get('weddingDate').valid &&

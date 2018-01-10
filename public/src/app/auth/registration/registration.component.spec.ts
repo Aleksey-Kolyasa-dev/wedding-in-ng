@@ -12,6 +12,7 @@ import {AuthService} from '../../@services/auth/auth.service';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {ToastService} from '../../@services/toast.service';
 import {TokenService} from '../../@services/auth/token.service';
+import {BsLocaleService} from 'ngx-bootstrap';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -35,6 +36,7 @@ describe('RegistrationComponent', () => {
                 TokenService,
                 ToasterService,
                 ToastService,
+                BsLocaleService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         })

@@ -3,6 +3,7 @@ import {MainHeaderComponent} from './main-header.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../@shared/shared.module';
+import {BsLocaleService} from 'ngx-bootstrap';
 
 
 describe('MainHeaderComponent', () => {
@@ -16,6 +17,7 @@ describe('MainHeaderComponent', () => {
                 TranslateModule.forChild(),
             ],
             declarations: [MainHeaderComponent],
+            providers: [BsLocaleService],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();

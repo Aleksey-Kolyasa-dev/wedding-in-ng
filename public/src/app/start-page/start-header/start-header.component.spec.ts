@@ -3,6 +3,7 @@ import {StartHeaderComponent} from './start-header.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../@shared/shared.module';
+import {BsLocaleService} from 'ngx-bootstrap';
 
 
 describe('StartHeaderComponent', () => {
@@ -16,6 +17,7 @@ describe('StartHeaderComponent', () => {
                 TranslateModule.forChild(),
             ],
             declarations: [StartHeaderComponent],
+            providers: [BsLocaleService],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
