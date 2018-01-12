@@ -19,6 +19,7 @@
     },
     "new": {
       "header": "СОЗДАТЬ НОВЫЙ ПРОЕКТ",
+      "back": "< Назад",
       "form": {
         "fiance": {
           "pl": "Имя Жениха",
@@ -52,40 +53,31 @@
             "pattern": "формат даты: дд.мм.гггг"
           }
         },
-
-
-
-
-        "pwd": {
-          "pl": "Password",
-          "err": {
-            "req": "Password field is required!",
-            "min": "Password should contain at least 6 characters!",
-            "pattern": "Only: letters and digits"
-          }
-        },
-        "r-pwd": {
-          "pl": "Repeat password",
-          "err": {
-            "same": "Passwords must be the same!"
-          }
-        },
         "email": {
-          "pl": "Email",
+          "pl": "Почта",
           "err": {
-            "req": "Email field is required!",
-            "pattern": "Wrong email format!"
+            "req": null,
+            "min": null,
+            "pattern": null
           }
         },
-        "name": {
-          "pl": "Name",
+        "telephone": {
+          "pl": "Телефон",
           "err": {
-            "req": "Name field is required!",
-            "min": "Name should contain at least 2 characters!",
-            "pattern": "Only: letters digits _ -"
+            "req": null,
+            "min": null,
+            "pattern": null
           }
         },
-        "submit": "Continue"
+        "notes": {
+          "pl": "Заметки",
+          "err": {
+            "req": null,
+            "min": null,
+            "pattern": null
+          }
+        },
+        "submit": "Создать"
       }
     }
   }

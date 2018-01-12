@@ -56,13 +56,19 @@
 
   .project-form {
     margin-top: 2rem;
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
     div.form-content {
       display: flex;
       justify-content: space-around;
       h5 {
         color: $wed-text-header;
       }
-      input {
+      input,
+      textarea {
         font-size: 120%;
         font-weight: 600;
         color: #464646;
@@ -76,7 +82,6 @@
       }
     }
     button[type=submit] {
-      margin-top: 3rem;
       &:disabled {
         cursor: not-allowed !important;
       }

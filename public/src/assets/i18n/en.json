@@ -19,9 +19,10 @@
     },
     "new": {
       "header": "CREATE NEW PROJECT",
+      "back": "< Back",
       "form": {
         "fiance": {
-          "pl": "Fiance name",
+          "pl": "Fiance name*",
           "err": {
             "req": "Fiance name field is required!",
             "min": null,
@@ -29,7 +30,7 @@
           }
         },
         "fiancee": {
-          "pl": "Fiancee name",
+          "pl": "Fiancee name*",
           "err": {
             "req": "Fiancee name field is required!",
             "min": null,
@@ -37,7 +38,7 @@
           }
         },
         "budget": {
-          "pl": "Planning budged in USD",
+          "pl": "Planning budged in USD*",
           "err": {
             "req": "Planning budged field is required!",
             "min": "Not less than 500",
@@ -45,48 +46,38 @@
           }
         },
         "date": {
-          "pl": "Wedding date",
+          "pl": "Wedding date*",
           "err": {
             "req": "Wedding date field is required!",
             "min": null,
             "pattern": "date format: dd.mm.yyyy"
           }
         },
-        
-        
-        
-        
-        
-        "pwd": {
-          "pl": "Password",
-          "err": {
-            "req": "Password field is required!",
-            "min": "Password should contain at least 6 characters!",
-            "pattern": "Only: letters and digits"
-          }
-        },
-        "r-pwd": {
-          "pl": "Repeat password",
-          "err": {
-            "same": "Passwords must be the same!"
-          }
-        },
         "email": {
           "pl": "Email",
           "err": {
-            "req": "Email field is required!",
-            "pattern": "Wrong email format!"
+            "req": null,
+            "min": null,
+            "pattern": null
           }
         },
-        "name": {
-          "pl": "Name",
+        "telephone": {
+          "pl": "Telephone",
           "err": {
-            "req": "Name field is required!",
-            "min": "Name should contain at least 2 characters!",
-            "pattern": "Only: letters digits _ -"
+            "req": null,
+            "min": null,
+            "pattern": null
           }
         },
-        "submit": "Continue"
+        "notes": {
+          "pl": "Notes",
+          "err": {
+            "req": null,
+            "min": null,
+            "pattern": null
+          }
+        },
+        "submit": "Create"
       }
     }
   }

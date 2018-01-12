@@ -51,16 +51,21 @@ export class MainNewProjectComponent implements OnInit {
                         // Validators.pattern(DATE_PATTERN),
                     ]),
                 ],
-                /*password: [
+                email: [
                     '',
-                    Validators.compose([
-                        Validators.required,
-                        Validators.minLength(6),
-                        Validators.pattern(PWD_PATTERN)
-                    ]),
-                ],*/
+                ],
+                telephone: [
+                    '',
+                ],
+                notes: [
+                    '',
+                ],
             },
         );
+    }
+
+    onSubmit({value}) {
+        console.log(value);
     }
 
 }

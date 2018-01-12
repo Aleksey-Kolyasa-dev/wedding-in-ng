@@ -37,7 +37,6 @@ export class MainHostComponent implements OnInit {
         this.userService.getCurrentUser().subscribe(
             user => {
                 if (user && user._id) {
-                    console.log(user);
                     this._user = user;
                 } else {
                     this.authService.kickOff();

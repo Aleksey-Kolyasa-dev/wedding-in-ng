@@ -86,6 +86,9 @@
       color: $bg-color !important;
       text-shadow: 0 0 3px $bg-color;
     }
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 
   .wed-btn-danger {
