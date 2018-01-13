@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ProjectService} from '../../@services/project/project.service';
 
 @Component({
     selector: 'app-main-new-project',
@@ -9,13 +10,15 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class MainNewProjectComponent implements OnInit {
     newProjectForm: FormGroup;
 
+    initDate: Date = new Date();
     minDate: Date = new Date();
     selectedDate: Date = new Date();
     bsConfig = {dateInputFormat: 'DD.MM.YYYY'};
     dp: any;
 
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder,
+                private projectService: ProjectService) {
         this.createForm();
     }
 
@@ -65,7 +68,14 @@ export class MainNewProjectComponent implements OnInit {
     }
 
     onSubmit({value}) {
-        console.log(value);
+        this.projectService.createNewProject(value).subscribe(
+            success => {
+                console.log(success);
+            },
+            error => {
+                console.log(error);
+            }
+        );
     }
 
 }

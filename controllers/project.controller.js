@@ -4,11 +4,16 @@ const { Project } = require('../models/project.model');
 const customError = require('../utils/errors');
 
 exports.newProject = async (req, res, next) => {
-	const { fiance, fiancee } = req.body;
+	const { fiance, fiancee, budgetGenPlanUsd, weddingDate, email, telephone, notes } = req.body;
 	try {
 		const _project = new Project({
 			fiance,
 			fiancee,
+			budgetGenPlanUsd,
+			weddingDate,
+			email: email || 'empty',
+			telephone: telephone || 'empty',
+			notes: notes || 'empty',
 			created: moment.now(),
 		});
 

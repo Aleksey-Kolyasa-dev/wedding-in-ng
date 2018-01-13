@@ -5,8 +5,27 @@ const { config } = require('../config');
 const ProjectSchema = new Schema({
 	fiance: {
 		type: String,
+		required: true,
 	},
 	fiancee: {
+		type: String,
+		required: true,
+	},
+	budgetGenPlanUsd: {
+		type: Number,
+		required: true,
+	},
+	weddingDate: {
+		type: Date,
+		required: true,
+	},
+	email: {
+		type: String,
+	},
+	telephone: {
+		type: String,
+	},
+	notes: {
 		type: String,
 	},
 	created: {

@@ -8,6 +8,7 @@ import {ToastService} from './@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
 import {UserService} from './@services/user/user.service';
 import {BsLocaleService} from 'ngx-bootstrap';
+import {ProjectService} from "./@services/project/project.service";
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -24,6 +25,7 @@ describe('AppComponent', () => {
                 ToasterService,
                 ToastService,
                 UserService,
+                ProjectService,
                 BsLocaleService,
             ],
             schemas: [NO_ERRORS_SCHEMA],

@@ -21,6 +21,7 @@ import {ToastService} from './@services/toast.service';
 import {TokenService} from './@services/auth/token.service';
 import {TokenInterceptor} from './@services/auth/token.interceptor';
 import {UserService} from './@services/user/user.service';
+import {ProjectService} from './@services/project/project.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -55,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ToastService,
         TokenService,
         UserService,
+        ProjectService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
