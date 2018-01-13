@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 // import 'rxjs/add/operator/map';
 import {PROJECT_BASE_URL} from '../../@constants/api.constants';
-import {Project} from "../../@interfaces/project";
+import {Project} from '../../@interfaces/project';
 
 
 
@@ -16,5 +16,4 @@ export class ProjectService {
     public createNewProject(project: Project): Observable<any> {
         return this.http.post(`${PROJECT_BASE_URL}/`, project);
     }
-    
 }

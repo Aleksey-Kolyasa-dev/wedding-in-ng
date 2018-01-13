@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {UserService} from '../../@services/user/user.service';
 import {User} from '../../@interfaces/user';
 import {AuthService} from '../../@services/auth/auth.service';
+import {EventsService} from "../../@services/events.service";
 
 @Component({
     selector: 'app-main-host',
@@ -20,12 +21,17 @@ import {AuthService} from '../../@services/auth/auth.service';
         ])
     ],
 })
-export class MainHostComponent implements OnInit {
+export class MainHostComponent implements OnInit, OnDestroy {
     anime = '';
     _user: User;
 
     constructor(private userService: UserService,
-                private authService: AuthService) {
+                private authService: AuthService,
+                private eventsService: EventsService) {
+        eventsService.changeEmitted$.subscribe(
+            text => {
+                console.log(text);
+            });
     }
 
     ngOnInit() {
@@ -38,6 +44,7 @@ export class MainHostComponent implements OnInit {
             user => {
                 if (user && user._id) {
                     this._user = user;
+                    console.log(this._user);
                 } else {
                     this.authService.kickOff();
                 }
@@ -50,5 +57,8 @@ export class MainHostComponent implements OnInit {
 
     fadeIn() {
         this.anime = 'fadeIn';
+    }
+    ngOnDestroy() {
+        // if (!this.eventsService.changeEmitted$.closed) this.toggleAccess$.unsubscribe();
     }
 }

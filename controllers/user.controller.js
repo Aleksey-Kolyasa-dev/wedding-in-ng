@@ -8,6 +8,7 @@ exports.getUser = async (req, res, next) => {
 	const { id } = req.params;
 
 	User.findOne({ _id: id })
+		.populate('projects')
 		.select('-password')
 		.then((user) => res.json(user))
 		.catch((err) => next(customError(`User not found! \ Пользователь не найден!`, 404)));
@@ -17,7 +18,7 @@ exports.getCurrentUser = async (req, res, next) => {
 	const { _id } = req.user;
 
 	User.findOne({ _id })
-		.populate('project')
+		.populate('projects')
 		.select('-password')
 		.exec()
 		.then((user) => res.json(user))

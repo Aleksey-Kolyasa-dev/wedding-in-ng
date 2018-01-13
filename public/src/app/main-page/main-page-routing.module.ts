@@ -8,9 +8,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'main', component: MainHostComponent,
       children: [
-          /*{path: '', component: MainProjectsPanelComponent},
-          {path: 'new-project', component: MainNewProjectComponent},*/
-          {path: '', component: MainNewProjectComponent},
+          {path: '', component: MainProjectsPanelComponent},
+          {path: 'new-project', component: MainNewProjectComponent},
+          // {path: '', component: MainNewProjectComponent},
       ],
   },
 ];

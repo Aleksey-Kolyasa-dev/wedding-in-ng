@@ -9,6 +9,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {ToastService} from '../../@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
 import {TokenService} from '../../@services/auth/token.service';
+import {EventsService} from '../../@services/events.service';
 
 describe('MainHostComponent', () => {
     let component: MainHostComponent;
@@ -29,6 +30,7 @@ describe('MainHostComponent', () => {
                 ToastService,
                 ToasterService,
                 TokenService,
+                EventsService,
             ],
         })
             .compileComponents();

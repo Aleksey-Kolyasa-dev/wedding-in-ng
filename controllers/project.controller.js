@@ -1,6 +1,7 @@
 'use strict';
 const moment = require('moment');
 const { Project } = require('../models/project.model');
+const { User } = require('../models/user.model');
 const customError = require('../utils/errors');
 
 exports.newProject = async (req, res, next) => {
@@ -16,12 +17,16 @@ exports.newProject = async (req, res, next) => {
 			notes: notes || 'empty',
 			created: moment.now(),
 		});
-
 		const newProject = await _project.save();
+
+		// Add project to User
+		const _user = await User.findById(req.user._id);
+		_user.projects.push(newProject._id);
+		await _user.save();
 
 		res.json(newProject);
 	} catch (err) {
-		next(customError(`User not found! \ Пользователь не найден!`, 404));
+		next(customError(`Create New Project Failed! \ Не удалось создать проект!`, 404));
 	}
 };
 

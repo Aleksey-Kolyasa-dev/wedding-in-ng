@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProjectService} from '../../@services/project/project.service';
+import {ToastService} from '../../@services/toast.service';
+import {Router} from '@angular/router';
+import {EventsService} from '../../@services/events.service';
 
 @Component({
     selector: 'app-main-new-project',
@@ -18,7 +21,10 @@ export class MainNewProjectComponent implements OnInit {
 
 
     constructor(private fb: FormBuilder,
-                private projectService: ProjectService) {
+                private projectService: ProjectService,
+                private toastService: ToastService,
+                private router: Router,
+                private eventsService: EventsService) {
         this.createForm();
     }
 
@@ -70,10 +76,13 @@ export class MainNewProjectComponent implements OnInit {
     onSubmit({value}) {
         this.projectService.createNewProject(value).subscribe(
             success => {
-                console.log(success);
+                this.router.navigate(['../']);
+                this.toastService.success(' ');
+                this.eventsService.emitChange('test');
             },
             error => {
-                console.log(error);
+                this.toastService.error(error);
+                this.router.navigate(['../']);
             }
         );
     }
