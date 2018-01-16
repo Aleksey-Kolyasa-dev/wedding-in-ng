@@ -30,7 +30,7 @@ exports.newProject = async (req, res, next) => {
 	}
 };
 
-exports.getAllProjects = async (req, res, next) => {
+exports.getUserProjects = async (req, res, next) => {
 	const { _id } = req.user;
 	try {
 		const _user = await User.findById(_id).populate('projects');
@@ -40,7 +40,7 @@ exports.getAllProjects = async (req, res, next) => {
 	}
 };
 
-exports.getSingleProject = async (req, res, next) => {
+exports.getProject = async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		const _project = await Project.findOne({ _id: id });
@@ -50,7 +50,23 @@ exports.getSingleProject = async (req, res, next) => {
 	}
 };
 
-exports.removeSingleProject = async (req, res, next) => {
+exports.updateProject = async (req, res, next) => {
+	const { id } = req.params;
+	const { fiance, fiancee, budgetGenPlanUsd, weddingDate } = req.body;
+
+	if (!fiance || !fiancee || !budgetGenPlanUsd || !weddingDate) {
+		return next(customError(`Invalid Data! \ Ошибка валидации`, 404));
+	}
+
+	try {
+		const _project = await Project.findByIdAndUpdate(id, req.body, { new: true });
+		res.json(_project);
+	} catch (err) {
+		return next(err);
+	}
+};
+
+exports.removeProject = async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		const _user = await User.findById(req.user._id);

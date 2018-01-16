@@ -81,7 +81,7 @@ export class MainEditProjectComponent implements OnInit {
 
     loadProject() {
         this.activatedRoute.params.forEach(({id}: Params) => {
-            this.projectService.getSingleProject(id).subscribe(
+            this.projectService.getProject(id).subscribe(
                 project => {
                     this.fillInForm(project);
                     this.id = project._id;
@@ -105,10 +105,10 @@ export class MainEditProjectComponent implements OnInit {
     }
 
     onSubmit({value}) {
-        this.projectService.createNewProject(value).subscribe(
+        this.projectService.updateProject(this.id, value).subscribe(
             success => {
                 this.router.navigate(['../']);
-                this.eventsService.emitChange('test');
+                // this.eventsService.emitChange('test');
             },
             error => {
                 this.toastService.error(error);
@@ -122,7 +122,7 @@ export class MainEditProjectComponent implements OnInit {
     }
 
     removeConfirm() {
-        this.projectService.removeSingleProject(this.id).subscribe(
+        this.projectService.removeProject(this.id).subscribe(
             success => {
                 this.router.navigate(['../']);
             },

@@ -14,7 +14,7 @@
             </div>
             <div class="row center-flex-hor">
                 <ul *ngIf="projects.length" class="col-11 w-projects-list">
-                    <li *ngFor="let project of projects; let i = index">
+                    <li *ngFor="let project of projects">
                         <div>
                             <a routerLink="{{'../' + 'project/' + project._id}}">
                                 <span>

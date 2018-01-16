@@ -21,11 +21,15 @@ export class ProjectService {
         return this.http.get(`${PROJECT_BASE_URL}/`);
     }
 
-    public getSingleProject(id: string): Observable<any> {
+    public getProject(id: string): Observable<any> {
         return this.http.get(`${PROJECT_BASE_URL}/${id}`);
     }
 
-    public removeSingleProject(id: string): Observable<any> {
+    public updateProject(id: string, project: Project): Observable<any> {
+        return this.http.put(`${PROJECT_BASE_URL}/${id}`, project);
+    }
+
+    public removeProject(id: string): Observable<any> {
         return this.http.delete(`${PROJECT_BASE_URL}/${id}`);
     }
 }
