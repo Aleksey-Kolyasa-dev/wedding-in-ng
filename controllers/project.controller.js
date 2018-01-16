@@ -52,6 +52,16 @@ exports.getSingleProject = async (req, res, next) => {
 
 exports.removeSingleProject = async (req, res, next) => {
 	const { id } = req.params;
-	console.log(id);
-	res.sendStatus(200);
+	try {
+		const _user = await User.findById(req.user._id);
+
+		_user.projects.splice(_user.projects.indexOf(id), 1);
+
+		await _user.save();
+		await Project.remove({ _id: id });
+
+		res.sendStatus(200);
+	} catch (err) {
+		return next(err);
+	}
 };
