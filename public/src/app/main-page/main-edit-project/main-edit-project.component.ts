@@ -16,11 +16,12 @@ export class MainEditProjectComponent implements OnInit {
     editProjectForm: FormGroup;
 
     initDate: Date = new Date();
-    minDate: Date = new Date();
     selectedDate: Date = new Date();
     bsConfig = {dateInputFormat: 'DD.MM.YYYY'};
     dp: any;
 
+    removeTrigger: boolean;
+    id: string;
 
     constructor(private fb: FormBuilder,
                 private projectService: ProjectService,
@@ -33,6 +34,7 @@ export class MainEditProjectComponent implements OnInit {
 
     ngOnInit() {
         this.loadProject();
+        this.removeTrigger = false;
     }
 
     createForm() {
@@ -77,6 +79,20 @@ export class MainEditProjectComponent implements OnInit {
         );
     }
 
+    loadProject() {
+        this.activatedRoute.params.forEach(({id}: Params) => {
+            this.projectService.getSingleProject(id).subscribe(
+                project => {
+                    this.fillInForm(project);
+                    this.id = project._id;
+                },
+                error => {
+                    this.router.navigate(['/main']);
+                }
+            );
+        });
+    }
+
     fillInForm({ fiance, fiancee, budgetGenPlanUsd, weddingDate, email, telephone, notes }: Project) {
         this.editProjectForm.patchValue({
             fiance,
@@ -86,19 +102,6 @@ export class MainEditProjectComponent implements OnInit {
             email,
             telephone,
             notes });
-    }
-
-    loadProject() {
-        this.activatedRoute.params.forEach(({id}: Params) => {
-           this.projectService.getSingleProject(id).subscribe(
-               project => {
-                   this.fillInForm(project);
-               },
-               error => {
-                   this.router.navigate(['/main']);
-               }
-           );
-        });
     }
 
     onSubmit({value}) {
@@ -114,4 +117,21 @@ export class MainEditProjectComponent implements OnInit {
             }
         );
     }
+
+    removeTriggerToggle(mode: boolean) {
+        this.removeTrigger = mode;
+    }
+
+    removeConfirm() {
+        this.projectService.removeSingleProject(this.id).subscribe(
+            success => {
+                this.router.navigate(['../']);
+            },
+            error => {
+                this.router.navigate(['../']);
+            }
+        );
+    }
+
+
 }

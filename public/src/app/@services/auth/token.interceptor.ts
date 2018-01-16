@@ -48,6 +48,9 @@ export class TokenInterceptor implements HttpInterceptor {
                     case 404:
                         this.toastService.error(`Not found! \ Не найдено!`);
                         break;
+                    case 500:
+                        this.toastService.error(`Server error! \ Ошибка на сервере!`);
+                        break;
                 }
             }
         });

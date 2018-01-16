@@ -2,7 +2,16 @@
   <div class="pr-list-panel container">
     <div class="col-12">
       <header>
-        <h3>{{ "MAIN.edit.header" | translate }}</h3>
+        <div>
+          <h3>{{ "MAIN.edit.header" | translate }}</h3>
+        </div>
+        <div *ngIf="!removeTrigger">
+          <button class="wed-btn-danger wed-btn-sm" (click)="removeTriggerToggle(true)">{{ "MAIN.edit.remove" | translate }}</button>
+        </div>
+        <div *ngIf="removeTrigger">
+          <button class="wed-btn-danger wed-btn-sm" (click)="removeConfirm()">{{ "MAIN.edit.confirm" | translate }}</button>
+          <button class="wed-btn-success wed-btn-sm" (click)="removeTriggerToggle(false)">{{ "MAIN.edit.cancel" | translate }}</button>
+        </div>
       </header>
 
       <div class="form-container">
@@ -103,7 +112,6 @@
                        formControlName="weddingDate"
                        class="form-control"
                        [bsValue] = "initDate"
-                       [minDate]="minDate"
                        [bsConfig]="bsConfig"
                        [placement]="'top'"
                        #dp="bsDatepicker"

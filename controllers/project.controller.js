@@ -30,7 +30,7 @@ exports.newProject = async (req, res, next) => {
 	}
 };
 
-exports.getProjects = async (req, res, next) => {
+exports.getAllProjects = async (req, res, next) => {
 	const { _id } = req.user;
 	try {
 		const _user = await User.findById(_id).populate('projects');
@@ -48,4 +48,10 @@ exports.getSingleProject = async (req, res, next) => {
 	} catch (err) {
 		return next(customError(`Project not found! \ Проект не найден!`, 404));
 	}
+};
+
+exports.removeSingleProject = async (req, res, next) => {
+	const { id } = req.params;
+	console.log(id);
+	res.sendStatus(200);
 };
