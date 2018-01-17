@@ -1,22 +1,42 @@
 <section class="container-fluid">
-  <div class="row center-flex-hor">
-    <section class="pr-list-panel col-10">
-        <div class="row center-flex-hor">
-          <nav class="col-11 pl-0">
-              <a class="wed-btn-md wed-btn-success" routerLink="new-project">
-                {{ "MAIN.pr-panel.nav.new" | translate}}
-              </a>
+    <div class="row center-flex-hor">
+        <section class="pr-list-panel col-10">
+            <div class="row center-flex-hor">
+                <nav class="col-11 pl-0">
+                    <a class="wed-btn-md wed-btn-success" routerLink="new-project">
+                        {{ "MAIN.pr-panel.nav.new" | translate}}
+                    </a>
 
-              <a class="wed-btn-md wed-btn-primary" routerLink="archive">
-                {{ "MAIN.pr-panel.nav.arch" | translate}}
-              </a>
-          </nav>
-            <div class="row">
-                <ul *ngIf="projects.length">
-                    <li *ngFor="let project of projects">{{project._id}}</li>
+                    <a class="wed-btn-md wed-btn-primary" routerLink="archive">
+                        {{ "MAIN.pr-panel.nav.arch" | translate}}
+                    </a>
+                </nav>
+            </div>
+            <div class="row center-flex-hor">
+                <ul *ngIf="projects.length" class="col-11 w-projects-list">
+                    <li *ngFor="let project of projects; let i = index">
+                        <div>
+                            <a routerLink="{{'../' + 'project/' + project._id}}">
+                                <span>
+                                    {{ "MAIN.pr-panel.pr-list.wedding" | translate}}
+                                    {{project.weddingDate | date : 'dd.MM.yyyy'}},
+                                    {{ "MAIN.pr-panel.pr-list.fiance" | translate}}
+                                    {{project.fiance}},
+                                    {{ "MAIN.pr-panel.pr-list.fiancee" | translate}}
+                                    {{project.fiancee}},
+                                    {{ "MAIN.pr-panel.pr-list.budget" | translate}}
+                                    {{project.budgetGenPlanUsd | number : 0}} USD
+                                </span>
+                            </a>
+                        </div>
+                        <div>
+                            <button class="wed-btn-xs wed-btn-secondary" routerLink="{{'edit-project/' + project._id}}">
+                                {{ "MAIN.pr-panel.pr-list.edit" | translate}}
+                            </button>
+                        </div>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </section>
-  </div>
+        </section>
+    </div>
 </section>

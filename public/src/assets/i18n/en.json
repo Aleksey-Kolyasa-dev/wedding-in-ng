@@ -15,6 +15,13 @@
       "nav": {
         "new": "New project",
         "arch" : "Archive"
+      },
+      "pr-list": {
+        "wedding": "Wedding",
+        "fiance" : "fiance:",
+        "fiancee": "fiancee:",
+        "budget": "budget:",
+        "edit": "edit"
       }
     },
     "new": {

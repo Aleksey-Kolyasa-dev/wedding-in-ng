@@ -1,3 +1,5 @@
+@import '../../../assets/styles/colors';
+
 nav {
   border-bottom: 2px solid rgba(88, 139, 255, 0.55);
   padding-bottom: 0.5rem;
@@ -5,4 +7,35 @@ nav {
     display: inline-block;
     margin-right: 1rem;
   }
+}
+
+.w-projects-list {
+  padding-left: 0;
+  list-style: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    > div {
+      display: inline-block;
+    }
+    > div:last-of-type {
+      margin-left: 10px;
+    }
+    a {
+      color: $wed-text-header;
+      font-style: italic;
+      font-size: 150%;
+      font-weight: 600;
+      transition: all 0.3s;
+      &:hover {
+        color: rgba(3, 38, 140, 0.77);;
+        text-shadow: 4px 4px 5px rgba(57, 73, 97, 0.33);
+      }
+      p {
+
+      }
+    }
+  }
+
 }

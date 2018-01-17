@@ -6,7 +6,7 @@ import {ProjectService} from '../../@services/project/project.service';
 import {HttpClientModule} from "@angular/common/http";
 import {ToastService} from '../../@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
-// import {RouterTestingModule} from "@angular/router/testing";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('MainProjectsPanelComponent', () => {
     let component: MainProjectsPanelComponent;
@@ -17,6 +17,7 @@ describe('MainProjectsPanelComponent', () => {
             imports: [
                 SharedModule,
                 HttpClientModule,
+                RouterTestingModule,
                 TranslateModule.forChild(),
             ],
             declarations: [MainProjectsPanelComponent],

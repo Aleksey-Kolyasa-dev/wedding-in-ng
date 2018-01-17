@@ -103,6 +103,9 @@
   .wed-btn-primary {
     @include btn($wed-primary, #ffffff);
   }
+  .wed-btn-service {
+    @include btn($wed-service, #ffffff);
+  }
   .wed-btn-default {
     @include btn($wed-default, #ffffff);
   }
