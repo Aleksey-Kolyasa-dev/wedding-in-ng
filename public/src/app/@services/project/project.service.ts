@@ -16,4 +16,8 @@ export class ProjectService {
     public createNewProject(project: Project): Observable<any> {
         return this.http.post(`${PROJECT_BASE_URL}/`, project);
     }
+
+    public getUserProjects(): Observable<any> {
+        return this.http.get(`${PROJECT_BASE_URL}/`);
+    }
 }

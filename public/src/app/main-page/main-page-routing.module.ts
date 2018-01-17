@@ -10,6 +10,7 @@ const routes: Routes = [
       children: [
           {path: '', component: MainProjectsPanelComponent},
           {path: 'new-project', component: MainNewProjectComponent},
+          {path: 'archive', component: MainNewProjectComponent},
           // {path: '', component: MainNewProjectComponent},
       ],
   },

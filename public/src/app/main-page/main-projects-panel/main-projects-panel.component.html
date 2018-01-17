@@ -11,6 +11,11 @@
                 {{ "MAIN.pr-panel.nav.arch" | translate}}
               </a>
           </nav>
+            <div class="row">
+                <ul *ngIf="projects.length">
+                    <li *ngFor="let project of projects">{{project._id}}</li>
+                </ul>
+            </div>
         </div>
     </section>
   </div>

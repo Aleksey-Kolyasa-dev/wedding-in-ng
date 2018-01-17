@@ -30,6 +30,15 @@ exports.newProject = async (req, res, next) => {
 	}
 };
 
+exports.getProjects = async (req, res, next) => {
+	const { _id } = req.user;
+	try {
+		const _user = await User.findById(_id).populate('projects');
+		res.json(_user.projects);
+	} catch (err) {
+		return next(customError(`Projects not found! \ Проекты не найдены!`, 404));
+	}
+};
 
 exports.getProject = async (req, res, next) => {
 	const { id } = req.params;
