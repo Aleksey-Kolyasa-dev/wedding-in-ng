@@ -6,6 +6,11 @@ const customError = require('../utils/errors');
 
 exports.newProject = async (req, res, next) => {
 	const { fiance, fiancee, budgetGenPlanUsd, weddingDate, email, telephone, notes } = req.body;
+
+	if (!fiance || !fiancee || !budgetGenPlanUsd || !weddingDate) {
+		return next(customError(`Invalid Data! \ Ошибка валидации`, 406));
+	}
+
 	try {
 		const _project = new Project({
 			fiance,
@@ -26,7 +31,7 @@ exports.newProject = async (req, res, next) => {
 
 		res.json(newProject);
 	} catch (err) {
-		next(customError(`Create New Project Failed! \ Не удалось создать проект!`, 404));
+		next(customError(`Create New Project Failed! \ Не удалось создать проект!`, 406));
 	}
 };
 
@@ -55,7 +60,7 @@ exports.updateProject = async (req, res, next) => {
 	const { fiance, fiancee, budgetGenPlanUsd, weddingDate } = req.body;
 
 	if (!fiance || !fiancee || !budgetGenPlanUsd || !weddingDate) {
-		return next(customError(`Invalid Data! \ Ошибка валидации`, 404));
+		return next(customError(`Invalid Data! \ Ошибка валидации`, 406));
 	}
 
 	try {

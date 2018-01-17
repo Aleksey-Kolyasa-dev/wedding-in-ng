@@ -108,10 +108,8 @@ export class MainEditProjectComponent implements OnInit {
         this.projectService.updateProject(this.id, value).subscribe(
             success => {
                 this.router.navigate(['../']);
-                // this.eventsService.emitChange('test');
             },
             error => {
-                this.toastService.error(error);
                 this.router.navigate(['../']);
             }
         );

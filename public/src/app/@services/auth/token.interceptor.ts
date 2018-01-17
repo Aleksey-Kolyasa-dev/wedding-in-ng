@@ -51,6 +51,9 @@ export class TokenInterceptor implements HttpInterceptor {
                     case 500:
                         this.toastService.error(`Server error! \ Ошибка на сервере!`);
                         break;
+                    default:
+                        this.toastService.error(err);
+                        break;
                 }
             }
         });
