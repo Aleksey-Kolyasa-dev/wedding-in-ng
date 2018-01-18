@@ -86,6 +86,14 @@
         },
         "submit": "Create"
       }
+    },
+    "edit": {
+      "header": "EDIT PROJECT",
+      "remove": "REMOVE PROJECT",
+      "confirm": "CONFIRM",
+      "cancel": "CANCEL",
+      "back": "< Back",
+      "submit": "Done"
     }
   }
 }

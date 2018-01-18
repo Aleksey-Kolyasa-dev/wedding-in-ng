@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
-import {MainHostComponent, MainProjectsPanelComponent, MainNewProjectComponent} from './index';
+import {MainHostComponent, MainProjectsPanelComponent, MainNewProjectComponent, MainEditProjectComponent} from './index';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -10,8 +10,8 @@ const routes: Routes = [
       children: [
           {path: '', component: MainProjectsPanelComponent},
           {path: 'new-project', component: MainNewProjectComponent},
+          {path: 'edit-project/:id', component: MainEditProjectComponent},
           {path: 'archive', component: MainNewProjectComponent},
-          // {path: '', component: MainNewProjectComponent},
       ],
   },
 ];

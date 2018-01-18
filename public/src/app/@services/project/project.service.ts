@@ -20,4 +20,8 @@ export class ProjectService {
     public getUserProjects(): Observable<any> {
         return this.http.get(`${PROJECT_BASE_URL}/`);
     }
+
+    public getSingleProject(id): Observable<any> {
+        return this.http.get(`${PROJECT_BASE_URL}/${id}`);
+    }
 }

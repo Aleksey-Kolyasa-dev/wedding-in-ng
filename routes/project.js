@@ -4,6 +4,6 @@ const ctrl = require('../controllers/project.controller');
 
 Router.post('/', ctrl.newProject);
 Router.get('/', ctrl.getProjects);
-Router.get('/:id', ctrl.getProject);
+Router.get('/:id', ctrl.getSingleProject);
 
 module.exports = Router;

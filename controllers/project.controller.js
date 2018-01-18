@@ -12,9 +12,9 @@ exports.newProject = async (req, res, next) => {
 			fiancee,
 			budgetGenPlanUsd,
 			weddingDate,
-			email: email || 'empty',
-			telephone: telephone || 'empty',
-			notes: notes || 'empty',
+			email: email || '---',
+			telephone: telephone || '---',
+			notes: notes || '---',
 			created: moment.now(),
 		});
 		const newProject = await _project.save();
@@ -40,7 +40,7 @@ exports.getProjects = async (req, res, next) => {
 	}
 };
 
-exports.getProject = async (req, res, next) => {
+exports.getSingleProject = async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		const _project = await Project.findOne({ _id: id });

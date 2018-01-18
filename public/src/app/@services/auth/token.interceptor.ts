@@ -45,6 +45,9 @@ export class TokenInterceptor implements HttpInterceptor {
                     case 403:
                         this.toastService.error(`Forbidden! \ Доступ запрещен!`);
                         break;
+                    case 404:
+                        this.toastService.error(`Not found! \ Не найдено!`);
+                        break;
                 }
             }
         });

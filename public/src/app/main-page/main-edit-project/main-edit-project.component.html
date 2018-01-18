@@ -1,0 +1,188 @@
+<section class="container-fluid">
+  <div class="pr-list-panel container">
+    <div class="col-12">
+      <header>
+        <h3>{{ "MAIN.edit.header" | translate }}</h3>
+      </header>
+
+      <div class="form-container">
+        <form class="project-form"
+              novalidate
+              [formGroup]='editProjectForm'
+              (ngSubmit)="onSubmit(editProjectForm)">
+
+          <div class="form-content col-12" style="">
+            <!--LEFT SECTION-->
+            <section class="col-4">
+              <!--FIANCE-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.fiance.pl" | translate }}</h5>
+                <input type="text"
+                       formControlName="fiance"
+                       class="form-control "
+                       maxlength="25"
+                       [class.form-control-danger]="editProjectForm.get('fiance').invalid &&
+                           editProjectForm.get('fiance').touched"
+                       [class.form-control-success]="editProjectForm.get('fiance').valid &&
+                           editProjectForm.get('fiance').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('fiance').hasError('required') &&
+                         editProjectForm.get('fiance').touched"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('fiance').touched &&
+                         editProjectForm.get('fiance').hasError('minlength')"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('fiance').touched &&
+                         editProjectForm.get('fiance').hasError('pattern')"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                </div>
+              </div>
+
+              <!--FIANCEE-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.fiancee.pl" | translate }}</h5>
+                <input type="text"
+                       formControlName="fiancee"
+                       class="form-control"
+                       maxlength="25"
+                       [class.form-control-danger]="editProjectForm.get('fiancee').invalid &&
+                           editProjectForm.get('fiancee').touched"
+                       [class.form-control-success]="editProjectForm.get('fiancee').valid &&
+                           editProjectForm.get('fiancee').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('fiancee').hasError('required') &&
+                         editProjectForm.get('fiancee').touched"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                </div>
+
+              </div>
+
+              <!--BUDGET-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.budget.pl" | translate }}</h5>
+                <input type="number"
+                       formControlName="budgetGenPlanUsd"
+                       class="form-control"
+                       [class.form-control-danger]="editProjectForm.get('budgetGenPlanUsd').invalid &&
+                                       editProjectForm.get('budgetGenPlanUsd').touched"
+                       [class.form-control-success]="editProjectForm.get('budgetGenPlanUsd').valid &&
+                                       editProjectForm.get('budgetGenPlanUsd').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('budgetGenPlanUsd').hasError('required') &&
+                                     editProjectForm.get('budgetGenPlanUsd').touched"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.budget.err.req" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('budgetGenPlanUsd').hasError('min') &&
+                                     editProjectForm.get('budgetGenPlanUsd').touched"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.budget.err.min" | translate }}</span>
+                </div>
+
+              </div>
+
+              <!--DATE-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.date.pl" | translate }}</h5>
+                <input type="text"
+                       formControlName="weddingDate"
+                       class="form-control"
+                       [bsValue] = "initDate"
+                       [minDate]="minDate"
+                       [bsConfig]="bsConfig"
+                       [placement]="'top'"
+                       #dp="bsDatepicker"
+                       bsDatepicker
+                       [(bsValue)]="selectedDate"
+                       [class.form-control-danger]="editProjectForm.get('weddingDate').invalid &&
+                           editProjectForm.get('weddingDate').touched"
+                       [class.form-control-success]="editProjectForm.get('weddingDate').valid &&
+                           editProjectForm.get('weddingDate').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('weddingDate').hasError('required') &&
+                         editProjectForm.get('weddingDate').touched"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.date.err.req" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="editProjectForm.get('weddingDate').touched &&
+                         editProjectForm.get('weddingDate').hasError('pattern')"
+                     role="alert">
+                  <span>{{ "MAIN.new.form.date.err.pattern" | translate }}</span>
+                </div>
+              </div>
+            </section>
+
+            <!--RIGHT SECTION-->
+            <section class="col-4">
+              <!--EMAIL-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.email.pl" | translate }}</h5>
+                <input type="text"
+                       formControlName="email"
+                       class="form-control "
+                       maxlength="25"
+                       [class.form-control-danger]="editProjectForm.get('email').invalid &&
+                           editProjectForm.get('email').touched">
+              </div>
+
+              <!--TELEPHONE-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.telephone.pl" | translate }}</h5>
+                <input type="text"
+                       formControlName="telephone"
+                       class="form-control "
+                       maxlength="25"
+                       [class.form-control-danger]="editProjectForm.get('telephone').invalid &&
+                           editProjectForm.get('telephone').touched">
+              </div>
+
+              <!--NOTES-->
+              <div class="form-group">
+                <h5>{{ "MAIN.new.form.notes.pl" | translate }}</h5>
+                <textarea type="text"
+                          formControlName="notes"
+                          class="form-control text-left"
+                          maxlength="250"
+                          rows="4"
+                          [class.form-control-danger]="editProjectForm.get('notes').invalid &&
+                           editProjectForm.get('notes').touched">
+                                </textarea>
+              </div>
+            </section>
+          </div>
+          <footer>
+            <nav class="col-12">
+              <a class="wed-btn-md wed-btn-warning" routerLink="../../">
+                {{ "MAIN.edit.back" | translate}}
+              </a>
+              <button class="wed-btn-success wed-btn-md"
+                      type="submit" [disabled]="editProjectForm.invalid">
+                {{ "MAIN.edit.submit" | translate}}
+              </button>
+            </nav>
+          </footer>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>

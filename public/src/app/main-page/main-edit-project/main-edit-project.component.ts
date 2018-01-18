@@ -4,14 +4,16 @@ import {ProjectService} from '../../@services/project/project.service';
 import {ToastService} from '../../@services/toast.service';
 import {Router} from '@angular/router';
 import {EventsService} from '../../@services/events.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import {Project} from '../../@interfaces/project';
 
 @Component({
-    selector: 'app-main-new-project',
-    templateUrl: './main-new-project.component.html',
-    styleUrls: ['./main-new-project.component.scss']
+  selector: 'app-main-edit-project',
+  templateUrl: './main-edit-project.component.html',
+  styleUrls: ['./main-edit-project.component.scss']
 })
-export class MainNewProjectComponent implements OnInit {
-    newProjectForm: FormGroup;
+export class MainEditProjectComponent implements OnInit {
+    editProjectForm: FormGroup;
 
     initDate: Date = new Date();
     minDate: Date = new Date();
@@ -24,15 +26,17 @@ export class MainNewProjectComponent implements OnInit {
                 private projectService: ProjectService,
                 private toastService: ToastService,
                 private router: Router,
+                private activatedRoute: ActivatedRoute,
                 private eventsService: EventsService) {
         this.createForm();
     }
 
     ngOnInit() {
+        this.loadProject();
     }
 
     createForm() {
-        this.newProjectForm = this.fb.group(
+        this.editProjectForm = this.fb.group(
             {
                 fiance: [
                     '',
@@ -71,6 +75,30 @@ export class MainNewProjectComponent implements OnInit {
                 ],
             },
         );
+    }
+
+    fillInForm({ fiance, fiancee, budgetGenPlanUsd, weddingDate, email, telephone, notes }: Project) {
+        this.editProjectForm.patchValue({
+            fiance,
+            fiancee,
+            budgetGenPlanUsd,
+            weddingDate: new Date(weddingDate),
+            email,
+            telephone,
+            notes });
+    }
+
+    loadProject() {
+        this.activatedRoute.params.forEach(({id}: Params) => {
+           this.projectService.getSingleProject(id).subscribe(
+               project => {
+                   this.fillInForm(project);
+               },
+               error => {
+                   this.router.navigate(['/main']);
+               }
+           );
+        });
     }
 
     onSubmit({value}) {

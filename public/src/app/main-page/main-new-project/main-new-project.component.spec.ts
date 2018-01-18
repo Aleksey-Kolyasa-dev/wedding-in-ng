@@ -18,6 +18,7 @@ describe('MainNewProjectComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            declarations: [MainNewProjectComponent],
             imports: [
                 SharedModule,
                 TranslateModule.forChild(),
@@ -27,14 +28,13 @@ describe('MainNewProjectComponent', () => {
                 RouterTestingModule,
                 BsDatepickerModule.forRoot(),
             ],
-            declarations: [MainNewProjectComponent],
             providers: [
                 ProjectService,
                 ToastService,
                 ToasterService,
                 EventsService,
             ],
-            schemas: [NO_ERRORS_SCHEMA]
+            schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
     }));
