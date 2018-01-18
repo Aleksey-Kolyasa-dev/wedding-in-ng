@@ -10,10 +10,11 @@
                         <a *ngIf="!archiveView"
                            class="wed-btn-md wed-btn-primary"
                            (click)="showArchive(true)">
-                            {{ "MAIN.pr-panel.nav.arch" | translate}} {{archive.length}}
+                            {{ "MAIN.pr-panel.nav.arch" | translate}}
+                            <span class="badge badge-primary">{{archive.length}}</span>
                         </a>
                         <a *ngIf="archiveView"
-                           class="wed-btn-md wed-btn-primary"
+                           class="wed-btn-md wed-btn-warning"
                            (click)="showArchive(false)">
                             {{ "MAIN.edit.back" | translate}}
                         </a>
