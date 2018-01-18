@@ -5,10 +5,12 @@ import {LanguageService} from '../@services/language.service';
 
 import {
 LanguageComponent,
+    OrderByWeddingDatePipe,
 } from './index';
 
 const COMPONENTS: any[] = [
     LanguageComponent,
+    OrderByWeddingDatePipe,
 ];
 
 @NgModule({

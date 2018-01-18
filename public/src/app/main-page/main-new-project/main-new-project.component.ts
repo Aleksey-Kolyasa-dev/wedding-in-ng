@@ -80,7 +80,6 @@ export class MainNewProjectComponent implements OnInit {
                 this.eventsService.emitChange('test');
             },
             error => {
-                // this.toastService.error(error);
                 this.router.navigate(['../']);
             }
         );

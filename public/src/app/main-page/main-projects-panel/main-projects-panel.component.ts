@@ -6,7 +6,7 @@ import {ToastService} from '../../@services/toast.service';
 @Component({
     selector: 'app-main-projects-panel',
     templateUrl: './main-projects-panel.component.html',
-    styleUrls: ['./main-projects-panel.component.scss']
+    styleUrls: ['./main-projects-panel.component.scss'],
 })
 export class MainProjectsPanelComponent implements OnInit {
     projects: Project[] = [];
