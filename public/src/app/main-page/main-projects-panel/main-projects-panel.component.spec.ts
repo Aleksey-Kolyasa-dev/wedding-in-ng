@@ -3,10 +3,10 @@ import {MainProjectsPanelComponent} from './main-projects-panel.component';
 import {SharedModule} from '../../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {ProjectService} from '../../@services/project/project.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import {ToastService} from '../../@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
-import {RouterTestingModule} from "@angular/router/testing";
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('MainProjectsPanelComponent', () => {
     let component: MainProjectsPanelComponent;
