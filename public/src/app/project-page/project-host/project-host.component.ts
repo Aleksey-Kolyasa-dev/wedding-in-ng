@@ -1,14 +1,14 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
-import {UserService} from '../../@services/user/user.service';
-import {User} from '../../@interfaces/user';
-import {AuthService} from '../../@services/auth/auth.service';
-import {EventsService} from '../../@services/events.service';
+import {UserService} from "../../@services/user/user.service";
+import {AuthService} from "../../@services/auth/auth.service";
+import {EventsService} from "../../@services/events.service";
+import {User} from "../../@interfaces/user";
 
 @Component({
-    selector: 'app-main-host',
-    templateUrl: './main-host.component.html',
-    styleUrls: ['./main-host.component.scss'],
+    selector: 'app-project-host',
+    templateUrl: './project-host.component.html',
+    styleUrls: ['./project-host.component.scss'],
     animations: [
         trigger('fadeInOnInit', [
             transition('* => fadeIn', [
@@ -21,10 +21,9 @@ import {EventsService} from '../../@services/events.service';
         ])
     ],
 })
-export class MainHostComponent implements OnInit, OnDestroy {
+export class ProjectHostComponent implements OnInit {
     anime = '';
     _user: User;
-
     constructor(private userService: UserService,
                 private authService: AuthService,
                 private eventsService: EventsService) {
@@ -34,7 +33,6 @@ export class MainHostComponent implements OnInit, OnDestroy {
                 // this.initCurrentUser();
             }).unsubscribe();
     }
-
     ngOnInit() {
         this.fadeIn();
         this.initCurrentUser();
@@ -57,9 +55,5 @@ export class MainHostComponent implements OnInit, OnDestroy {
 
     fadeIn() {
         this.anime = 'fadeIn';
-    }
-
-    ngOnDestroy() {
-        // if (!this.eventsService.eventListener$.closed) this.toggleAccess$.unsubscribe();
     }
 }

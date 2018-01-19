@@ -13,7 +13,7 @@ export class MainProjectsPanelComponent implements OnInit {
     projects: Project[] = [];
     archive: Project[] = [];
 
-    archiveView: boolean = false;
+    archiveView = false;
 
     constructor(private projectService: ProjectService,
                 private toastService: ToastService) {
@@ -32,7 +32,7 @@ export class MainProjectsPanelComponent implements OnInit {
                     } else {
                         this.archive.push(project);
                     }
-                })
+                });
             },
             error => {
                 this.toastService.error(error);

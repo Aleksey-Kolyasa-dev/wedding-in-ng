@@ -8,9 +8,10 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // Custom Modules
 import {AppRoutingModule} from './app-routing.module';
+import {AuthModule} from './auth/auth.module';
 import {StartPageModule} from './start-page/start-page.module';
 import {MainPageModule} from './main-page/main-page.module';
-import {AuthModule} from './auth/auth.module';
+import {ProjectPageModule} from './project-page/project-page.module';
 // Components
 import {AppComponent} from './app.component';
 // Services
@@ -36,9 +37,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        StartPageModule,
         AuthModule,
+        StartPageModule,
         MainPageModule,
+        ProjectPageModule,
         ToasterModule,
         TranslateModule.forRoot({
             loader: {
