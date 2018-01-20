@@ -3,12 +3,11 @@ import {UserMenuComponent} from './user-menu.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {TranslateModule} from '@ngx-translate/core';
-import {SharedModule} from '../../../@shared/shared.module';
-import {AuthService} from '../../../@services/auth/auth.service';
-import {TokenService} from '../../../@services/auth/token.service';
-import {UserService} from '../../../@services/user/user.service';
-import {ToastService} from '../../../@services/toast.service';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {AuthService} from '../../../../@services/auth/auth.service';
+import {TokenService} from '../../../../@services/auth/token.service';
+import {UserService} from '../../../../@services/user/user.service';
+import {ToastService} from '../../../../@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
 
 
@@ -19,7 +18,7 @@ describe('UserMenuComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                SharedModule,
+                // SharedModule,
                 RouterTestingModule,
                 HttpClientModule,
                 TranslateModule.forChild(),
@@ -27,11 +26,12 @@ describe('UserMenuComponent', () => {
             declarations: [UserMenuComponent],
             schemas: [NO_ERRORS_SCHEMA],
             providers: [
+                TranslateService,
                 AuthService,
-                ToastService,
-                ToasterService,
                 TokenService,
                 UserService,
+                ToastService,
+                ToasterService,
             ],
         })
             .compileComponents();

@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../../@interfaces/user';
-
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main-header',
@@ -8,13 +6,10 @@ import {User} from '../../@interfaces/user';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
-    @Input() _user: User;
 
     constructor() {
     }
 
     ngOnInit() {
     }
-
-
 }

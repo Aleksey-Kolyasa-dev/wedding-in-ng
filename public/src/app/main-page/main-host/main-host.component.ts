@@ -23,7 +23,7 @@ import {EventsService} from '../../@services/events.service';
 })
 export class MainHostComponent implements OnInit, OnDestroy {
     anime = '';
-    _user: User;
+    // _user: User;
 
     constructor(private userService: UserService,
                 private authService: AuthService,
@@ -37,23 +37,23 @@ export class MainHostComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.fadeIn();
-        this.initCurrentUser();
+        // this.initCurrentUser();
     }
 
-    initCurrentUser() {
-        this.userService.getCurrentUser().subscribe(
-            user => {
-                if (user && user._id) {
-                    this._user = user;
-                } else {
-                    this.authService.kickOff();
-                }
-            },
-            error => {
-                this.authService.kickOff();
-            }
-        );
-    }
+    // initCurrentUser() {
+    //     this.userService.getCurrentUser().subscribe(
+    //         user => {
+    //             if (user && user._id) {
+    //                 this._user = user;
+    //             } else {
+    //                 this.authService.kickOff();
+    //             }
+    //         },
+    //         error => {
+    //             this.authService.kickOff();
+    //         }
+    //     );
+    // }
 
     fadeIn() {
         this.anime = 'fadeIn';

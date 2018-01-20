@@ -7,18 +7,14 @@ import {TranslateModule} from '@ngx-translate/core';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 import {
-    MainEditProjectComponent,
-    MainHeaderComponent,
     MainHostComponent,
-    MainNewProjectComponent,
     MainProjectsPanelComponent,
-    UserMenuComponent
+    MainNewProjectComponent,
+    MainEditProjectComponent,
 } from './index';
 
 const COMPONENTS: any[] = [
     MainHostComponent,
-    MainHeaderComponent,
-    UserMenuComponent,
     MainProjectsPanelComponent,
     MainNewProjectComponent,
     MainEditProjectComponent,

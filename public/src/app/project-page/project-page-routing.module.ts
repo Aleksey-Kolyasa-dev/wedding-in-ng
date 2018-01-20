@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import {ProjectHostComponent} from './index';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'project/:id', pathMatch: 'full'},
+    // {path: '', redirectTo: 'project/:id', pathMatch: 'full'},
     {path: 'project/:id', component: ProjectHostComponent},
 ];
 

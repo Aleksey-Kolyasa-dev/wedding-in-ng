@@ -1,30 +1,31 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MainHeaderComponent} from './main-header.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {LanguageComponent} from './language.component';
 import {TranslateModule} from '@ngx-translate/core';
-import {SharedModule} from '../../@shared/shared.module';
+import {LanguageService} from '../../../@services/language.service';
 import {BsLocaleService} from 'ngx-bootstrap';
 
-
-describe('MainHeaderComponent', () => {
-    let component: MainHeaderComponent;
-    let fixture: ComponentFixture<MainHeaderComponent>;
+describe('LanguageComponent', () => {
+    let component: LanguageComponent;
+    let fixture: ComponentFixture<LanguageComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                SharedModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
-            declarations: [MainHeaderComponent],
-            providers: [BsLocaleService],
+            providers: [
+                LanguageService,
+                BsLocaleService,
+            ],
+            declarations: [LanguageComponent],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(MainHeaderComponent);
+        fixture = TestBed.createComponent(LanguageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

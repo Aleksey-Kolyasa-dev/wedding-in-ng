@@ -5,13 +5,12 @@ import {CommonModule} from '@angular/common';
 import {MainHostComponent, MainProjectsPanelComponent, MainNewProjectComponent, MainEditProjectComponent} from './index';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'main', pathMatch: 'full'},
+  // {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'main', component: MainHostComponent,
       children: [
           {path: '', component: MainProjectsPanelComponent},
           {path: 'new-project', component: MainNewProjectComponent},
           {path: 'edit-project/:id', component: MainEditProjectComponent},
-          {path: 'archive', component: MainNewProjectComponent},
       ],
   },
 ];

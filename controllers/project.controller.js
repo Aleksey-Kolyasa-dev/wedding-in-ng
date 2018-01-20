@@ -81,7 +81,7 @@ exports.removeProject = async (req, res, next) => {
 		await _user.save();
 		await Project.remove({ _id: id });
 
-		res.sendStatus(200);
+		res.json('ok');
 	} catch (err) {
 		return next(err);
 	}

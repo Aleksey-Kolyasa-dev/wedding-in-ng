@@ -3,13 +3,12 @@ import {CommonModule} from '@angular/common';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
 import {LanguageService} from '../@services/language.service';
 
-import {
-LanguageComponent,
-    OrderByWeddingDatePipe,
-} from './index';
+import {LanguageComponent, MainHeaderComponent, UserMenuComponent, OrderByWeddingDatePipe,} from './index';
 
 const COMPONENTS: any[] = [
     LanguageComponent,
+    MainHeaderComponent,
+    UserMenuComponent,
     OrderByWeddingDatePipe,
 ];
 

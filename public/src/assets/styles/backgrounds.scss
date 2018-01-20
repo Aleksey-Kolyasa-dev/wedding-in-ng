@@ -18,7 +18,10 @@
   }
 
   .bg-main {
-    //@include bg("main-page_bg");
-    @include bg("1");
+    @include bg("main-page_bg");
+  }
+
+  .bg-project {
+    @include bg("project-page_bg");
   }
 }

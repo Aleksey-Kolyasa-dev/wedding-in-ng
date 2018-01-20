@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'main',
         loadChildren: 'app/main-page/main-page.module#MainPageModule',
     },
+    {
+        path: 'project',
+        loadChildren: 'app/project-page/project-page.module#ProjectPageModule',
+    },
 ];
 
 
