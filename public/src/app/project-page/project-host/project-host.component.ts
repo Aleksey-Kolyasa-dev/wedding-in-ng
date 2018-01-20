@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
-import {UserService} from "../../@services/user/user.service";
-import {AuthService} from "../../@services/auth/auth.service";
-import {EventsService} from "../../@services/events.service";
-import {User} from "../../@interfaces/user";
+import {UserService} from '../../@services/user/user.service';
+import {AuthService} from '../../@services/auth/auth.service';
+import {EventsService} from '../../@services/events.service';
+import {User} from '../../@interfaces/user';
 
 @Component({
     selector: 'app-project-host',
@@ -27,6 +27,7 @@ export class ProjectHostComponent implements OnInit {
     constructor(private userService: UserService,
                 private authService: AuthService,
                 private eventsService: EventsService) {
+        // TODO:
         eventsService.eventListener$.subscribe(
             data => {
                 // console.log(data);

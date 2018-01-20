@@ -3,7 +3,7 @@ import {User} from '../../../../@interfaces/user';
 import {Router} from '@angular/router';
 import {TokenService} from '../../../../@services/auth/token.service';
 import {AuthService} from '../../../../@services/auth/auth.service';
-import {UserService} from "../../../../@services/user/user.service";
+import {UserService} from '../../../../@services/user/user.service';
 
 
 @Component({

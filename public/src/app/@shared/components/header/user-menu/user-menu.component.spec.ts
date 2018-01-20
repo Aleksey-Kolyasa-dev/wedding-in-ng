@@ -3,7 +3,7 @@ import {UserMenuComponent} from './user-menu.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {TranslateModule} from '@ngx-translate/core';
 import {AuthService} from '../../../../@services/auth/auth.service';
 import {TokenService} from '../../../../@services/auth/token.service';
 import {UserService} from '../../../../@services/user/user.service';
@@ -18,15 +18,13 @@ describe('UserMenuComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                // SharedModule,
                 RouterTestingModule,
                 HttpClientModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [UserMenuComponent],
             schemas: [NO_ERRORS_SCHEMA],
             providers: [
-                TranslateService,
                 AuthService,
                 TokenService,
                 UserService,
