@@ -1,7 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {UserService} from '../../@services/user/user.service';
-import {User} from '../../@interfaces/user';
 import {AuthService} from '../../@services/auth/auth.service';
 import {EventsService} from '../../@services/events.service';
 
@@ -21,13 +20,13 @@ import {EventsService} from '../../@services/events.service';
         ])
     ],
 })
-export class MainHostComponent implements OnInit, OnDestroy {
+export class MainHostComponent implements OnInit {
     anime = '';
-    // _user: User;
 
     constructor(private userService: UserService,
                 private authService: AuthService,
                 private eventsService: EventsService) {
+        // TODO:
         eventsService.eventListener$.subscribe(
             data => {
                 // console.log(data);
@@ -37,29 +36,9 @@ export class MainHostComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.fadeIn();
-        // this.initCurrentUser();
     }
-
-    // initCurrentUser() {
-    //     this.userService.getCurrentUser().subscribe(
-    //         user => {
-    //             if (user && user._id) {
-    //                 this._user = user;
-    //             } else {
-    //                 this.authService.kickOff();
-    //             }
-    //         },
-    //         error => {
-    //             this.authService.kickOff();
-    //         }
-    //     );
-    // }
 
     fadeIn() {
         this.anime = 'fadeIn';
-    }
-
-    ngOnDestroy() {
-        // if (!this.eventsService.eventListener$.closed) this.toggleAccess$.unsubscribe();
     }
 }
