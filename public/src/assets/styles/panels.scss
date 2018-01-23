@@ -45,11 +45,11 @@
 
   .wed-panel-def {
     $index: 4rem;
-    $bg-color: rgba(255, 255, 255, 0.8);
-    $brd-r: $index / 4;
+    $bg-color: rgba(255, 255, 255, 0.6);
+    $brd-r: $index / 8;
 
     //margin-top: $index;
-    width: 100%;
+    //width: 100%;
     border-radius: $brd-r;
     background: rgba(255, 255, 255, 0.8);
     padding: $index / 4;
