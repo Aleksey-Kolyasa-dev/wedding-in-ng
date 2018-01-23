@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {AUTH_BASE_URL} from '../../@constants/api.constants';
+import {AUTH_BASE_URL} from '../../@constants/api.constant';
 import {LoginData, RegisterData} from '../../@interfaces/auth';
 import {Router} from '@angular/router';
 import {ToastService} from '../toast.service';

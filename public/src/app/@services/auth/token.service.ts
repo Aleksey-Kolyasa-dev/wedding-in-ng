@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {TOKEN} from '../../@constants/api.constants';
+import {TOKEN} from '../../@constants/api.constant';
 
 @Injectable()
 export class TokenService {

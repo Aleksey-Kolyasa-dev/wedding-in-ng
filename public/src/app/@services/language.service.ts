@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {LANG_STORAGE, LANGUAGES} from '../@constants/language.constants';
+import {LANG_STORAGE, LANGUAGES} from '../@constants/language.constant';
 import {TranslateService} from '@ngx-translate/core';
 
 import {BsLocaleService} from 'ngx-bootstrap';

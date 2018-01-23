@@ -95,5 +95,21 @@
       "back": "< Back",
       "submit": "Save"
     }
+  },
+  "PROJ": {
+    "menu": {
+      "main": "MAIN",
+      "rest": "RESTAURANT",
+      "deco": "DECORATIONS",
+      "flower": "FLOWERS",
+      "lieder": "LIEDER",
+      "music": "MUSIC",
+      "ph": "PHOTO",
+      "vd": "VIDEO",
+      "reg": "REGISTRATION",
+      "tr": "TRANSPORT",
+      "dress": "DRESSCOAT",
+      "other": "OTHER"
+    }
   }
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {Router} from '@angular/router';
-import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
+import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constant';
 import {LanguageService} from '../../@services/language.service';
 import {AuthService} from '../../@services/auth/auth.service';
 import {ToastService} from '../../@services/toast.service';

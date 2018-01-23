@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
+import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constant';
 import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-password.validator';
 import {LanguageService} from '../../@services/language.service';
 import {AuthService} from '../../@services/auth/auth.service';

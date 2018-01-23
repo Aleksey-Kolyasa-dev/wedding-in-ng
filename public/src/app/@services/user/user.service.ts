@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {USER_BASE_URL} from '../../@constants/api.constants';
+import {USER_BASE_URL} from '../../@constants/api.constant';
 
 
 @Injectable()

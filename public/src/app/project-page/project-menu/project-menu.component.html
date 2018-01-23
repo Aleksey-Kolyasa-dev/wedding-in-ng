@@ -1,0 +1,9 @@
+<div class="menu-container">
+  <ul>
+    <li *ngFor="let item of menu; let i = index">
+      <a class="menu-btns" (click)="activeMenu(i)" ngClass="{{menuIndex==i? 'menu-btn-active':'menu-btn'}}">
+        {{item.name | translate}}
+      </a>
+    </li>
+  </ul>
+</div>
