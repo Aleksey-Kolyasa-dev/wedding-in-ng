@@ -24,6 +24,7 @@ import {User} from '../../@interfaces/user';
 export class ProjectHostComponent implements OnInit {
     anime = '';
     _user: User;
+    menuIndex = 0;
     constructor(private userService: UserService,
                 private authService: AuthService,
                 private eventsService: EventsService) {
@@ -56,5 +57,9 @@ export class ProjectHostComponent implements OnInit {
 
     fadeIn() {
         this.anime = 'fadeIn';
+    }
+
+    activeMenu(i: number): void {
+        this.menuIndex = i;
     }
 }
