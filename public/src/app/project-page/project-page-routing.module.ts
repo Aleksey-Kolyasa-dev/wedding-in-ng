@@ -2,15 +2,14 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
-import {ProjectHostComponent, DashboardComponent} from './index';
+import {ProjectHostComponent} from './index';
 
 const routes: Routes = [
-    // {path: '', redirectTo: 'project/:id', pathMatch: 'full'},
     {
         path: 'project/:id',
         component: ProjectHostComponent,
         children: [
-            {path: 'dashboard', component: DashboardComponent},
+            {path: 'dashboard', loadChildren: 'app/project-page/pages/dashboard/dashboard.module#DashboardModule'},
             {path: 'restaurant', component: ProjectHostComponent},
             {path: 'decorations', component: ProjectHostComponent},
             {path: 'show', component: ProjectHostComponent},
