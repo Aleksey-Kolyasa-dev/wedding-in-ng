@@ -1,50 +1,46 @@
 export const PROJ_MENU_PRO: any[] = [
     {
-        name: 'PROJ.menu.main',
-        link: '/main',
+        name: 'PROJ.menu.dashboard',
+        link: 'dashboard',
     },
     {
         name: 'PROJ.menu.rest',
-        link: '/main',
+        link: 'restaurant',
     },
     {
         name: 'PROJ.menu.deco',
-        link: '/main',
+        link: 'decorations',
     },
     {
-        name: 'PROJ.menu.flower',
-        link: '/main',
+        name: 'PROJ.menu.show',
+        link: 'show',
     },
     {
-        name: 'PROJ.menu.lieder',
-        link: '/main',
-    },
-    {
-        name: 'PROJ.menu.music',
-        link: '/main',
-    },
-    {
-        name: 'PROJ.menu.ph',
-        link: '/main',
-    },
-    {
-        name: 'PROJ.menu.vd',
-        link: '/main',
+        name: 'PROJ.menu.img',
+        link: 'imagery',
     },
     {
         name: 'PROJ.menu.reg',
-        link: '/main',
+        link: 'registration',
+    },
+    {
+        name: 'PROJ.menu.wedding',
+        link: 'wedding',
     },
     {
         name: 'PROJ.menu.tr',
-        link: '/main',
+        link: 'transfer',
     },
     {
         name: 'PROJ.menu.dress',
-        link: '/main',
+        link: 'dresscoat',
+    },
+    {
+        name: 'PROJ.menu.party',
+        link: 'party',
     },
     {
         name: 'PROJ.menu.other',
-        link: '/main',
+        link: 'other',
     },
 ];

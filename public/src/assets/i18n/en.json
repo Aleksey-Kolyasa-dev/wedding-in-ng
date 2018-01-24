@@ -98,17 +98,16 @@
   },
   "PROJ": {
     "menu": {
-      "main": "MAIN",
+      "dashboard": "DASHBOARD",
       "rest": "RESTAURANT",
       "deco": "DECORATIONS",
-      "flower": "FLOWERS",
-      "lieder": "LIEDER",
-      "music": "MUSIC",
-      "ph": "PHOTO",
-      "vd": "VIDEO",
+      "show": "SHOW",
+      "img": "IMAGERY",
       "reg": "REGISTRATION",
-      "tr": "TRANSPORT",
+      "wedding": "WEDDING",
+      "tr": "TRANSFER",
       "dress": "DRESSCOAT",
+      "party": "PARTY",
       "other": "OTHER"
     }
   }

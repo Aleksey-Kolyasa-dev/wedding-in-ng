@@ -6,7 +6,22 @@ import {ProjectHostComponent} from './index';
 
 const routes: Routes = [
     // {path: '', redirectTo: 'project/:id', pathMatch: 'full'},
-    {path: 'project/:id', component: ProjectHostComponent},
+    {
+        path: 'project/:id',
+        component: ProjectHostComponent,
+        children: [
+            {path: 'dashboard', component: ProjectHostComponent},
+            {path: 'restaurant', component: ProjectHostComponent},
+            {path: 'decorations', component: ProjectHostComponent},
+            {path: 'show', component: ProjectHostComponent},
+            {path: 'imagery', component: ProjectHostComponent},
+            {path: 'registration', component: ProjectHostComponent},
+            {path: 'wedding', component: ProjectHostComponent},
+            {path: 'transfer', component: ProjectHostComponent},
+            {path: 'dresscoat', component: ProjectHostComponent},
+            {path: 'party', component: ProjectHostComponent},
+            {path: 'other', component: ProjectHostComponent},
+        ]},
 ];
 
 @NgModule({
