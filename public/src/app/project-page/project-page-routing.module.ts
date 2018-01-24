@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
-import {ProjectHostComponent} from './index';
+import {ProjectHostComponent, DashboardComponent} from './index';
 
 const routes: Routes = [
     // {path: '', redirectTo: 'project/:id', pathMatch: 'full'},
@@ -10,7 +10,7 @@ const routes: Routes = [
         path: 'project/:id',
         component: ProjectHostComponent,
         children: [
-            {path: 'dashboard', component: ProjectHostComponent},
+            {path: 'dashboard', component: DashboardComponent},
             {path: 'restaurant', component: ProjectHostComponent},
             {path: 'decorations', component: ProjectHostComponent},
             {path: 'show', component: ProjectHostComponent},

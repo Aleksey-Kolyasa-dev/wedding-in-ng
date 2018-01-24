@@ -1,0 +1,12 @@
+.test {
+  > div {
+    display: inline-block;
+  }
+}
+.test-s {
+  margin: 15px auto;
+  transition: all 0.8s;
+  &:hover {
+    margin: 20px auto;
+  }
+}
