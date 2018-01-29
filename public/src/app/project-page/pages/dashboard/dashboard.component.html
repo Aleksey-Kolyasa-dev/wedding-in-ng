@@ -1,9 +1,15 @@
 <div class="app-menu-layout" [@fadeInOnInit]="anime">
-  <!--APP-MENU-LAYOUT-->
-  <div class="wed-panel-def test-s" style="margin-top: 0">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
-    Assumenda exercitationem ipsam quasi repudiandae. Corporis debitis eos Corporis debitis eos Corporis
-    debitis eos
+  <!--APP-SUB-NAV-->
+  <div class="wed-panel-def test-s" style="margin-top: 3px">
+    <nav class="project-sub-nav">
+      <ul>
+        <li *ngFor="let i of [1,2,3,4]">
+          <a href="" class="wed-btn-smX wed-btn-serviceX">
+            budget
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <div class="wed-panel-def test-s">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
