@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {TokenService} from '../../@services/auth/token.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-start-main',
@@ -19,11 +21,19 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class StartHostComponent implements OnInit {
     anime = '';
-    constructor() {
+
+    constructor(private tokenService: TokenService,
+                private router: Router) {
     }
 
     ngOnInit() {
-        this.fadeIn();
+        this.isLoggedIn();
+    }
+
+    isLoggedIn() {
+        this.tokenService.isTokenSet()
+            ? this.router.navigate(['/main'])
+            : this.fadeIn();
     }
 
     fadeIn() {

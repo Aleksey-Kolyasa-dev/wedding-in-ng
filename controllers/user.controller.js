@@ -10,7 +10,7 @@ exports.getUser = async (req, res, next) => {
 	User.findOne({ _id: id })
 		.select('-password')
 		.then((user) => res.json(user))
-		.catch((err) => next(customError(`User not found! \ Полььзователь не найден!`, 404)));
+		.catch((err) => next(customError(`User not found! \ Пользователь не найден!`, 404)));
 };
 
 exports.getCurrentUser = async (req, res, next) => {
@@ -19,7 +19,7 @@ exports.getCurrentUser = async (req, res, next) => {
 	User.findOne({ _id })
 		.select('-password')
 		.then((user) => res.json(user))
-		.catch((err) => next(customError(`User not found! \ Полььзователь не найден!`, 404)));
+		.catch((err) => next(customError(`User not found! \ Пользователь не найден!`, 404)));
 };
 
 

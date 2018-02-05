@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { StartHostComponent } from './start-host.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterTestingModule} from '@angular/router/testing';
+import {TokenService} from '../../@services/auth/token.service';
 
 describe('StartHostComponent', () => {
   let component: StartHostComponent;
@@ -11,9 +13,13 @@ describe('StartHostComponent', () => {
     TestBed.configureTestingModule({
         imports: [
             BrowserAnimationsModule,
+            RouterTestingModule,
         ],
       declarations: [ StartHostComponent ],
       schemas: [NO_ERRORS_SCHEMA],
+        providers: [
+            TokenService,
+        ],
     })
     .compileComponents();
   }));
