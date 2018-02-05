@@ -11,7 +11,6 @@
 
   .bg-landing {
     @include bg("landing_bg");
-    //@include bg("2");
   }
 
   .bg-auth {
@@ -19,7 +18,7 @@
   }
 
   .bg-main {
-    @include bg("main-page_bg");
+    //@include bg("main-page_bg");
+    @include bg("1");
   }
-
 }

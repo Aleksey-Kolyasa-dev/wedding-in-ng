@@ -1,3 +1,5 @@
+@import "colors";
+
 @mixin buttons() {
   a,
   button {
@@ -26,4 +28,140 @@
       }
     }
   }
+
+  $size: 40px;
+  .wed-btn-lg {
+    padding-top: $size/3.5;
+    padding-bottom: $size/3.5;
+    padding-left: $size;
+    padding-right: $size;
+    font-size: $size/2;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .wed-btn-md {
+    padding-top: $size/4;
+    padding-bottom: $size/4;
+    padding-left: $size/2;
+    padding-right: $size/2;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .wed-btn-sm {
+    padding-top: $size/6;
+    padding-bottom: $size/6;
+    padding-left: $size/4;
+    padding-right: $size/4;
+    font-size: $size/3;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .wed-btn-xs {
+    padding-top: $size/7;
+    padding-bottom: $size/7;
+    padding-left: $size/5;
+    padding-right: $size/5;
+    font-size: $size/4;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .wed-btn-danger {
+    $text-color: #ffffff;
+    $bg-color: $wed-danger;
+
+    //$text-color-hover: rgba(25, 98, 148, 0.31);
+    //$bg-color-hover: rgba(31, 146, 216, 0.31);
+
+    background: $bg-color;
+    transition: all 0.4s;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: $text-color;
+      box-shadow: inset 4px 4px 8px $bg-color;
+      a {
+        color: $bg-color;
+        text-shadow: 0 0 3px $bg-color;
+      }
+    }
+  }
+  .wed-btn-warning {
+    $text-color: #ffffff;
+    $bg-color: $wed-warning;
+
+    background: $bg-color;
+    transition: all 0.4s;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: $text-color;
+      box-shadow: inset 4px 4px 8px $bg-color;
+      a {
+        color: $bg-color;
+        text-shadow: 0 0 3px $bg-color;
+      }
+    }
+  }
+  .wed-btn-success {
+    $text-color: #ffffff;
+    $bg-color: $wed-success;
+
+    background: $bg-color;
+    transition: all 0.4s;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: $text-color;
+      box-shadow: inset 4px 4px 8px $bg-color;
+      a {
+        color: $bg-color;
+        text-shadow: 0 0 3px $bg-color;
+      }
+    }
+  }
+  .wed-btn-primary {
+    $text-color: #ffffff;
+    $bg-color: $wed-primary;
+
+    background: $bg-color;
+    transition: all 0.4s;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: $text-color;
+      box-shadow: inset 4px 4px 8px $bg-color;
+      a {
+        color: $bg-color;
+        text-shadow: 0 0 3px $bg-color;
+      }
+    }
+  }
+  .wed-btn-default {
+    $text-color: #ffffff;
+    $bg-color: $wed-default;
+
+    background: $bg-color;
+    transition: all 0.4s;
+    a {
+      color: $text-color;
+    }
+    &:hover {
+      background: $text-color;
+      box-shadow: inset 4px 4px 8px $bg-color;
+      a {
+        color: $bg-color;
+        text-shadow: 0 0 3px $bg-color;
+      }
+    }
+  }
 }
+
