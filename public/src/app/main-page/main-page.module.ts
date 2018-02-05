@@ -4,12 +4,13 @@ import {MainPageRoutingModule} from './main-page-routing.module';
 import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {MainHostComponent, MainHeaderComponent, UserMenuComponent} from './index';
+import {MainHostComponent, MainHeaderComponent, UserMenuComponent, MainProjectsPanelComponent} from './index';
 
 const COMPONENTS: any[] = [
     MainHostComponent,
     MainHeaderComponent,
     UserMenuComponent,
+    MainProjectsPanelComponent
 ];
 
 @NgModule({

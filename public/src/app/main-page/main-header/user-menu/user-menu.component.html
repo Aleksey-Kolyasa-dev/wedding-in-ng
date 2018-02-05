@@ -1,4 +1,7 @@
 <div class="menu-block">
+  <div class="user-name">
+    <h3>{{_user?.name}}</h3>
+  </div>
   <div class="auth-btn">
     <a (click)="logout()" routerLink="/auth/login">
       {{ "header.user-menu.logout" | translate}}

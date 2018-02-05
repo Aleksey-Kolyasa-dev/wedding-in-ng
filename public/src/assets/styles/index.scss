@@ -3,11 +3,13 @@
 @import "fonts";
 @import "forms";
 @import "panels";
+@import "positioning";
 
 @mixin index(){
   @include backgrounds();
   @include buttons();
   @include panels();
+  @include position();
   @include fonts();
   @include forms();
 }

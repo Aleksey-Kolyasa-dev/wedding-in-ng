@@ -1,0 +1,15 @@
+@mixin position() {
+  .center-flex-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .center-flex-hor {
+    display: flex;
+    justify-content: center;
+  }
+  .center-flex-ver {
+    display: flex;
+    justify-content: center;
+  }
+}

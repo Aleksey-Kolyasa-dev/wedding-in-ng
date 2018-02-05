@@ -1,9 +1,9 @@
 @mixin panels() {
   .auth-panel {
-    $auth-panel-padding: 4rem;
+    $index: 4rem;
     background: rgba(255, 255, 255, 0.8);
-    padding-top: $auth-panel-padding - 2;
-    padding-bottom: $auth-panel-padding;
+    padding-top: $index - 2;
+    padding-bottom: $index;
     width: 100%;
     border-radius: 2rem;
     position: relative;
@@ -15,4 +15,18 @@
       background: rgba(255, 255, 255, 0.85);
     }
   }
+
+  .pr-list-panel {
+    $index: 4rem;
+    $bg-color: rgba(255, 255, 255, 0.8);
+    $brd-r: $index / 2;
+
+    margin-top: $index*2;
+    padding: $index/4;
+    width: 100%;
+    border-radius: $brd-r;
+    background: rgba(255, 255, 255, 0.8);
+    padding: $index / 2;
+  }
+
 }
