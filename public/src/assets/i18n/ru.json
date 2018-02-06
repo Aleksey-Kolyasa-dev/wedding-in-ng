@@ -3,9 +3,19 @@
     "auth-menu" : {
       "login": "Авторизация",
       "register" : "Регистрация"
+    }
+  },
+  "MAIN": {
+    "header": {
+      "user-menu": {
+        "logout": "Выход"
+      }
     },
-    "user-menu": {
-      "logout": "Выход"
+    "pr-panel": {
+      "nav": {
+        "new": "Новый проект",
+        "arch" : "Архив"
+      }
     }
   }
 }

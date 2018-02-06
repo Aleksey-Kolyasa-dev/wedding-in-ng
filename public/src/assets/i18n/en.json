@@ -3,9 +3,19 @@
     "auth-menu" : {
       "login": "Sign In",
       "register" : "Sign Up"
+    }
+  },
+  "MAIN": {
+    "header": {
+      "user-menu": {
+        "logout": "Logout"
+      }
     },
-    "user-menu": {
-      "logout": "Logout"
+    "pr-panel": {
+      "nav": {
+        "new": "New project",
+        "arch" : "Archive"
+      }
     }
   }
 }
