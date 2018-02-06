@@ -36,7 +36,7 @@
     padding-left: $size;
     padding-right: $size;
     font-size: $size/2;
-    border-radius: 15px;
+    border-radius: $size/4;
     font-weight: bold;
     cursor: pointer;
   }
@@ -45,7 +45,7 @@
     padding-bottom: $size/4;
     padding-left: $size/2;
     padding-right: $size/2;
-    border-radius: 15px;
+    border-radius: $size/4;
     font-weight: bold;
     cursor: pointer;
   }
@@ -55,7 +55,7 @@
     padding-left: $size/4;
     padding-right: $size/4;
     font-size: $size/3;
-    border-radius: 15px;
+    border-radius: $size/4;
     font-weight: bold;
     cursor: pointer;
   }
@@ -65,14 +65,14 @@
     padding-left: $size/5;
     padding-right: $size/5;
     font-size: $size/4;
-    border-radius: 15px;
+    border-radius: $size/4;
     font-weight: bold;
     cursor: pointer;
   }
 
   @mixin btn($bg-color, $text-color) {
     background: $bg-color;
-    transition: all 0.4s;
+    transition: all 0.3s;
     a {
       text-decoration: none;
       color: $text-color !important;

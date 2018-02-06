@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainProjectsPanelComponent } from './main-projects-panel.component';
-import {SharedModule} from "../../@shared/shared.module";
-import {RouterTestingModule} from "@angular/router/testing";
-import {TranslateModule} from "@ngx-translate/core";
-import {HttpClientModule} from "@angular/common/http";
+import {SharedModule} from '../../@shared/shared.module';
+// import {RouterTestingModule} from "@angular/router/testing";
+import {TranslateModule} from '@ngx-translate/core';
+// import {HttpClientModule} from "@angular/common/http";
 
 describe('MainProjectsPanelComponent', () => {
   let component: MainProjectsPanelComponent;
