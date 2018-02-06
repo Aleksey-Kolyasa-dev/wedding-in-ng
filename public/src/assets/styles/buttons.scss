@@ -70,98 +70,36 @@
     cursor: pointer;
   }
 
-  .wed-btn-danger {
-    $text-color: #ffffff;
-    $bg-color: $wed-danger;
-
-    //$text-color-hover: rgba(25, 98, 148, 0.31);
-    //$bg-color-hover: rgba(31, 146, 216, 0.31);
-
+  @mixin btn($bg-color, $text-color) {
     background: $bg-color;
     transition: all 0.4s;
     a {
-      color: $text-color;
+      text-decoration: none;
+      color: $text-color !important;
     }
     &:hover {
       background: $text-color;
       box-shadow: inset 4px 4px 8px $bg-color;
       a {
-        color: $bg-color;
+        color: $bg-color !important;
         text-shadow: 0 0 3px $bg-color;
       }
     }
+  }
+  .wed-btn-danger {
+    @include btn($wed-danger, #ffffff);
   }
   .wed-btn-warning {
-    $text-color: #ffffff;
-    $bg-color: $wed-warning;
-
-    background: $bg-color;
-    transition: all 0.4s;
-    a {
-      color: $text-color;
-    }
-    &:hover {
-      background: $text-color;
-      box-shadow: inset 4px 4px 8px $bg-color;
-      a {
-        color: $bg-color;
-        text-shadow: 0 0 3px $bg-color;
-      }
-    }
+    @include btn($wed-warning, #ffffff);
   }
   .wed-btn-success {
-    $text-color: #ffffff;
-    $bg-color: $wed-success;
-
-    background: $bg-color;
-    transition: all 0.4s;
-    a {
-      color: $text-color;
-    }
-    &:hover {
-      background: $text-color;
-      box-shadow: inset 4px 4px 8px $bg-color;
-      a {
-        color: $bg-color;
-        text-shadow: 0 0 3px $bg-color;
-      }
-    }
+    @include btn($wed-success, #ffffff);
   }
   .wed-btn-primary {
-    $text-color: #ffffff;
-    $bg-color: $wed-primary;
-
-    background: $bg-color;
-    transition: all 0.4s;
-    a {
-      color: $text-color;
-    }
-    &:hover {
-      background: $text-color;
-      box-shadow: inset 4px 4px 8px $bg-color;
-      a {
-        color: $bg-color;
-        text-shadow: 0 0 3px $bg-color;
-      }
-    }
+    @include btn($wed-primary, #ffffff);
   }
   .wed-btn-default {
-    $text-color: #ffffff;
-    $bg-color: $wed-default;
-
-    background: $bg-color;
-    transition: all 0.4s;
-    a {
-      color: $text-color;
-    }
-    &:hover {
-      background: $text-color;
-      box-shadow: inset 4px 4px 8px $bg-color;
-      a {
-        color: $bg-color;
-        text-shadow: 0 0 3px $bg-color;
-      }
-    }
+    @include btn($wed-default, #ffffff);
   }
 }
 
