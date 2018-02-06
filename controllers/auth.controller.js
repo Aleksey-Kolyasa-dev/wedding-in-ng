@@ -24,6 +24,7 @@ exports.register = async (req, res, next) => {
 			name,
 			registred: moment.now(),
 			isLogged: false,
+			projects: [],
 		});
 
 		const newUser = await _newUser.save();

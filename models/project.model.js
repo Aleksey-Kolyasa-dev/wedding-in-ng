@@ -4,10 +4,13 @@ const { config } = require('../config');
 
 const ProjectSchema = new Schema({
 	fiance: {
-		type: 'string',
+		type: String,
 	},
 	fiancee: {
-		type: 'string',
+		type: String,
+	},
+	created: {
+		type: Date,
 	},
 });
 

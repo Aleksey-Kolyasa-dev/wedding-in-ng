@@ -29,13 +29,15 @@ const UserSchema = new Schema({
 	lastOnline: {
 		type: 'Date',
 	},
-	projects: {
-		type: Schema.Types.ObjectId,
-		ref: 'projects',
-	},
+	projects: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'project',
+		},
+	],
 });
 
-UserSchema.methods.comparePassword = function(password) {
+UserSchema.methods.comparePassword = function (password) {
 	return new Promise((resolve, reject) => {
 		bCrypt.compare(password, this.password, (err, isMatch) => {
 			if (err) {
@@ -47,7 +49,7 @@ UserSchema.methods.comparePassword = function(password) {
 	});
 };
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
 	// only hash the password if it has been modified (or is new)
 	if (!this.isModified('password')) return next();
 
@@ -60,7 +62,7 @@ UserSchema.pre('save', function(next) {
 		bCrypt.hash(this.password, salt, (err, hash) => {
 			if (err) return next(err);
 
-			// override the cleartext password with the hashed one
+			// override the clear text password with the hashed one
 			this.password = hash;
 			next();
 		});

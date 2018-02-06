@@ -17,7 +17,9 @@ exports.getCurrentUser = async (req, res, next) => {
 	const { _id } = req.user;
 
 	User.findOne({ _id })
+		.populate('project')
 		.select('-password')
+		.exec()
 		.then((user) => res.json(user))
 		.catch((err) => next(customError(`User not found! \ Пользователь не найден!`, 404)));
 };
