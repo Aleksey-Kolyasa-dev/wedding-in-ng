@@ -29,6 +29,10 @@ const UserSchema = new Schema({
 	lastOnline: {
 		type: 'Date',
 	},
+	projects: {
+		type: Schema.Types.ObjectId,
+		ref: 'projects',
+	},
 });
 
 UserSchema.methods.comparePassword = function(password) {

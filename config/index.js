@@ -9,7 +9,7 @@ exports.config = {
 		name: 'wedding-in',
 		collections: {
 			user: 'user',
-			projects: 'project',
+			project: 'project',
 		},
 	},
 	get _dbProd() {
