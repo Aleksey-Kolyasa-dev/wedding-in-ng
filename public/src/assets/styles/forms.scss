@@ -1,23 +1,38 @@
 @mixin forms() {
+  // form-controls colors
   .form-control-danger {
     border: 2px solid #ff4c6a !important;
   }
-
   .form-control-success {
     border: 2px solid #40dc7e !important;
   }
 
+  // Alert panels
   .alert-danger-wed {
     color: #ff6780;
     background-color: #ebeff5;
     font-weight: bold;
   }
 
+  // input sizes
+  $index: 100px;
+  .wed-input-lg {
+    width: $index*5 !important;
+  }
+  .wed-input-md {
+    width: $index*4 !important;
+  }
+  .wed-input-sm {
+    width: $index*3 !important;
+  }
+  .wed-input-xs {
+    width: $index*2 !important;
+  }
+
+  // forms
   .auth-form {
     margin-top: 2rem;
-
     > div {
-
       input {
         font-size: 120%;
         font-weight: 600;
@@ -25,7 +40,6 @@
         border: 2px solid #eef0f4;
         text-align: center;
         background: #feffff;
-
         &::placeholder {
           color: #a8afb7;
           font-weight: normal;
@@ -34,7 +48,32 @@
     }
     button[type=submit] {
       margin-top: 3rem;
+      &:disabled {
+        cursor: not-allowed !important;
+      }
+    }
+  }
 
+  .project-form {
+    margin-top: 2rem;
+    div.form-content {
+      display: flex;
+      justify-content: space-around;
+      input {
+        font-size: 120%;
+        font-weight: 600;
+        color: #464646;
+        border: 2px solid #eef0f4;
+        text-align: center;
+        background: #feffff;
+        &::placeholder {
+          color: #9ea5ad;
+          font-weight: normal;
+        }
+      }
+    }
+    button[type=submit] {
+      margin-top: 3rem;
       &:disabled {
         cursor: not-allowed !important;
       }

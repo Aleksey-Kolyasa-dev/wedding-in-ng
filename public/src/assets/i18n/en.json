@@ -16,6 +16,62 @@
         "new": "New project",
         "arch" : "Archive"
       }
+    },
+    "new": {
+      "header": "CREATE NEW PROJECT",
+      "form": {
+        "fiance": {
+          "pl": "Fiance name",
+          "err": {
+            "req": "Fiance name field is required!",
+            "min": null,
+            "pattern": null
+          }
+        },
+        "fiancee": {
+          "pl": "Fiancee name",
+          "err": {
+            "req": "Fiancee name field is required!",
+            "min": null,
+            "pattern": null
+          }
+        },
+        
+        
+        
+        
+        
+        "pwd": {
+          "pl": "Password",
+          "err": {
+            "req": "Password field is required!",
+            "min": "Password should contain at least 6 characters!",
+            "pattern": "Only: letters and digits"
+          }
+        },
+        "r-pwd": {
+          "pl": "Repeat password",
+          "err": {
+            "same": "Passwords must be the same!"
+          }
+        },
+        "email": {
+          "pl": "Email",
+          "err": {
+            "req": "Email field is required!",
+            "pattern": "Wrong email format!"
+          }
+        },
+        "name": {
+          "pl": "Name",
+          "err": {
+            "req": "Name field is required!",
+            "min": "Name should contain at least 2 characters!",
+            "pattern": "Only: letters digits _ -"
+          }
+        },
+        "submit": "Continue"
+      }
     }
   }
 }

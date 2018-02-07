@@ -1,16 +1,262 @@
 <section class="container-fluid">
-  <div class="row center-flex-hor">
-    <section class="pr-list-panel col-10">
-      <div class="row center-flex-hor">
-        <header>
-          <h3>CREATE NEW PROJECT</h3>
-        </header>
-        <div class="form-container">
-          <form novalidate>
+    <div class="pr-list-panel container">
+        <div class="col-12">
+            <header>
+                <h3>CREATE NEW PROJECT</h3>
+            </header>
+            <div class="form-container">
+                <form class="project-form"
+                      novalidate
+                      [formGroup]='newProjectForm'
+                      (ngSubmit)="onSubmit(newProjectForm)">
 
-          </form>
+                    <div class="form-content col-12" style="">
+                        <!--LEFT SECTION-->
+                        <div class="col-4">
+                            <!--FIANCE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiance"
+                                       class="form-control "
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
+                           newProjectForm.get('fiance').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiance').valid &&
+                           newProjectForm.get('fiance').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').hasError('required') &&
+                         newProjectForm.get('fiance').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('minlength')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('pattern')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                                </div>
+                            </div>
+
+                            <!--FIANCEE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiancee"
+                                       class="form-control"
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
+                           newProjectForm.get('fiancee').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
+                           newProjectForm.get('fiancee').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
+                         newProjectForm.get('fiancee').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                </div>
+
+                            </div>
+
+                            <!--FIANCE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiance"
+                                       class="form-control "
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
+                           newProjectForm.get('fiance').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiance').valid &&
+                           newProjectForm.get('fiance').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').hasError('required') &&
+                         newProjectForm.get('fiance').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('minlength')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('pattern')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                                </div>
+                            </div>
+
+                            <!--FIANCEE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiancee"
+                                       class="form-control"
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
+                           newProjectForm.get('fiancee').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
+                           newProjectForm.get('fiancee').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
+                         newProjectForm.get('fiancee').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--RIGHT SECTION-->
+                        <div class="col-4">
+                            <!--FIANCE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiance"
+                                       class="form-control "
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
+                           newProjectForm.get('fiance').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiance').valid &&
+                           newProjectForm.get('fiance').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').hasError('required') &&
+                         newProjectForm.get('fiance').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('minlength')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('pattern')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                                </div>
+                            </div>
+
+                            <!--FIANCEE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiancee"
+                                       class="form-control"
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
+                           newProjectForm.get('fiancee').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
+                           newProjectForm.get('fiancee').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
+                         newProjectForm.get('fiancee').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                </div>
+
+                            </div>
+
+                            <!--FIANCE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiance"
+                                       class="form-control "
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiance.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiance').invalid &&
+                           newProjectForm.get('fiance').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiance').valid &&
+                           newProjectForm.get('fiance').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').hasError('required') &&
+                         newProjectForm.get('fiance').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.req" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('minlength')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.min" | translate }}</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiance').touched &&
+                         newProjectForm.get('fiance').hasError('pattern')"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiance.err.pattern" | translate }}</span>
+                                </div>
+                            </div>
+
+                            <!--FIANCEE-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="fiancee"
+                                       class="form-control"
+                                       maxlength="25"
+                                       placeholder='{{ "MAIN.new.form.fiancee.pl" | translate }}'
+                                       [class.form-control-danger]="newProjectForm.get('fiancee').invalid &&
+                           newProjectForm.get('fiancee').touched"
+                                       [class.form-control-success]="newProjectForm.get('fiancee').valid &&
+                           newProjectForm.get('fiancee').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="newProjectForm.get('fiancee').hasError('required') &&
+                         newProjectForm.get('fiancee').touched"
+                                     role="alert">
+                                    <span>{{ "MAIN.new.form.fiancee.err.req" | translate }}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            <footer>
+
+                    <nav class="col-12">
+                        <div class="wed-btn-md wed-btn-success">
+                            <a routerLink="new-project">
+                                {{ "MAIN.pr-panel.nav.new" | translate}}
+                            </a>
+                        </div>
+                        <div class="wed-btn-md wed-btn-primary">
+                            <a routerLink="archive">
+                                {{ "MAIN.pr-panel.nav.arch" | translate}}
+                            </a>
+                        </div>
+                    </nav>
+
+            </footer>
         </div>
-      </div>
-    </section>
-  </div>
+    </div>
 </section>

@@ -22,25 +22,25 @@
     $brd-r: $index / 4;
 
     margin-top: $index;
-    padding: $index/3 $index/2;
+    //padding: $index/3 $index/2;
     width: 100%;
     border-radius: $brd-r;
     background: rgba(255, 255, 255, 0.8);
     padding: $index / 2;
     header {
       text-align: left;
-      width: 95%;
       border-bottom: 2px solid $wed-primary;
       color: $wed-text-header;
-      margin-bottom: $index/2;
     }
 
     footer {
+      padding-top: $index/4;
       text-align: right;
-      width: 95%;
       border-top: 2px solid $wed-primary;
       color: $wed-text-header;
-      //margin-bottom: $index/2;
+      > div {
+        display: inline-block;
+      }
     }
   }
 
