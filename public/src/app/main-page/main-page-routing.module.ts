@@ -2,14 +2,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
-import {MainHostComponent, MainProjectsPanelComponent, MainHeaderComponent} from './index';
+import {MainHostComponent, MainProjectsPanelComponent, MainNewProjectComponent} from './index';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
   {path: 'main', component: MainHostComponent,
       children: [
-          {path: '', component: MainProjectsPanelComponent},
-          {path: 'new-project', component: MainHeaderComponent},
+          // {path: '', component: MainProjectsPanelComponent},
+          // {path: 'new-project', component: MainNewProjectComponent},
+          {path: '', component: MainNewProjectComponent},
       ],
   },
 ];
