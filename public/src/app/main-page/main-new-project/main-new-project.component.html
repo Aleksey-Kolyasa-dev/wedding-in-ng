@@ -243,18 +243,17 @@
             </div>
             <footer>
 
-                    <nav class="col-12">
-                        <div class="wed-btn-md wed-btn-success">
-                            <a routerLink="new-project">
-                                {{ "MAIN.pr-panel.nav.new" | translate}}
-                            </a>
-                        </div>
-                        <div class="wed-btn-md wed-btn-primary">
-                            <a routerLink="archive">
-                                {{ "MAIN.pr-panel.nav.arch" | translate}}
-                            </a>
-                        </div>
-                    </nav>
+                <nav class="col-12">
+                    <button class="wed-btn-success wed-btn-md"
+                            routerLink="new-project">
+                        {{ "MAIN.pr-panel.nav.new" | translate}}
+                    </button>
+
+                    <a class="wed-btn-primary wed-btn-md"
+                            routerLink="archive">
+                        {{ "MAIN.pr-panel.nav.arch" | translate}}
+                    </a>
+                </nav>
 
             </footer>
         </div>

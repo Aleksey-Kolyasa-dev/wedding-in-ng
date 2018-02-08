@@ -46,7 +46,7 @@
     padding-left: $size/2;
     padding-right: $size/2;
     border-radius: $size/4;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
   }
   .wed-btn-sm {
@@ -56,7 +56,7 @@
     padding-right: $size/4;
     font-size: $size/3;
     border-radius: $size/4;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
   }
   .wed-btn-xs {
@@ -66,26 +66,28 @@
     padding-right: $size/5;
     font-size: $size/4;
     border-radius: $size/4;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
   }
 
   @mixin btn($bg-color, $text-color) {
+    display: inline-block;
+    color: $text-color !important;
     background: $bg-color;
+    border: none;
+    margin: 5px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
     transition: all 0.3s;
-    a {
-      text-decoration: none;
-      color: $text-color !important;
-    }
     &:hover {
       background: $text-color;
       box-shadow: inset 4px 4px 8px $bg-color;
-      a {
-        color: $bg-color !important;
-        text-shadow: 0 0 3px $bg-color;
-      }
+      color: $bg-color !important;
+      text-shadow: 0 0 3px $bg-color;
     }
   }
+
   .wed-btn-danger {
     @include btn($wed-danger, #ffffff);
   }
