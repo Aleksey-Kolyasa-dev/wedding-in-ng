@@ -1,3 +1,4 @@
+const moment = require('moment');
 exports.config = {
 	env: process.env.NODE_ENV,
 	port: process.env.PORT || 3000,
@@ -24,6 +25,6 @@ exports.config = {
 	},
 	auth: {
 		secret: 'macgriffin',
-		tokenExpiration: 1000*60*60*24*3,
+		tokenExpiration: 1000*60*60*24*3 + moment.now(),
 	},
 };

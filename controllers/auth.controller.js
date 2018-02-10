@@ -33,7 +33,6 @@ exports.register = async (req, res, next) => {
 	}
 };
 
-
 exports.login = async (req, res, next) => {
 	const { login, password } = req.body;
 
@@ -51,5 +50,16 @@ exports.login = async (req, res, next) => {
 		res.json(token);
 	} catch (err) {
 		return next(err);
+	}
+};
+
+exports.logout = async (req, res, next) => {
+	const { id } = req.params;
+	try {
+		const _user = await User.findOne({ _id: id });
+		const updateStatus = await _user.update({ $set: { isLogged: false } });
+		res.json(updateStatus);
+	} catch (err) {
+		return next(customError(`User not found!`, 404));
 	}
 };
