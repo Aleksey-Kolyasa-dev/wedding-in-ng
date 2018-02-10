@@ -8,19 +8,28 @@
         <div class="offset-xl-5">
             <app-language></app-language>
         </div>
+        <!--AUTHORIZATION-->
         <div class="menu-block">
             <div class="auth-btn">
                 <a routerLink="/auth/login">
-                    {{ "header.auth-btn.login" | translate}}
+                    {{ "header.auth-menu.login" | translate}}
                 </a>
             </div>
 
             <div class="auth-btn">
                 <a routerLink="/auth/registration">
-                    {{ "header.auth-btn.register" | translate}}
+                    {{ "header.auth-menu.register" | translate}}
                 </a>
             </div>
         </div>
 
+        <!--USER MENU-->
+        <div class="menu-block">
+            <div class="auth-btn">
+                <a (click)="logout()">
+                    {{ "header.user-menu.logout" | translate}}
+                </a>
+            </div>
+        </div>
     </nav>
 </section>

@@ -1,8 +1,11 @@
 {
   "header": {
-    "auth-btn" : {
+    "auth-menu" : {
       "login": "Авторизация",
       "register" : "Регистрация"
+    },
+    "user-menu": {
+      "logout": "Выход"
     }
   }
 }

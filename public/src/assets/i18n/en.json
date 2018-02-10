@@ -1,8 +1,11 @@
 {
   "header": {
-    "auth-btn" : {
+    "auth-menu" : {
       "login": "Sign In",
       "register" : "Sign Up"
+    },
+    "user-menu": {
+      "logout": "Logout"
     }
   }
 }
