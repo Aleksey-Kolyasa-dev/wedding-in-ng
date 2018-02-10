@@ -6,6 +6,7 @@ const api = require('./routes/api');
 const logger = require('morgan');
 const fileUpload = require('express-fileupload');
 const { config } = require('./config');
+const passport = require('./config/passports/passportJwt');
 // const favicon = require('serve-favicon');
 
 // Express
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(cors());
+app.use(passport.initialize());
 app.use(logger('dev'));
 
 // View engine setup

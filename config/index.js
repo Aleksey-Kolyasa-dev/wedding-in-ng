@@ -24,5 +24,6 @@ exports.config = {
 	},
 	auth: {
 		secret: 'macgriffin',
+		tokenExpiration: 1000*60*60*24*3,
 	},
 };
