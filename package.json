@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=3000 node server.js",
-    "dev": "cross-env NODE_ENV=development PORT=80 nodemon",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
     "postinstall": "cd ./public",
     "lint": "eslint app.js controllers models config routes utils test && cd ./public && npm run lint",
     "precommit": "npm run lint && cd ./public && npm run test"
