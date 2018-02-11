@@ -39,7 +39,7 @@
           "pattern": "Only: letters digits _ -"
         }
       },
-      "submit": "Sign Up"
+      "submit": "Continue"
     },
     "footer": {
       "account": "Already have an account? Proceed to",
