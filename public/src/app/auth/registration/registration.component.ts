@@ -5,6 +5,7 @@ import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
 import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-password.validator';
 import {LanguageService} from '../../@services/language.service';
 import {AuthService} from '../../@services/auth/auth.service';
+import {ToastService} from '../../@services/toast.service';
 
 @Component({
     selector: 'app-registration',
@@ -28,7 +29,8 @@ export class RegistrationComponent implements OnInit {
 
     constructor(private fb: FormBuilder,
                 private languageService: LanguageService,
-                private authService: AuthService) {
+                private authService: AuthService,
+                private toastService: ToastService) {
         this.createForm();
     }
 
@@ -89,7 +91,8 @@ export class RegistrationComponent implements OnInit {
                 console.log(`OK:`, success);
             },
             error => {
-                console.log(`ERR:`, error);
+                console.log(error);
+                this.toastService.error(error.error);
             }
         );
     }

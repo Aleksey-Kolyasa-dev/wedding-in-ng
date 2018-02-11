@@ -4,6 +4,8 @@ import {AppComponent} from './app.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from './@services/language.service';
 import {AuthService} from './@services/auth/auth.service';
+import {ToastService} from './@services/toast.service';
+import {ToasterService} from 'angular2-toaster';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -17,6 +19,8 @@ describe('AppComponent', () => {
             providers: [
                 LanguageService,
                 AuthService,
+                ToasterService,
+                ToastService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();

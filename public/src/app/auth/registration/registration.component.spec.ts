@@ -8,6 +8,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from '../../@services/language.service';
 import {SharedModule} from '../../@shared/shared.module';
 import {AuthService} from '../../@services/auth/auth.service';
+import {ToasterService} from 'angular2-toaster';
+import {ToastService} from '../../@services/toast.service';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -27,6 +29,8 @@ describe('RegistrationComponent', () => {
             providers: [
                 LanguageService,
                 AuthService,
+                ToasterService,
+                ToastService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         })

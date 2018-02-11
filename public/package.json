@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-conf proxy.conf.json --disable-host-check",
-    "build": "ng build",
+    "start": "ng serve --proxy-conf proxy.conf.json",
+    "build": "ng build --watch",
     "test": "ng test --browsers ChromeHeadless -sr",
     "testDev": "ng test --browsers ChromeHeadless -w",
     "lint": "ng lint",

@@ -16,6 +16,8 @@ import {AppComponent} from './app.component';
 // Services
 import {LanguageService} from './@services/language.service';
 import {AuthService} from './@services/auth/auth.service';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
+import {ToastService} from './@services/toast.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,23 +30,26 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         BrowserModule,
-        StartModule,
-        AuthModule,
-        AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        StartModule,
+        AuthModule,
+        ToasterModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        AppRoutingModule,
     ],
     providers: [
         TranslateService,
         LanguageService,
         AuthService,
+        ToasterService,
+        ToastService,
     ],
     bootstrap: [AppComponent]
 })
