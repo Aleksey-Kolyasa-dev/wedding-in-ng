@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import {Router} from '@angular/router';
 import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
 import {LanguageService} from '../../@services/language.service';
+import {AuthService} from '../../@services/auth/auth.service';
+import {ToastService} from '../../@services/toast.service';
 
 @Component({
     selector: 'app-login',
@@ -25,7 +28,10 @@ export class LoginComponent implements OnInit {
     anime = '';
 
     constructor(private fb: FormBuilder,
-                private languageService: LanguageService) {
+                private languageService: LanguageService,
+                private authService: AuthService,
+                private toastService: ToastService,
+                private router: Router) {
         this.createForm();
     }
 
@@ -54,6 +60,19 @@ export class LoginComponent implements OnInit {
                     ]),
                 ],
             },
+        );
+    }
+
+    onSubmit({value}) {
+        this.authService.doLogin(value).subscribe(
+            success => {
+                console.log(success);
+                this.toastService.success('OK-TEST');
+                this.router.navigate(['index']);
+            },
+            error => {
+                this.toastService.error(error);
+            }
         );
     }
 

@@ -6,7 +6,7 @@ import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-passwor
 import {LanguageService} from '../../@services/language.service';
 import {AuthService} from '../../@services/auth/auth.service';
 import {ToastService} from '../../@services/toast.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-registration',
@@ -87,7 +87,6 @@ export class RegistrationComponent implements OnInit {
     }
 
     onSubmit({value}) {
-        // console.log(value);
         this.authService.doRegister(value).subscribe(
             success => {
                 this.toastService.success('Registred, now Login');
@@ -95,7 +94,7 @@ export class RegistrationComponent implements OnInit {
 
             },
             error => {
-                this.toastService.error(error.error);
+                this.toastService.error(error);
             }
         );
     }

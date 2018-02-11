@@ -32,9 +32,12 @@ export class ToastService {
     }
 
     private getMessage(message): string {
-        if (typeof message === 'string') return message;
-        if (get(message, 'message')) return message.message;
-
+        if (typeof message === 'string') {
+            return message;
+        }
+        if (get(message, 'message')) {
+            return message.message;
+        }
         console.log(message);
         return message.toString();
     }
@@ -42,7 +45,9 @@ export class ToastService {
     private getErrorMessage(error): string {
         console.error(error);
 
-        if (typeof error === 'string') return error;
+        if (typeof error === 'string') {
+            return error;
+        }
 
         switch (true) {
             case error instanceof HttpErrorResponse:

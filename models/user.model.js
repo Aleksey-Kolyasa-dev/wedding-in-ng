@@ -20,10 +20,13 @@ const UserSchema = new Schema({
 	name: {
 		type: 'string',
 	},
+	registred: {
+		type: 'Date',
+	},
 	isLogged: {
 		type: 'boolean',
 	},
-	registred: {
+	lastOnline: {
 		type: 'Date',
 	},
 });

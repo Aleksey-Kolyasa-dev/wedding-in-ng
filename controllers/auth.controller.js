@@ -37,9 +37,10 @@ exports.login = async (req, res, next) => {
 		if (!_user) return next(customError(`User Not Found!`, 404));
 
 		const isMatch = await _user.comparePassword(password);
-		if (!isMatch) return next(customError(`Password doesn't match!`, 403));
+		if (!isMatch) return next(customError(`Password incorrect!`, 403));
 
-		res.json('ok');
+		const onlineStatusUpdate = await _user.update({ $set: { isLogged: true, lastOnline: moment.now() } });
+		res.json(onlineStatusUpdate);
 	} catch (err) {
 		return next(err);
 	}

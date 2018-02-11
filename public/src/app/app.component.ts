@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
         this.toasterConfig = new ToasterConfig({
             positionClass: 'toast-top-right',
-            showCloseButton: true,
+            showCloseButton: false,
             newestOnTop: true,
             tapToDismiss: true,
             preventDuplicates: false,
