@@ -1,7 +1,7 @@
 @mixin panels() {
   .auth-panel {
     $auth-panel-padding: 4rem;
-    background: rgba(255, 255, 255, 0.84);
+    background: rgba(255, 255, 255, 0.8);
     padding-top: $auth-panel-padding - 2;
     padding-bottom: $auth-panel-padding;
     width: 100%;
@@ -10,5 +10,9 @@
     top: 5rem;
     display: flex;
     align-items: center;
+    transition: background 0.8s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
   }
 }
