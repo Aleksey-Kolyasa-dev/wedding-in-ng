@@ -1,8 +1,8 @@
 @mixin buttons() {
   a,
   button {
-    text-decoration: none;
-    cursor: pointer;
+    text-decoration: none !important;
+    cursor: pointer !important;
   }
 
   .auth-btn {
@@ -13,12 +13,17 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.5s;
+    a {
+      color: #ffffff;
+    }
 
     &:hover {
-      color: #5989f5;
       background: #ffffff;
       box-shadow: 2px 2px 6px #366885;
-      text-shadow: 3px 3px 8px #5989f5;
+      a {
+        color: #5989f5;
+        text-shadow: 3px 3px 8px #5989f5;
+      }
     }
   }
 }
