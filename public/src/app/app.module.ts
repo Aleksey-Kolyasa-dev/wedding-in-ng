@@ -8,7 +8,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // Custom Modules
 import {AppRoutingModule} from './app-routing.module';
-import {StartModule} from './start-page/start.module';
+import {StartPageModule} from './start-page/start-page.module';
 import {MainPageModule} from './main-page/main-page.module';
 import {AuthModule} from './auth/auth.module';
 // Components
@@ -34,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        StartModule,
+        StartPageModule,
         AuthModule,
         MainPageModule,
         ToasterModule,

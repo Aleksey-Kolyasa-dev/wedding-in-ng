@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: 'app/start-page/start.module#StartModule',
+        loadChildren: 'app/start-page/start-page.module#StartPageModule',
     },
     {
         path: 'auth',

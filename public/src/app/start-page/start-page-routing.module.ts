@@ -2,11 +2,11 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
-import {StartMainComponent} from './index';
+import {StartHostComponent} from './index';
 
 const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
-  {path: 'index', component: StartMainComponent},
+  {path: 'index', component: StartHostComponent},
 ];
 
 
@@ -15,5 +15,5 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class StartRoutingModule {
+export class StartPageRoutingModule {
 }

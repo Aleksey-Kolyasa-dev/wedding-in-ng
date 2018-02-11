@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { StartMainComponent } from './start-main.component';
+import { StartHostComponent } from './start-host.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-describe('StartMainComponent', () => {
-  let component: StartMainComponent;
-  let fixture: ComponentFixture<StartMainComponent>;
+describe('StartHostComponent', () => {
+  let component: StartHostComponent;
+  let fixture: ComponentFixture<StartHostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         imports: [
             BrowserAnimationsModule,
         ],
-      declarations: [ StartMainComponent ],
+      declarations: [ StartHostComponent ],
       schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartMainComponent);
+    fixture = TestBed.createComponent(StartHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

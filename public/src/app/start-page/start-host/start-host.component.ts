@@ -3,8 +3,8 @@ import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
     selector: 'app-start-main',
-    templateUrl: './start-main.component.html',
-    styleUrls: ['./start-main.component.scss'],
+    templateUrl: './start-host.component.html',
+    styleUrls: ['./start-host.component.scss'],
     animations: [
         trigger('fadeInOnInit', [
             transition('* => fadeIn', [
@@ -17,7 +17,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
         ])
     ],
 })
-export class StartMainComponent implements OnInit {
+export class StartHostComponent implements OnInit {
     anime = '';
     constructor() {
     }

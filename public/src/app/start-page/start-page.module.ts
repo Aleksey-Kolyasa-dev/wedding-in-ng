@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {StartRoutingModule} from './start-routing.module';
+import {StartPageRoutingModule} from './start-page-routing.module';
 import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {AuthMenuComponent, StartHeaderComponent, StartMainComponent, } from './index';
+import {AuthMenuComponent, StartHeaderComponent, StartHostComponent,} from './index';
 
 
 const COMPONENTS: any[] = [
-    StartMainComponent,
+    StartHostComponent,
     StartHeaderComponent,
     AuthMenuComponent,
 ];
@@ -16,12 +16,12 @@ const COMPONENTS: any[] = [
 @NgModule({
     imports: [
         CommonModule,
-        StartRoutingModule,
+        StartPageRoutingModule,
         SharedModule,
         TranslateModule,
     ],
     declarations: [COMPONENTS],
     exports: [COMPONENTS],
 })
-export class StartModule {
+export class StartPageModule {
 }

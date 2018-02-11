@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
         this.authService.doLogin(value).subscribe(
             token => {
                 this.tokenService.setToken(token);
-                this.router.navigate([`index`]);
+                this.router.navigate([`main`]);
             },
             error => {
                 this.toastService.error(error);
