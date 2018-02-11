@@ -3,6 +3,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 import {RegistrationComponent} from './registration.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from '../../@services/language.service';
@@ -23,6 +24,7 @@ describe('RegistrationComponent', () => {
                 SharedModule,
                 BrowserAnimationsModule,
                 HttpClientModule,
+                RouterTestingModule,
                 TranslateModule.forChild(),
             ],
             declarations: [RegistrationComponent],

@@ -20,6 +20,9 @@ const UserSchema = new Schema({
 	name: {
 		type: 'string',
 	},
+	isLogged: {
+		type: 'boolean',
+	},
 	registred: {
 		type: 'Date',
 	},

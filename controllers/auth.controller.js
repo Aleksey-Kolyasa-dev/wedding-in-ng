@@ -18,6 +18,7 @@ exports.register = async (req, res, next) => {
 			email,
 			name,
 			registred: moment.now(),
+			isLogged: false,
 		});
 
 		const newUser = await _newUser.save();
