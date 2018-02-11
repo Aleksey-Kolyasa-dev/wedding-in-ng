@@ -1,0 +1,11 @@
+@mixin fonts(){
+  @font-face {
+    font-family: "RageItalic";
+    src: url('assets/fonts/RageItalic.ttf');
+  }
+
+  @font-face {
+    font-family: "ArialRoundedMT";
+    src: url('assets/fonts/ArialRoundedMTStd.otf');
+  }
+}
