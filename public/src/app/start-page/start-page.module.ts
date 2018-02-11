@@ -4,7 +4,7 @@ import {StartPageRoutingModule} from './start-page-routing.module';
 import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {AuthMenuComponent, StartHeaderComponent, StartHostComponent,} from './index';
+import {AuthMenuComponent, StartHeaderComponent, StartHostComponent, } from './index';
 
 
 const COMPONENTS: any[] = [
