@@ -1,20 +1,23 @@
 import {Injectable} from '@angular/core';
 import {TOKEN} from '../../@constants/api.constants';
+import {AuthService} from './auth.service';
 
 @Injectable()
 export class TokenService {
 
-    constructor() {
+    constructor(private authService: AuthService) {
     }
 
-    public isAuthenticated(): boolean {
+    public isTokenSet(): boolean {
         return !!localStorage[TOKEN];
     }
 
     public getToken(): string | boolean {
-        return this.isAuthenticated()
-            ? localStorage[TOKEN]
-            : false;
+        if (this.isTokenSet()) {
+            return localStorage[TOKEN];
+        } else {
+            return this.authService.kickOff();
+        }
     }
 
     public setToken(token: string): void {
@@ -24,7 +27,7 @@ export class TokenService {
     }
 
     public removeToken(): void {
-        if (this.isAuthenticated()) {
+        if (this.isTokenSet()) {
             localStorage.removeItem(TOKEN);
         }
     }

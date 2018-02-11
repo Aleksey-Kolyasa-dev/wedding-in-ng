@@ -19,13 +19,11 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class StartMainComponent implements OnInit {
     anime = '';
-    user: object = {};
     constructor() {
     }
 
     ngOnInit() {
         this.fadeIn();
-        this.user = {_id : 'ss'};
     }
 
     fadeIn() {

@@ -12,3 +12,14 @@ exports.getUser = async (req, res, next) => {
 		.then((user) => res.json(user))
 		.catch((err) => next(customError(`User not found! \ Полььзователь не найден!`, 404)));
 };
+
+exports.getCurrentUser = async (req, res, next) => {
+	const { _id } = req.user;
+
+	User.findOne({ _id })
+		.select('-password')
+		.then((user) => res.json(user))
+		.catch((err) => next(customError(`User not found! \ Полььзователь не найден!`, 404)));
+};
+
+
