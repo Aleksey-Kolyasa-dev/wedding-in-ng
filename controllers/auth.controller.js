@@ -6,11 +6,15 @@ const customError = require('../utils/errors');
 exports.register = async (req, res, next) => {
 	const { login, password, confirmPassword, email, name } = req.body;
 
-	if (password !== confirmPassword) return next(customError(`Passwords validation failed! \ Пароли не совпадают!`, 403));
+	if (password !== confirmPassword) {
+		return next(customError(`Passwords validation failed! \ Пароли не совпадают!`, 403));
+	}
 
 	try {
 		const isExists = await User.findOne({ login });
-		if (isExists) return next(customError(`Such login already exists, try another one \ Такой логин уже занят!`, 403));
+		if (isExists) {
+			return next(customError(`Such login already exists, try another one \ Такой логин уже занят!`, 403));
+		}
 
 		const _newUser = new User({
 			login,
