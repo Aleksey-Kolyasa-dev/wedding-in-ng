@@ -1,3 +1,10 @@
 @import "assets/styles/index";
-
 @include index();
+
+@import "assets/styles/buttons";
+@include buttons();
+
+body {
+  font-family: ArialRoundedMT, Arial, sans-serif;
+  letter-spacing: 1px;
+}
