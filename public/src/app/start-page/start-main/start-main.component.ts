@@ -25,6 +25,7 @@ export class StartMainComponent implements OnInit {
 
     ngOnInit() {
         this.fadeIn();
+        this.user = {_id : 'ss'};
     }
 
     fadeIn() {

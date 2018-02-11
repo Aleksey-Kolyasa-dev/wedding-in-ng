@@ -9,7 +9,7 @@
             <app-language></app-language>
         </div>
         <!--AUTHORIZATION-->
-        <div class="menu-block">
+        <div *ngIf="!user._id" class="menu-block">
             <div class="auth-btn">
                 <a routerLink="/auth/login">
                     {{ "header.auth-menu.login" | translate}}
@@ -24,7 +24,7 @@
         </div>
 
         <!--USER MENU-->
-        <div class="menu-block">
+        <div *ngIf="user._id" class="menu-block">
             <div class="auth-btn">
                 <a (click)="logout()">
                     {{ "header.user-menu.logout" | translate}}
