@@ -1,8 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../../@services/auth/auth.service';
-import {TokenService} from '../../@services/auth/token.service';
-import {User} from '../../@interfaces/user';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-start-header',
@@ -10,27 +6,10 @@ import {User} from '../../@interfaces/user';
     styleUrls: ['./start-header.component.scss']
 })
 export class StartHeaderComponent implements OnInit {
-    @Input() user: User;
 
-    constructor(private authService: AuthService,
-                private tokenService: TokenService,
-                private router: Router) {
+    constructor() {
     }
 
     ngOnInit() {
-    }
-
-    logout() {
-
-            this.authService.doLogout(this.user).subscribe(
-                (success) => {
-                    this.tokenService.removeToken();
-                    this.router.navigate(['/auth/login']);
-                },
-                (error) => {
-                }
-            );
-
-
     }
 }

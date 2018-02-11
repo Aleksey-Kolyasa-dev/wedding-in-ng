@@ -1,0 +1,48 @@
+$scale-index: 3.5rem;
+@mixin logo-block() {
+  .logo-block {
+    .logo {
+      color: white;
+      text-shadow: 0 0 10px #fff031;
+      font-size: $scale-index;
+      font-family: RageItalic, Arial, sans-serif;
+    }
+
+    .status {
+      color: white;
+      text-shadow: 0 0 10px #fff031;
+      font-size: $scale-index/3;
+      font-style: italic;
+      font-family: ArialRoundedMT, Arial, sans-serif;
+      position: absolute;
+      top: $scale-index;
+      left: $scale-index/2;
+    }
+  }
+}
+
+@mixin menu-block() {
+  .menu-block {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    > div {
+      margin: auto 10px;
+    }
+  }
+}
+
+.main {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    height: $scale-index*1.6;
+    transition: background 0.5s ease;
+    &:hover {
+      background: hsla(226, 84%, 67%, 0.58);
+    }
+    @include logo-block();
+  }
+}

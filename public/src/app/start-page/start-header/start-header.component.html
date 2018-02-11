@@ -10,14 +10,6 @@
         </div>
 
         <!--AUTHORIZATION MENU-->
-        <div *ngIf="user._id">
-            <app-auth-menu></app-auth-menu>
-        </div>
-
-
-        <!--USER MENU-->
-        <div *ngIf="user._id">
-            <app-user-menu></app-user-menu>
-        </div>
+        <app-auth-menu></app-auth-menu>
     </nav>
 </section>
