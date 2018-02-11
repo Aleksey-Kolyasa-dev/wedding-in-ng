@@ -4,15 +4,14 @@ import {StartRoutingModule} from './start-routing.module';
 import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 
-import {
-StartHeaderComponent,
-StartMainComponent,
-} from './index';
+import {AuthMenuComponent, StartHeaderComponent, StartMainComponent, UserMenuComponent,} from './index';
 
 
 const COMPONENTS: any[] = [
-StartMainComponent,
-StartHeaderComponent,
+    StartMainComponent,
+    StartHeaderComponent,
+    AuthMenuComponent,
+    UserMenuComponent,
 ];
 
 @NgModule({
@@ -23,7 +22,7 @@ StartHeaderComponent,
         TranslateModule,
     ],
     declarations: [COMPONENTS],
-    exports: [COMPONENTS]
+    exports: [COMPONENTS],
 })
 export class StartModule {
 }

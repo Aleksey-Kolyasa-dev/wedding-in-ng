@@ -5,31 +5,19 @@
             <span class="logo">WEDDING_in</span>
             <span class="status">Beta v2.0.0</span>
         </div>
-        <div class="offset-xl-5">
+        <div class="offset-xl-4 col-1">
             <app-language></app-language>
         </div>
-        <!--AUTHORIZATION-->
-        <div *ngIf="!user._id" class="menu-block">
-            <div class="auth-btn">
-                <a routerLink="/auth/login">
-                    {{ "header.auth-menu.login" | translate}}
-                </a>
-            </div>
 
-            <div class="auth-btn">
-                <a routerLink="/auth/registration">
-                    {{ "header.auth-menu.register" | translate}}
-                </a>
-            </div>
+        <!--AUTHORIZATION MENU-->
+        <div *ngIf="user._id">
+            <app-auth-menu></app-auth-menu>
         </div>
 
+
         <!--USER MENU-->
-        <div *ngIf="user._id" class="menu-block">
-            <div class="auth-btn">
-                <a (click)="logout()">
-                    {{ "header.user-menu.logout" | translate}}
-                </a>
-            </div>
+        <div *ngIf="user._id">
+            <app-user-menu></app-user-menu>
         </div>
     </nav>
 </section>

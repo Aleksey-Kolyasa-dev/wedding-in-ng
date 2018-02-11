@@ -6,6 +6,7 @@ import {LanguageService} from './@services/language.service';
 import {AuthService} from './@services/auth/auth.service';
 import {ToastService} from './@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
+import {UserService} from './@services/user/user.service';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -21,6 +22,7 @@ describe('AppComponent', () => {
                 AuthService,
                 ToasterService,
                 ToastService,
+                UserService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();

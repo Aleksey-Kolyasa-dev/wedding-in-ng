@@ -1,13 +1,13 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {StartHeaderComponent} from './start-header.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
-import {SharedModule} from '../../@shared/shared.module';
+import {SharedModule} from '../../../@shared/shared.module';
 
+import {AuthMenuComponent} from './auth-menu.component';
 
-describe('StartHeaderComponent', () => {
-    let component: StartHeaderComponent;
-    let fixture: ComponentFixture<StartHeaderComponent>;
+describe('AuthMenuComponent', () => {
+    let component: AuthMenuComponent;
+    let fixture: ComponentFixture<AuthMenuComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -15,19 +15,19 @@ describe('StartHeaderComponent', () => {
                 SharedModule,
                 TranslateModule.forChild(),
             ],
-            declarations: [StartHeaderComponent],
+            declarations: [AuthMenuComponent],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(StartHeaderComponent);
+        fixture = TestBed.createComponent(AuthMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
 
-    // it('should create', () => {
-    //     expect(component).toBeTruthy();
-    // });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
