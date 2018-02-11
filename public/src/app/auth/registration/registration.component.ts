@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/patterns/pattern.constants';
+import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
 import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-password.validator';
 import {LanguageService} from '../../@services/language.service';
+import {AuthService} from '../../@services/auth/auth.service';
 
 @Component({
     selector: 'app-registration',
@@ -26,7 +27,8 @@ export class RegistrationComponent implements OnInit {
     anime = '';
 
     constructor(private fb: FormBuilder,
-                private languageService: LanguageService) {
+                private languageService: LanguageService,
+                private authService: AuthService) {
         this.createForm();
     }
 
@@ -77,6 +79,18 @@ export class RegistrationComponent implements OnInit {
                 ],
             },
             {validator: ConfirmPasswordValidation.MatchPassword}
+        );
+    }
+
+    onSubmit({value}) {
+        // console.log(value);
+        this.authService.doRegister(value).subscribe(
+            success => {
+                console.log(`OK:`, success);
+            },
+            error => {
+                console.log(`ERR:`, error);
+            }
         );
     }
 

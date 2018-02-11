@@ -13,8 +13,15 @@ const UserSchema = new Schema({
 		type: 'string',
 		required: true,
 	},
-	created: {
-		type: Date,
+	email: {
+		type: 'string',
+		required: true,
+	},
+	name: {
+		type: 'string',
+	},
+	registred: {
+		type: 'Date',
 	},
 });
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const chalk = require('chalk');
+const cors = require('cors');
 const api = require('./routes/api');
 const logger = require('morgan');
 const fileUpload = require('express-fileupload');
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
+app.use(cors());
 app.use(logger('dev'));
 
 // View engine setup

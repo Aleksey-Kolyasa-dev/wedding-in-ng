@@ -15,6 +15,7 @@ import {AppComponent} from './app.component';
 
 // Services
 import {LanguageService} from './@services/language.service';
+import {AuthService} from './@services/auth/auth.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     providers: [
         TranslateService,
         LanguageService,
+        AuthService,
     ],
     bootstrap: [AppComponent]
 })

@@ -1,11 +1,13 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 import {RegistrationComponent} from './registration.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from '../../@services/language.service';
 import {SharedModule} from '../../@shared/shared.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AuthService} from '../../@services/auth/auth.service';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -18,11 +20,13 @@ describe('RegistrationComponent', () => {
                 ReactiveFormsModule,
                 SharedModule,
                 BrowserAnimationsModule,
+                HttpClientModule,
                 TranslateModule.forChild(),
             ],
             declarations: [RegistrationComponent],
             providers: [
                 LanguageService,
+                AuthService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         })

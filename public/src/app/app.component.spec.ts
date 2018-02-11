@@ -3,6 +3,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {AppComponent} from './app.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from './@services/language.service';
+import {AuthService} from './@services/auth/auth.service';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
             ],
             providers: [
                 LanguageService,
+                AuthService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();
