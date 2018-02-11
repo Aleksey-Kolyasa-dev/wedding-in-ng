@@ -47,5 +47,54 @@
       "or" : "or go back to ",
       "back": "Main"
     }
+  },
+  "LOG" : {
+    "title": "Sign In",
+    "form": {
+      "login": {
+        "pl": "Login",
+        "err": {
+          "req": "Login field is required!",
+          "min": "Login should contain at least 2 characters!",
+          "pattern": "Only: letters digits _ -"
+        }
+      },
+      "pwd": {
+        "pl": "Password",
+        "err": {
+          "req": "Password field is required!",
+          "min": "Password should contain at least 6 characters!",
+          "pattern": "Only: letters and digits"
+        }
+      },
+      "r-pwd": {
+        "pl": "Repeat password",
+        "err": {
+          "same": "Passwords must be the same!"
+        }
+      },
+      "email": {
+        "pl": "Email",
+        "err": {
+          "req": "Email field is required!",
+          "pattern": "Wrong email format!"
+        }
+      },
+      "name": {
+        "pl": "Name",
+        "err": {
+          "req": "Name field is required!",
+          "min": "Name should contain at least 2 characters!",
+          "pattern": "Only: letters digits _ -"
+        }
+      },
+      "submit": "Sign In"
+    },
+    "footer": {
+      "account": "Not yet registred? Proceed to",
+      "login" : "Sign Up",
+      "or" : "or go back to ",
+      "back": "Main"
+    }
   }
 }

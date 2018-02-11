@@ -1,3 +1,114 @@
-<p>
-  login works!
-</p>
+<section class="bg-landing">
+  <div class="container">
+    <div class="row">
+      <div class="auth-panel">
+        <div class="col-12 auth-content" [@fadeInOnInit]="anime">
+          <!--HEADER-->
+          <header class="text-center">
+            <h2>{{ "LOG.title" | translate }}</h2>
+          </header>
+
+          <!--FORM-->
+          <div class="col-4 offset-4">
+            <form class="auth-form"
+                  novalidate
+                  [formGroup]='loginForm'
+                  (ngSubmit)="onSubmit(loginForm)">
+
+              <!--LOGIN-->
+              <div class="form-group">
+                <input type="text"
+                       formControlName="login"
+                       class="form-control"
+                       maxlength="30"
+                       placeholder='{{ "LOG.form.login.pl" | translate }}'
+                       [class.form-control-danger]="loginForm.get('login').invalid &&
+                                   loginForm.get('login').touched"
+                       [class.form-control-success]="loginForm.get('login').valid &&
+                                   loginForm.get('login').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('login').hasError('required') &&
+                                 loginForm.get('login').touched"
+                     role="alert">
+                  <span>{{ "LOG.form.login.err.req" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('login').touched &&
+                                 loginForm.get('login').hasError('minlength')"
+                     role="alert">
+                  <span>{{ "LOG.form.login.err.min" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('login').touched &&
+                                 loginForm.get('login').hasError('pattern')"
+                     role="alert">
+                  <span>{{ "LOG.form.login.err.pattern" | translate }}</span>
+                </div>
+              </div>
+
+              <!--PASSWORD-->
+              <div class="form-group">
+                <input type="password"
+                       formControlName="password"
+                       class="form-control"
+                       maxlength="40"
+                       placeholder='{{ "LOG.form.pwd.pl" | translate }}'
+                       [class.form-control-danger]="loginForm.get('password').invalid &&
+                                   loginForm.get('password').touched"
+                       [class.form-control-success]="loginForm.get('password').valid &&
+                                   loginForm.get('password').touched">
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('password').hasError('required') &&
+                                 loginForm.get('password').touched"
+                     role="alert">
+                  <span>{{ "LOG.form.pwd.err.req" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('password').touched &&
+                                 loginForm.get('password').hasError('minlength')"
+                     role="alert">
+                  <span>{{ "LOG.form.pwd.err.min" | translate }}</span>
+                </div>
+
+                <div class="alert alert-danger-wed text-center mt-3"
+                     *ngIf="loginForm.get('password').touched &&
+                                 loginForm.get('password').hasError('pattern')"
+                     role="alert">
+                  <span>{{ "LOG.form.pwd.err.pattern" | translate }}</span>
+                </div>
+              </div>
+
+              <button type="submit"
+                      class="btn btn-block btn-outline-success submit"
+                      [disabled]="loginForm.invalid">
+                {{ "LOG.form.submit" | translate }}
+              </button>
+            </form>
+          </div>
+
+          <!--FOOTER-->
+          <footer class="col-6 offset-3">
+            <p>
+              {{ 'LOG.footer.account' | translate }}
+              <a [routerLink]="'/auth/registration'">
+                {{ 'LOG.footer.login' | translate }}
+              </a>
+            </p>
+            <p>
+              {{ 'LOG.footer.or' | translate }}
+              <a [routerLink]="'/index'">
+                {{ 'LOG.footer.back' | translate }}
+              </a>
+            </p>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

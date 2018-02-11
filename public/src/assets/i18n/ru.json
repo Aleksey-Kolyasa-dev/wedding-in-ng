@@ -1,7 +1,7 @@
 {
   "header": {
     "auth-btn" : {
-      "login": "Логин",
+      "login": "Авторизация",
       "register" : "Регистрация"
     }
   }
