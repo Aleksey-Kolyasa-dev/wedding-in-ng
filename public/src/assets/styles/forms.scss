@@ -1,0 +1,9 @@
+@mixin forms() {
+  .form-control-danger {
+    border: 2px solid #f5186d !important;
+  }
+
+  .form-control-success {
+    border: 2px solid #42db7d !important;
+  }
+}

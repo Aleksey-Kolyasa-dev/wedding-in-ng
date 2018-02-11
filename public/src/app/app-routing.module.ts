@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: 'app/start-page/start.module#StartModule',
   },
+  {
+    path: 'auth',
+    loadChildren: 'app/auth/auth.module#AuthModule',
+  },
 ];
 
 
