@@ -19,7 +19,7 @@ import {LanguageService} from '../../@services/language.service';
                 animate(400, style({ opacity: 0 }))
             ])
         ])
-    ]
+    ],
 })
 export class RegistrationComponent implements OnInit {
     registrationForm: FormGroup;
