@@ -11,7 +11,7 @@ import {SharedModule} from '../../@shared/shared.module';
 import {AuthService} from '../../@services/auth/auth.service';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {ToastService} from '../../@services/toast.service';
-import {TokenService} from "../../@services/auth/token.service";
+import {TokenService} from '../../@services/auth/token.service';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
