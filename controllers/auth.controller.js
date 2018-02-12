@@ -1,5 +1,7 @@
 'use strict';
 const moment = require('moment');
+const jwt = require('jsonwebtoken');
+const { config } = require('../config');
 const { User } = require('../models/user.model');
 const customError = require('../utils/errors');
 
@@ -43,8 +45,14 @@ exports.login = async (req, res, next) => {
 		const isMatch = await _user.comparePassword(password);
 		if (!isMatch) return next(customError(`Password incorrect! \ Неверный пароль!`, 403));
 
-		const onlineStatusUpdate = await _user.update({ $set: { isLogged: true, lastOnline: moment.now() } });
-		res.json(onlineStatusUpdate);
+		const statusUpdate = await _user.update({ $set: { isLogged: true, lastOnline: moment.now() } });
+		if (!statusUpdate) return next(customError(`Login error \ Ошибка авторизации!`, 500));
+
+		jwt.sign({ _id: _user._id }, config.auth.secret, (err, token) => {
+			if (err) return next(customError(`Token set error! \ Ошибка подписи токена!`, 500));
+			console.log(_user);
+			res.json(token);
+		});
 	} catch (err) {
 		return next(err);
 	}

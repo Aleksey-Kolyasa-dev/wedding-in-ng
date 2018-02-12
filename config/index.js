@@ -8,7 +8,7 @@ exports.config = {
 		name: 'wedding-in',
 		collections: {
 			user: 'user',
-			projects: 'rejects',
+			projects: 'project',
 		},
 	},
 	get _dbProd() {
@@ -21,5 +21,8 @@ exports.config = {
 		return this.env === 'development'
 			? this._dbDev
 			: this._dbProd;
+	},
+	auth: {
+		secret: 'macgriffin',
 	},
 };
