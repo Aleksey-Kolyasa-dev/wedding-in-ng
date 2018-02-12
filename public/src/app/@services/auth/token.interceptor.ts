@@ -11,11 +11,15 @@ import {
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import {TokenService} from './token.service';
+import {AuthService} from './auth.service';
+import {ToastService} from '../toast.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
     constructor(public tokenService: TokenService,
-                private router: Router) {
+                private router: Router,
+                private authService: AuthService,
+                private toastService: ToastService) {
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -33,9 +37,14 @@ export class TokenInterceptor implements HttpInterceptor {
             }
         }, (err: any) => {
             if (err instanceof HttpErrorResponse) {
-                if (err.status === 401) {
-                    this.tokenService.removeToken();
-                    this.router.navigate(['/auth/login']);
+
+                switch (err.status) {
+                    case 401:
+                        this.authService.kickOff();
+                        break;
+                    case 403:
+                        this.toastService.error(`Forbidden! \ Доступ запрещен!`);
+                        break;
                 }
             }
         });

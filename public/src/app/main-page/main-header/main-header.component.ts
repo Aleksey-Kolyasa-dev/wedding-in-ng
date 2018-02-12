@@ -1,7 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../../@services/auth/auth.service';
-import {TokenService} from '../../@services/auth/token.service';
 import {User} from '../../@interfaces/user';
 
 
@@ -11,27 +8,13 @@ import {User} from '../../@interfaces/user';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
-    @Input() user: User;
+    @Input() _user: User;
 
-    constructor(private authService: AuthService,
-                private tokenService: TokenService,
-                private router: Router) {
+    constructor() {
     }
 
     ngOnInit() {
     }
 
-    logout() {
 
-        this.authService.doLogout(this.user).subscribe(
-            (success) => {
-                this.tokenService.removeToken();
-                this.router.navigate(['/auth/login']);
-            },
-            (error) => {
-            }
-        );
-
-
-    }
 }

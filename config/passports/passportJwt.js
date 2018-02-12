@@ -37,10 +37,10 @@ exports.isAuthenticated = (req, res, next) => {
 				checkTokenExp(req, userData, next);
 			},
 			(error) => {
-				return next(customError(`Unauthorized, access denied! \ Доступ запрещен!`, 403));
+				return next(customError(`Unauthorized, access denied! \ Доступ запрещен!`, 401));
 			});
 	} else {
-		return next(customError(`Unauthorized, access denied! \ Доступ запрещен!`, 403));
+		return next(customError(`Unauthorized, access denied! \ Доступ запрещен!`, 401));
 	}
 };
 
@@ -53,7 +53,7 @@ function verifyToken(token) {
 	return new Promise((resolve, reject) => {
 		jwt.verify(token, config.auth.secret, (err, decodedData) => {
 			if (err) {
-				err.status = 403;
+				err.status = 401;
 				reject(err);
 			} else {
 				resolve(decodedData);

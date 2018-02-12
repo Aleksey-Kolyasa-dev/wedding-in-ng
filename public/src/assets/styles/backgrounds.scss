@@ -1,14 +1,25 @@
 @mixin backgrounds() {
   $screen-height: 3000px;
-  .bg-landing {
-    background: url("assets/img/backgrounds/landing_main_bg.jpg") no-repeat center center fixed;
+  $base-url: "assets/img/backgrounds/";
+  $ext: ".jpg";
+
+  @mixin bg($name) {
+    background: url($base-url + $name + $ext) no-repeat center center fixed;
     background-size: cover;
     height: $screen-height;
   }
 
-  .bg-auth {
-    background: url("assets/img/backgrounds/auth_main.jpg") no-repeat center center fixed;
-    background-size: cover;
-    height: $screen-height;
+  .bg-landing {
+    @include bg("landing_bg");
+    //@include bg("2");
   }
+
+  .bg-auth {
+    @include bg("auth_main");
+  }
+
+  .bg-main {
+    @include bg("main-page_bg");
+  }
+
 }

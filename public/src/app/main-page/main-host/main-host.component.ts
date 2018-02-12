@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {UserService} from '../../@services/user/user.service';
+import {User} from '../../@interfaces/user';
+import {AuthService} from '../../@services/auth/auth.service';
 
 @Component({
     selector: 'app-main-host',
@@ -19,12 +22,26 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class MainHostComponent implements OnInit {
     anime = '';
+    _user: User;
 
-    constructor() {
+    constructor(private userService: UserService,
+                private authService: AuthService) {
     }
 
     ngOnInit() {
         this.fadeIn();
+        this.initCurrentUser();
+    }
+
+    initCurrentUser() {
+        this.userService.getCurrentUser().subscribe(
+            user => {
+                this._user = user;
+            },
+            error => {
+                this.authService.kickOff();
+            }
+        );
     }
 
     fadeIn() {
