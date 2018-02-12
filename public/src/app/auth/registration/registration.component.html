@@ -1,109 +1,174 @@
-<section class="auth-main">
+<section class="auth-main bg-landing">
     <div class="container">
         <div class="row">
-            <div class="col-12 auth-content">
-                <header class="text-center">
-                    <h2>Sign Up</h2>
-                </header>
-                <div class="col-6 offset-3">
-                    <form class="mt-5"
-                          novalidate
-                          [formGroup]='registrationForm'
-                          (ngSubmit)="onSubmit(registrationForm)">
+            <div class="shell">
+                <div class="col-12 auth-content">
+                    <header class="text-center">
+                        <h2>Sign Up</h2>
+                    </header>
+                    <div class="col-4 offset-4">
+                        <form class="auth-form"
+                              novalidate
+                              [formGroup]='registrationForm'
+                              (ngSubmit)="onSubmit(registrationForm)">
 
-                        <!--LOGIN-->
-                        <div class="form-group">
-                            <input type="text"
-                                   formControlName="login"
-                                   class="form-control"
-                                   maxlength="30"
-                                   placeholder="Enter your login"
-                                   [class.form-control-danger]="registrationForm.get('login').invalid &&
+                            <!--LOGIN-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="login"
+                                       class="form-control"
+                                       maxlength="30"
+                                       placeholder="Login"
+                                       [class.form-control-danger]="registrationForm.get('login').invalid &&
                                    registrationForm.get('login').touched"
-                                   [class.form-control-success]="registrationForm.get('login').valid &&
+                                       [class.form-control-success]="registrationForm.get('login').valid &&
                                    registrationForm.get('login').touched">
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('login').hasError('required') &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('login').hasError('required') &&
                                  registrationForm.get('login').touched"
-                                 role="alert">
-                                <span>Login field is required!</span>
-                            </div>
+                                     role="alert">
+                                    <span>Login field is required!</span>
+                                </div>
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('login').touched &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('login').touched &&
                                  registrationForm.get('login').hasError('minlength')"
-                                 role="alert">
-                                <span>Login should contain at least 2 characters!</span>
-                            </div>
+                                     role="alert">
+                                    <span>Login should contain at least 2 characters!</span>
+                                </div>
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('login').touched &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('login').touched &&
                                  registrationForm.get('login').hasError('pattern')"
-                                 role="alert">
-                                <span>Only: letters digits _  -</span>
+                                     role="alert">
+                                    <span>Only: letters digits _  -</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <!--PASSWORD-->
-                        <div class="form-group">
-                            <input type="password"
-                                   formControlName="password"
-                                   class="form-control"
-                                   maxlength="40"
-                                   placeholder="Enter your password"
-                                   [class.form-control-danger]="registrationForm.get('password').invalid &&
+                            <!--PASSWORD-->
+                            <div class="form-group">
+                                <input type="password"
+                                       formControlName="password"
+                                       class="form-control"
+                                       maxlength="40"
+                                       placeholder="Password"
+                                       [class.form-control-danger]="registrationForm.get('password').invalid &&
                                    registrationForm.get('password').touched"
-                                   [class.form-control-success]="registrationForm.get('password').valid &&
+                                       [class.form-control-success]="registrationForm.get('password').valid &&
                                    registrationForm.get('password').touched">
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('password').hasError('required') &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('password').hasError('required') &&
                                  registrationForm.get('password').touched"
-                                 role="alert">
-                                <span>Password field is required!</span>
-                            </div>
+                                     role="alert">
+                                    <span>Password field is required!</span>
+                                </div>
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('password').touched &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('password').touched &&
                                  registrationForm.get('password').hasError('minlength')"
-                                 role="alert">
-                                <span>Password should contain at least 6 characters!</span>
-                            </div>
+                                     role="alert">
+                                    <span>Password should contain at least 6 characters!</span>
+                                </div>
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('password').touched &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('password').touched &&
                                  registrationForm.get('password').hasError('pattern')"
-                                 role="alert">
-                                <span>Only: letters and digits</span>
+                                     role="alert">
+                                    <span>Only: letters and digits</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <!--CONFIRM PASSWORD-->
-                        <div class="form-group">
-                            <input type="password"
-                                   formControlName="confirmPassword"
-                                   class="form-control"
-                                   placeholder="Repeat password"
-                                   [class.form-control-danger]="registrationForm.get('confirmPassword').touched &&
+                            <!--CONFIRM PASSWORD-->
+                            <div class="form-group">
+                                <input type="password"
+                                       formControlName="confirmPassword"
+                                       class="form-control"
+                                       placeholder="Repeat password"
+                                       [class.form-control-danger]="registrationForm.get('confirmPassword').touched &&
                                    registrationForm.get('confirmPassword').invalid"
-                                   [class.form-control-success]="registrationForm.get('confirmPassword').touched &&
+                                       [class.form-control-success]="registrationForm.get('confirmPassword').touched &&
                                    registrationForm.get('confirmPassword').valid">
 
-                            <div class="alert alert-danger text-center mt-3"
-                                 *ngIf="registrationForm.get('confirmPassword').touched &&
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('confirmPassword').touched &&
                                  registrationForm.get('confirmPassword').invalid"
-                                 role="alert">
-                                <strong>Passwords must be the same!</strong>
+                                     role="alert">
+                                    <span>Passwords must be the same!</span>
+                                </div>
                             </div>
-                        </div>
 
+                            <!--EMAIL-->
+                            <div class="form-group">
+                                <input type="email"
+                                       formControlName="email"
+                                       class="form-control"
+                                       placeholder="Email"
+                                       [class.form-control-danger]="registrationForm.get('email').invalid &&
+                                   registrationForm.get('email').touched"
+                                       [class.form-control-success]="registrationForm.get('email').valid &&
+                                   registrationForm.get('email').touched">
 
-                    </form>
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('email').hasError('required') &&
+                                 registrationForm.get('email').touched"
+                                     role="alert">
+                                    <span>Email field is required!</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('email').touched &&
+                                 !registrationForm.get('email').hasError('required') &&
+                                 registrationForm.get('email').hasError('email')"
+                                     role="alert">
+                                    <span>Wrong email format</span>
+                                </div>
+                            </div>
+
+                            <!--NAME-->
+                            <div class="form-group">
+                                <input type="text"
+                                       formControlName="name"
+                                       class="form-control"
+                                       maxlength="30"
+                                       placeholder="Name"
+                                       [class.form-control-danger]="registrationForm.get('name').invalid &&
+                                   registrationForm.get('name').touched"
+                                       [class.form-control-success]="registrationForm.get('name').valid &&
+                                   registrationForm.get('name').touched">
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('name').hasError('required') &&
+                                 registrationForm.get('name').touched"
+                                     role="alert">
+                                    <span>Name field is required!</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('name').touched &&
+                                 registrationForm.get('name').hasError('minlength')"
+                                     role="alert">
+                                    <span>Name should contain at least 2 characters!</span>
+                                </div>
+
+                                <div class="alert alert-danger-wed text-center mt-3"
+                                     *ngIf="registrationForm.get('name').touched &&
+                                 registrationForm.get('name').hasError('pattern')"
+                                     role="alert">
+                                    <span>Only: letters digits _  -</span>
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                    class="btn btn-block btn-outline-success submit"
+                                    [disabled]="registrationForm.invalid">Sign Up
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
-
             </div>
-
         </div>
     </div>
 </section>

@@ -1,9 +1,11 @@
 @import "fonts";
 @import "buttons";
 @import "forms";
+@import "backgrounds";
 
 @mixin index(){
-  @include fonts();
   @include buttons();
+  @include backgrounds();
+  @include fonts();
   @include forms();
 }

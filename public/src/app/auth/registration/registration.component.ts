@@ -44,8 +44,14 @@ export class RegistrationComponent implements OnInit {
                         Validators.minLength(6),
                     ]),
                 ],
-                // email: ['', Validators.required],
-                // name: ['', Validators.required],
+                email: [
+                    '',
+                    Validators.compose([
+                        Validators.required,
+                        Validators.email,
+                    ]),
+                ],
+                name: ['', Validators.required],
             },
             {validator: ConfirmPasswordValidation.MatchPassword}
         );

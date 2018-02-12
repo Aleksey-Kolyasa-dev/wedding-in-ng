@@ -1,10 +1,49 @@
-.auth-main{
-  //display: flex;
-  //justify-content: center;
+.auth-main {
   .auth-content {
-    margin-top: 10em;
+    //margin-top: 2em;
+  }
+}
+
+$shell-padding: 4rem;
+.shell {
+  background: rgba(255, 255, 255, 0.84);
+  padding-top: $shell-padding - 2;
+  padding-bottom: $shell-padding;
+  width: 100%;
+  border-radius: 2rem;
+  position: relative;
+  top: 5rem;
+  display: flex;
+  align-items: center;
+
+  header {
+    color: #7e81b1;
   }
   .auth-form {
-    //display: flex;
+    margin-top: 2rem;
+
+    > div {
+
+      input {
+        font-size: 120%;
+        font-weight: 600;
+        color: #464646;
+        border: 2px solid #eef0f4;
+        text-align: center;
+        background: #feffff;
+
+        &::placeholder {
+          color: #a8afb7;
+          font-weight: normal;
+        }
+      }
+    }
+    button[type=submit] {
+      margin-top: 3rem;
+
+      &:disabled {
+        cursor: not-allowed !important;
+      }
+    }
   }
 }
