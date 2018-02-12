@@ -22,8 +22,8 @@ export class AuthService {
         return this.http.post(`${AUTH_BASE_URL}/login`, data);
     }
 
-    doLogout(user): Observable<any> {
-        return this.http.put(`${AUTH_BASE_URL}/logout/${user._id}`, null);
+    doLogout({_id}): Observable<any> {
+        return this.http.put(`${AUTH_BASE_URL}/logout/${_id}`, null);
     }
 
     kickOff() {
