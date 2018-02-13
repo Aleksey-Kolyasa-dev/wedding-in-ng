@@ -4,7 +4,7 @@
             <div class="shell">
                 <div class="col-12 auth-content" [@fadeInOnInit]="anime">
                     <header class="text-center">
-                        <h2>{{ "title" | translate }}</h2>
+                        <h2>{{ "REG.title" | translate }}</h2>
                     </header>
                     <div class="col-4 offset-4">
                         <form class="auth-form"
@@ -18,7 +18,7 @@
                                        formControlName="login"
                                        class="form-control"
                                        maxlength="30"
-                                       placeholder='{{ "form.login.pl" | translate }}'
+                                       placeholder='{{ "REG.form.login.pl" | translate }}'
                                        [class.form-control-danger]="registrationForm.get('login').invalid &&
                                    registrationForm.get('login').touched"
                                        [class.form-control-success]="registrationForm.get('login').valid &&
@@ -28,21 +28,21 @@
                                      *ngIf="registrationForm.get('login').hasError('required') &&
                                  registrationForm.get('login').touched"
                                      role="alert">
-                                    <span>{{ "form.login.err.req" | translate }}</span>
+                                    <span>{{ "REG.form.login.err.req" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
                                      *ngIf="registrationForm.get('login').touched &&
                                  registrationForm.get('login').hasError('minlength')"
                                      role="alert">
-                                    <span>{{ "form.login.err.min" | translate }}</span>
+                                    <span>{{ "REG.form.login.err.min" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
                                      *ngIf="registrationForm.get('login').touched &&
                                  registrationForm.get('login').hasError('pattern')"
                                      role="alert">
-                                    <span>{{ "form.login.err.pattern" | translate }}</span>
+                                    <span>{{ "REG.form.login.err.pattern" | translate }}</span>
                                 </div>
                             </div>
 
@@ -52,7 +52,7 @@
                                        formControlName="password"
                                        class="form-control"
                                        maxlength="40"
-                                       placeholder='{{ "form.pwd.pl" | translate }}'
+                                       placeholder='{{ "REG.form.pwd.pl" | translate }}'
                                        [class.form-control-danger]="registrationForm.get('password').invalid &&
                                    registrationForm.get('password').touched"
                                        [class.form-control-success]="registrationForm.get('password').valid &&
@@ -62,21 +62,21 @@
                                      *ngIf="registrationForm.get('password').hasError('required') &&
                                  registrationForm.get('password').touched"
                                      role="alert">
-                                    <span>{{ "form.pwd.err.req" | translate }}</span>
+                                    <span>{{ "REG.form.pwd.err.req" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
                                      *ngIf="registrationForm.get('password').touched &&
                                  registrationForm.get('password').hasError('minlength')"
                                      role="alert">
-                                    <span>{{ "form.pwd.err.min" | translate }}</span>
+                                    <span>{{ "REG.form.pwd.err.min" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
                                      *ngIf="registrationForm.get('password').touched &&
                                  registrationForm.get('password').hasError('pattern')"
                                      role="alert">
-                                    <span>{{ "form.pwd.err.pattern" | translate }}</span>
+                                    <span>{{ "REG.form.pwd.err.pattern" | translate }}</span>
                                 </div>
                             </div>
 
@@ -85,7 +85,7 @@
                                 <input type="password"
                                        formControlName="confirmPassword"
                                        class="form-control"
-                                       placeholder='{{ "form.r-pwd.pl" | translate }}'
+                                       placeholder='{{ "REG.form.r-pwd.pl" | translate }}'
                                        [class.form-control-danger]="registrationForm.get('confirmPassword').touched &&
                                    registrationForm.get('confirmPassword').invalid"
                                        [class.form-control-success]="registrationForm.get('confirmPassword').touched &&
@@ -95,7 +95,7 @@
                                      *ngIf="registrationForm.get('confirmPassword').touched &&
                                  registrationForm.get('confirmPassword').invalid"
                                      role="alert">
-                                    <span>{{ "form.r-pwd.err.same" | translate }}</span>
+                                    <span>{{ "REG.form.r-pwd.err.same" | translate }}</span>
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                                 <input type="email"
                                        formControlName="email"
                                        class="form-control"
-                                       placeholder='{{"form.email.pl" | translate}}'
+                                       placeholder='{{"REG.form.email.pl" | translate}}'
                                        [class.form-control-danger]="registrationForm.get('email').invalid &&
                                    registrationForm.get('email').touched"
                                        [class.form-control-success]="registrationForm.get('email').valid &&
@@ -114,7 +114,7 @@
                                      *ngIf="registrationForm.get('email').hasError('required') &&
                                  registrationForm.get('email').touched"
                                      role="alert">
-                                    <span>{{ "form.email.err.req" | translate }}</span>
+                                    <span>{{ "REG.form.email.err.req" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
@@ -122,7 +122,7 @@
                                  !registrationForm.get('email').hasError('required') &&
                                  registrationForm.get('email').hasError('email')"
                                      role="alert">
-                                    <span>{{ "form.email.err.pattern" | translate }}</span>
+                                    <span>{{ "REG.form.email.err.pattern" | translate }}</span>
                                 </div>
                             </div>
 
@@ -132,7 +132,7 @@
                                        formControlName="name"
                                        class="form-control"
                                        maxlength="30"
-                                       placeholder="{{'form.name.pl' | translate}}"
+                                       placeholder="{{'REG.form.name.pl' | translate}}"
                                        [class.form-control-danger]="registrationForm.get('name').invalid &&
                                    registrationForm.get('name').touched"
                                        [class.form-control-success]="registrationForm.get('name').valid &&
@@ -142,24 +142,38 @@
                                      *ngIf="registrationForm.get('name').hasError('required') &&
                                  registrationForm.get('name').touched"
                                      role="alert">
-                                    <span>{{ "form.name.err.req" | translate }}</span>
+                                    <span>{{ "REG.form.name.err.req" | translate }}</span>
                                 </div>
 
                                 <div class="alert alert-danger-wed text-center mt-3"
                                      *ngIf="registrationForm.get('name').touched &&
                                  registrationForm.get('name').hasError('minlength')"
                                      role="alert">
-                                    <span>{{ "form.name.err.min" | translate }}</span>
+                                    <span>{{ "REG.form.name.err.min" | translate }}</span>
                                 </div>
                             </div>
 
                             <button type="submit"
                                     class="btn btn-block btn-outline-success submit"
                                     [disabled]="registrationForm.invalid">
-                                {{ "form.submit" | translate }}
+                                {{ "REG.form.submit" | translate }}
                             </button>
                         </form>
                     </div>
+                    <footer class="col-6 offset-3">
+                        <p>
+                            {{ 'REG.footer.account' | translate }}
+                            <a [routerLink]="'/auth/login'">
+                                {{ 'REG.footer.login' | translate }}
+                            </a>
+                        </p>
+                        <p>
+                            {{ 'REG.footer.or' | translate }}
+                            <a [routerLink]="'/index'">
+                                {{ 'REG.footer.back' | translate }}
+                            </a>
+                        </p>
+                    </footer>
 
                 </div>
             </div>

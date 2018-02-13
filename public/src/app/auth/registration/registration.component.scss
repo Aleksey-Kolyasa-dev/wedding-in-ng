@@ -19,6 +19,7 @@ $shell-padding: 4rem;
   header {
     color: #7e81b1;
   }
+
   .auth-form {
     margin-top: 2rem;
 
@@ -45,5 +46,12 @@ $shell-padding: 4rem;
         cursor: not-allowed !important;
       }
     }
+  }
+
+  footer {
+    margin-top: 3em;
+    text-align: center;
+    color: #7e81b1;
+    font-weight: bolder;
   }
 }
