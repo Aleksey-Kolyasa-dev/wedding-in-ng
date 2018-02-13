@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/patterns/pattern.constants';
 import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-password.validator';
 import {LanguageService} from '../../@services/language.service';
@@ -7,10 +8,22 @@ import {LanguageService} from '../../@services/language.service';
 @Component({
     selector: 'app-registration',
     templateUrl: './registration.component.html',
-    styleUrls: ['./registration.component.scss']
+    styleUrls: ['./registration.component.scss'],
+    animations: [
+        trigger('fadeInOnInit', [
+            transition('* => fadeIn', [
+                style({ opacity: 0 }),
+                animate(500, style({ opacity: 1}))
+            ]),
+            transition('* => fadeOut', [
+                animate(400, style({ opacity: 0 }))
+            ])
+        ])
+    ]
 })
 export class RegistrationComponent implements OnInit {
     registrationForm: FormGroup;
+    anime = '';
 
     constructor(private fb: FormBuilder,
                 private languageService: LanguageService) {
@@ -19,6 +32,7 @@ export class RegistrationComponent implements OnInit {
 
     ngOnInit() {
         this.languageService.initLanguage();
+        this.fadeIn();
     }
 
     createForm() {
@@ -64,5 +78,12 @@ export class RegistrationComponent implements OnInit {
             },
             {validator: ConfirmPasswordValidation.MatchPassword}
         );
+    }
+
+    fadeIn() {
+        this.anime = 'fadeIn';
+    }
+    fadeOut() {
+        this.anime = 'fadeOut';
     }
 }

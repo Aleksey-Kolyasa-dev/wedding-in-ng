@@ -5,6 +5,7 @@ import {RegistrationComponent} from './registration.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {LanguageService} from '../../@services/language.service';
 import {SharedModule} from '../../@shared/shared.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -16,6 +17,7 @@ describe('RegistrationComponent', () => {
                 FormsModule,
                 ReactiveFormsModule,
                 SharedModule,
+                BrowserAnimationsModule,
                 TranslateModule.forChild(),
             ],
             declarations: [RegistrationComponent],
