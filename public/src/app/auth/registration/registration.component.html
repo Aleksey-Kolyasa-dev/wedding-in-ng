@@ -1,11 +1,14 @@
-<section class="auth-main bg-landing">
+<section class="bg-landing">
     <div class="container">
         <div class="row">
             <div class="auth-panel">
                 <div class="col-12 auth-content" [@fadeInOnInit]="anime">
+                    <!--HEADER-->
                     <header class="text-center">
                         <h2>{{ "REG.title" | translate }}</h2>
                     </header>
+
+                    <!--FORM-->
                     <div class="col-4 offset-4">
                         <form class="auth-form"
                               novalidate
@@ -160,6 +163,8 @@
                             </button>
                         </form>
                     </div>
+
+                    <!--FOOTER-->
                     <footer class="col-6 offset-3">
                         <p>
                             {{ 'REG.footer.account' | translate }}
@@ -174,7 +179,7 @@
                             </a>
                         </p>
                     </footer>
-
+                    
                 </div>
             </div>
         </div>
