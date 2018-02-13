@@ -1,0 +1,14 @@
+@mixin panels() {
+  .auth-panel {
+    $auth-panel-padding: 4rem;
+    background: rgba(255, 255, 255, 0.84);
+    padding-top: $auth-panel-padding - 2;
+    padding-bottom: $auth-panel-padding;
+    width: 100%;
+    border-radius: 2rem;
+    position: relative;
+    top: 5rem;
+    display: flex;
+    align-items: center;
+  }
+}

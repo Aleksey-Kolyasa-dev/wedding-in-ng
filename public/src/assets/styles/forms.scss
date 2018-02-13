@@ -12,4 +12,32 @@
     background-color: #ebeff5;
     font-weight: bold;
   }
+
+  .auth-form {
+    margin-top: 2rem;
+
+    > div {
+
+      input {
+        font-size: 120%;
+        font-weight: 600;
+        color: #464646;
+        border: 2px solid #eef0f4;
+        text-align: center;
+        background: #feffff;
+
+        &::placeholder {
+          color: #a8afb7;
+          font-weight: normal;
+        }
+      }
+    }
+    button[type=submit] {
+      margin-top: 3rem;
+
+      &:disabled {
+        cursor: not-allowed !important;
+      }
+    }
+  }
 }
