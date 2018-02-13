@@ -3,12 +3,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 // Vendor Modules
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // Custom Modules
 import {AppRoutingModule} from './app-routing.module';
 import {StartModule} from './start-page/start.module';
 import {AuthModule} from './auth/auth.module';
+import {SharedModule} from './@shared/shared.module';
 // Components
 import {AppComponent} from './app.component';
 
@@ -24,6 +25,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         BrowserModule,
+
         StartModule,
         AuthModule,
         AppRoutingModule,
@@ -36,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    providers: [],
+    providers: [TranslateService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

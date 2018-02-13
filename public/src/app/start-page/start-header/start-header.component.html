@@ -5,17 +5,19 @@
             <span class="logo">WEDDING_in</span>
             <span class="status">Beta v2.0.0</span>
         </div>
-
+        <div class="offset-xl-5">
+            <app-language></app-language>
+        </div>
         <div class="menu-block">
             <div class="auth-btn">
                 <a routerLink="/auth/login">
-                    <span>Sign In</span>
+                    <span>{{ "START.authBtns.login" | translate}}</span>
                 </a>
             </div>
 
             <div class="auth-btn">
                 <a routerLink="/auth/registration">
-                    <span>Sign Up</span>
+                    <span>{{ "START.authBtns.register" | translate}}</span>
                 </a>
             </div>
         </div>

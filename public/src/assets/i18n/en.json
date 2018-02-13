@@ -1,3 +1,8 @@
 {
-  "title": "Sign in"
+  "START": {
+    "authBtns" : {
+      "login": "Sign In",
+      "register" : "Sign Up"
+    }
+  }
 }

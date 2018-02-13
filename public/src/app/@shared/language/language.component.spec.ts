@@ -1,26 +1,25 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-
-import {StartHeaderComponent} from './start-header.component';
+import {LanguageComponent} from './language.component';
 import {TranslateModule} from '@ngx-translate/core';
 
-describe('StartHeaderComponent', () => {
-    let component: StartHeaderComponent;
-    let fixture: ComponentFixture<StartHeaderComponent>;
+describe('LanguageComponent', () => {
+    let component: LanguageComponent;
+    let fixture: ComponentFixture<LanguageComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
                 TranslateModule.forRoot(),
             ],
-            declarations: [StartHeaderComponent],
+            declarations: [LanguageComponent],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(StartHeaderComponent);
+        fixture = TestBed.createComponent(LanguageComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

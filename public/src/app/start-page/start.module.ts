@@ -1,18 +1,25 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {StartRoutingModule} from './start-routing.module';
-import {StartHeaderComponent, StartLanguageComponent, StartMainComponent,} from './index';
+import {SharedModule} from '../@shared/shared.module';
+import {TranslateModule} from '@ngx-translate/core';
+
+import {
+StartHeaderComponent,
+StartMainComponent,
+} from './index';
 
 const COMPONENTS: any[] = [
     StartMainComponent,
     StartHeaderComponent,
-    StartLanguageComponent,
 ];
 
 @NgModule({
     imports: [
         CommonModule,
         StartRoutingModule,
+        SharedModule,
+        TranslateModule.forRoot(),
     ],
     declarations: [COMPONENTS],
     exports: [COMPONENTS]

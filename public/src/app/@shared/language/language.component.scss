@@ -1,0 +1,16 @@
+nav {
+  div {
+    display: inline-flex;
+    margin-right: 15px;
+    a {
+      img {
+        width: 32px;
+        opacity: 0.9;
+        &:hover {
+          filter: drop-shadow(8px 1px 8px #d1d5e0);
+          opacity: 1.0;
+        }
+      }
+    }
+  }
+}
