@@ -8,7 +8,7 @@ import {LANGUAGES} from './@constants/language/language.constants';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
     constructor(private translate: TranslateService,
                 private languageService: LanguageService) {
 

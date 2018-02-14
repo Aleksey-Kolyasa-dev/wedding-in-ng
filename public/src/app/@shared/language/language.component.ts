@@ -8,7 +8,7 @@ import {LanguageService} from '../../@services/language.service';
 })
 export class LanguageComponent {
 
-    constructor(private languageService : LanguageService) { }
+    constructor(private languageService: LanguageService) { }
 
     changeLanguage(language: string) {
         this.languageService.setLanguage(language);
