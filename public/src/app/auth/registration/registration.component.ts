@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/pattern.constants';
+import {PWD_PATTERN, TEXT_PATTERN} from '../../@constants/patterns/pattern.constants';
 import {ConfirmPasswordValidation} from '../../@utils/validators/confirm-password.validator';
 
 @Component({
