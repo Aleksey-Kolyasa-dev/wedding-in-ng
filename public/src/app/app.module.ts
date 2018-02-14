@@ -9,11 +9,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AppRoutingModule} from './app-routing.module';
 import {StartModule} from './start-page/start.module';
 import {AuthModule} from './auth/auth.module';
-import {SharedModule} from './@shared/shared.module';
 // Components
 import {AppComponent} from './app.component';
 
 // Services
+
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -25,7 +25,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         BrowserModule,
-
         StartModule,
         AuthModule,
         AppRoutingModule,
