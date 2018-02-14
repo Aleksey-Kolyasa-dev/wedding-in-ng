@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
 import {RegistrationComponent} from './registration.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -12,6 +12,7 @@ describe('RegistrationComponent', () => {
             imports: [
                 FormsModule,
                 ReactiveFormsModule,
+                TranslateModule.forChild(),
             ],
             declarations: [RegistrationComponent]
         })
