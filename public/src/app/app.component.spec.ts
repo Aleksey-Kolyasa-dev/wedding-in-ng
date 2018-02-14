@@ -2,6 +2,7 @@ import {async, TestBed} from '@angular/core/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {AppComponent} from './app.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {LanguageService} from './@services/language.service';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -13,7 +14,7 @@ describe('AppComponent', () => {
                 AppComponent
             ],
             providers: [
-
+                LanguageService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();

@@ -5,9 +5,9 @@ import {HttpClient} from '@angular/common/http';
 import {AuthRoutingModule} from './auth-routing.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from '../@shared/shared.module';
 
 import {LoginComponent, RegistrationComponent} from './index';
-import {SharedModule} from "../@shared/shared.module";
 
 const COMPONENTS: any[] = [
     LoginComponent,

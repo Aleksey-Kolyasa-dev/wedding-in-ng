@@ -1,7 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegistrationComponent} from './registration.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {LanguageService} from '../../@services/language.service';
+import {SharedModule} from '../../@shared/shared.module';
 
 describe('RegistrationComponent', () => {
     let component: RegistrationComponent;
@@ -12,9 +15,14 @@ describe('RegistrationComponent', () => {
             imports: [
                 FormsModule,
                 ReactiveFormsModule,
+                SharedModule,
                 TranslateModule.forChild(),
             ],
-            declarations: [RegistrationComponent]
+            declarations: [RegistrationComponent],
+            providers: [
+                LanguageService,
+            ],
+            schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();
     }));
