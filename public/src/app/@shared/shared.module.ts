@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {LanguageService} from '../@services/language.service';
 
 import {
-    LanguageComponent,
+LanguageComponent,
 } from './index';
 
 const COMPONENTS: any[] = [
@@ -17,7 +18,10 @@ const COMPONENTS: any[] = [
     ],
     declarations: [COMPONENTS],
     exports: [COMPONENTS],
-    providers: [TranslateService]
+    providers: [
+        TranslateService,
+        LanguageService,
+    ]
 })
 export class SharedModule {
 }

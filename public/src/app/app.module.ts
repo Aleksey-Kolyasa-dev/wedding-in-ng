@@ -13,6 +13,7 @@ import {AuthModule} from './auth/auth.module';
 import {AppComponent} from './app.component';
 
 // Services
+import {LanguageService} from './@services/language.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +38,10 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    providers: [TranslateService],
+    providers: [
+        TranslateService,
+        LanguageService,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
