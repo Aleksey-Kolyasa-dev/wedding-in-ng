@@ -1,12 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 import {AuthRoutingModule} from './auth-routing.module';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
 import {LoginComponent, RegistrationComponent} from './index';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient} from '@angular/common/http';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from "../@shared/shared.module";
 
 const COMPONENTS: any[] = [
     LoginComponent,
@@ -14,7 +15,7 @@ const COMPONENTS: any[] = [
 ];
 
 export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, 'assets/i18n/auth', '.json');
+    return new TranslateHttpLoader(http, 'assets/i18n/auth/', '.json');
 }
 
 @NgModule({
@@ -23,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
         FormsModule,
         ReactiveFormsModule,
         AuthRoutingModule,
+        SharedModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,

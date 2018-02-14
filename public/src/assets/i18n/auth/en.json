@@ -1,8 +1,13 @@
 {
-  "START": {
-    "authBtns" : {
-      "login": "Sign In",
-      "register" : "Sign Up"
+  "title": "Sign In",
+  "form": {
+    "login": {
+      "pl": "Login",
+      "err": {
+        "req": "Login field is required!",
+        "min": "Login should contain at least 2 characters!",
+        "pattern": "Only: letters digits _  -"
+      }
     }
   }
 }
