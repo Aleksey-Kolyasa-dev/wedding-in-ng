@@ -1,7 +1,7 @@
 // Core
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Vendor Modules
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
@@ -12,14 +12,13 @@ import {StartModule} from './start-page/start.module';
 import {AuthModule} from './auth/auth.module';
 // Components
 import {AppComponent} from './app.component';
-
 // Services
 import {LanguageService} from './@services/language.service';
 import {AuthService} from './@services/auth/auth.service';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {ToastService} from './@services/toast.service';
 import {TokenService} from './@services/auth/token.service';
-
+import {TokenInterceptor} from './@services/auth/token.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -52,6 +51,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         ToasterService,
         ToastService,
         TokenService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+        },
     ],
     bootstrap: [AppComponent]
 })
