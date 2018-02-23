@@ -11,6 +11,7 @@ import {SharedModule} from '../../@shared/shared.module';
 import {AuthService} from '../../@services/auth/auth.service';
 import {ToasterService} from 'angular2-toaster';
 import {ToastService} from '../../@services/toast.service';
+import {TokenService} from '../../@services/auth/token.service';
 
 
 describe('LoginComponent', () => {
@@ -34,6 +35,7 @@ describe('LoginComponent', () => {
                 AuthService,
                 ToasterService,
                 ToastService,
+                TokenService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         })

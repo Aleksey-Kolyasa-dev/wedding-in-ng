@@ -50,7 +50,7 @@ exports.login = async (req, res, next) => {
 
 		jwt.sign({ _id: _user._id }, config.auth.secret, (err, token) => {
 			if (err) return next(customError(`Token set error! \ Ошибка подписи токена!`, 500));
-			console.log(_user);
+			// console.log(_user);
 			res.json(token);
 		});
 	} catch (err) {

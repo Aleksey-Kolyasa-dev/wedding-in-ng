@@ -18,6 +18,7 @@ import {LanguageService} from './@services/language.service';
 import {AuthService} from './@services/auth/auth.service';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import {ToastService} from './@services/toast.service';
+import {TokenService} from './@services/auth/token.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AuthService,
         ToasterService,
         ToastService,
+        TokenService,
     ],
     bootstrap: [AppComponent]
 })
