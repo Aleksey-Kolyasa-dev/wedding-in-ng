@@ -1,0 +1,45 @@
+.project-sub-nav {
+  $size: 10px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li:first-of-type a {
+      border-top-left-radius: $size/2;
+      border-bottom-left-radius: $size/2;
+    }
+    li:last-of-type a {
+      border-top-right-radius: $size/2;
+      border-bottom-right-radius: $size/2;
+    }
+    li {
+      display: inline-block;
+      padding: 0;
+      margin-right: $size/5;
+
+      @mixin sub-nav-btn() {
+        display: block;
+        padding: 5px 10px;
+
+        background: rgba(0, 150, 136, 0.7);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.6s;
+      }
+
+      .sub-nav-btn {
+        @include sub-nav-btn();
+        background: rgba(0, 150, 136, 0.7);
+        &:hover {
+          background: rgba(76, 175, 80, 0.7);
+        }
+      }
+
+      .sub-nav-btn-active {
+        @include sub-nav-btn();
+        background: rgba(76, 175, 80, 0.7);
+      }
+    }
+  }
+}

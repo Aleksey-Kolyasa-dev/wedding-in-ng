@@ -47,12 +47,17 @@
     $index: 4rem;
     $bg-color: rgba(255, 255, 255, 0.6);
     $brd-r: $index / 8;
-
-    //margin-top: $index;
-    //width: 100%;
     border-radius: $brd-r;
     background: rgba(255, 255, 255, 0.8);
     padding: $index / 4;
+  }
+
+  .panel-animated-lt {
+    margin: 10px auto;
+    transition: all 0.8s;
+    &:hover {
+      margin: 15px auto;
+    }
   }
 
 }

@@ -1,21 +1,15 @@
 <div class="app-menu-layout" [@fadeInOnInit]="anime">
   <!--APP-SUB-NAV-->
-  <div class="wed-panel-def test-s" style="margin-top: 3px">
-    <nav class="project-sub-nav">
-      <ul>
-        <li *ngFor="let i of [1,2,3,4]">
-          <a href="" class="wed-btn-smX wed-btn-serviceX">
-            budget
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div class="wed-panel-def test-s">
+  <app-sub-nav></app-sub-nav>
+
+  <!--APP-STATUS-BAR-->
+  <div class="wed-panel-def">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
 
   </div>
-  <div class="wed-panel-def test-s" style="height: 800px">
+
+  <!--APP-BODY-->
+  <div class="wed-panel-def panel-animated-lt" style="height: 800px">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
     Assumenda exercitationem ipsam quasi repudiandae. Corporis debitis eos est hic in ipsum molestiae
     quaerat quas, quisquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis

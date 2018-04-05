@@ -1,4 +1,6 @@
-export const PROJ_MENU_PRO: any[] = [
+import {Menu} from '../@interfaces/menu';
+
+export const PROJ_MENU_PRO: Menu[] = [
     {
         name: 'PROJ.menu.dashboard',
         link: 'dashboard',

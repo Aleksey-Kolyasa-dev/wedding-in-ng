@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {DashboardComponent} from './dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedModule} from '../../../@shared/shared.module';
 
 describe('DashboardComponent', () => {
     let component: DashboardComponent;
@@ -12,6 +12,7 @@ describe('DashboardComponent', () => {
             declarations: [DashboardComponent],
             imports: [
                 BrowserAnimationsModule,
+                SharedModule,
             ]
         })
             .compileComponents();

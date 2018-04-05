@@ -7,7 +7,7 @@ import {ProjectMenuService} from '../../@services/project/project-menu.service';
     styleUrls: ['./project-menu.component.scss']
 })
 export class ProjectMenuComponent implements OnInit {
-    menuIndex = 0;
+    menuIndex: number;
     menu: any[];
 
     constructor(private projectMenuService: ProjectMenuService) {
@@ -15,6 +15,7 @@ export class ProjectMenuComponent implements OnInit {
 
     ngOnInit() {
         this.initMenu();
+        this.activeMenu(0);
     }
 
     initMenu() {

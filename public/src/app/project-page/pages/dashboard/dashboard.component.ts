@@ -19,6 +19,12 @@ import {animate, style, transition, trigger} from '@angular/animations';
 })
 export class DashboardComponent implements OnInit {
     anime = '';
+    // subMenu = [
+    //     { name: 'PROJ.dashboard.subMenu[0].name'},
+    //     { name: 'PROJ.dashboard.subMenu[1].name'},
+    //     { name: 'PROJ.dashboard.subMenu[2].name'},
+    //     { name: 'PROJ.dashboard.subMenu[3].name'},
+    // ];
 
     constructor() {
     }

@@ -109,6 +109,14 @@
       "dress": "DRESSCOAT",
       "party": "PARTY",
       "other": "OTHER"
+    },
+    "dashboard": {
+      "subMenu": [
+        {"name": "Project"},
+        {"name": "Budget"},
+        {"name": "Todo"},
+        {"name": "sms"}
+      ]
     }
   }
 }
