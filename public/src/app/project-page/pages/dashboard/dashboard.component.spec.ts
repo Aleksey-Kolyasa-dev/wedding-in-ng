@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from '../../../@shared/shared.module';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {ProjectMenuService} from '../../../@services/project/project-menu.service';
 
 describe('DashboardComponent', () => {
     let component: DashboardComponent;
@@ -16,6 +17,9 @@ describe('DashboardComponent', () => {
                 BrowserAnimationsModule,
                 SharedModule,
                 TranslateModule.forRoot(),
+            ],
+            providers: [
+                ProjectMenuService,
             ],
             schemas: [NO_ERRORS_SCHEMA]
         })

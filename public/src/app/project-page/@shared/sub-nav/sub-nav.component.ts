@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {ProjectMenuService} from '../../../@services/project/project-menu.service';
+import {Component, Input, OnInit} from '@angular/core';
 import {SubMenu} from '../../../@interfaces/menu';
 
 @Component({
@@ -9,21 +8,17 @@ import {SubMenu} from '../../../@interfaces/menu';
 })
 export class SubNavComponent implements OnInit {
     subMenuIndex: number;
-    subMenu: SubMenu[];
+    @Input() subMenu: SubMenu[];
 
-    constructor(private projectMenuService: ProjectMenuService) {
+    constructor() {
     }
 
     ngOnInit() {
         this.activeSubMenu(0);
-        this.initSubMenu(0);
     }
 
     activeSubMenu(i: number): void {
         this.subMenuIndex = i;
     }
 
-    initSubMenu(index: number) {
-        this.subMenu = this.projectMenuService.getSubMenu(index);
-    }
 }
