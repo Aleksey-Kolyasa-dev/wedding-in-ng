@@ -10,7 +10,6 @@ const COMPONENTS: any[] = [
     LanguageComponent,
     HeaderComponent,
     UserMenuComponent,
-    // SubNavComponent,
     OrderByWeddingDatePipe,
 ];
 
@@ -24,7 +23,6 @@ const COMPONENTS: any[] = [
     providers: [
         TranslateService,
         LanguageService,
-        ProjectMenuService,
     ]
 })
 export class SharedModule {

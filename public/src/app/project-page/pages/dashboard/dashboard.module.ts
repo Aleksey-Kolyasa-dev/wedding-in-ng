@@ -6,7 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../../@shared/shared.module';
 
 import {DashboardComponent} from './index';
-import {ProjectPageModule} from "../../project-page.module";
+import {ProjectPageModule} from '../../project-page.module';
 
 const COMPONENTS: any[] = [
     DashboardComponent,

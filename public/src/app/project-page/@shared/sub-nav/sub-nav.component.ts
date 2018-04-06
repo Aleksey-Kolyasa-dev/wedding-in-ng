@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjectMenuService} from '../../../../@services/project/project-menu.service';
-import {SubMenu} from '../../../../@interfaces/menu';
+import {ProjectMenuService} from '../../../@services/project/project-menu.service';
+import {SubMenu} from '../../../@interfaces/menu';
 
 @Component({
     selector: 'app-sub-nav',
