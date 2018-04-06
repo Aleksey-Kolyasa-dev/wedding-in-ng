@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubNavComponent } from './sub-nav.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {ProjectMenuService} from '../../../../@services/project/project-menu.service';
 
 describe('SubNavComponent', () => {
   let component: SubNavComponent;
@@ -8,7 +10,13 @@ describe('SubNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubNavComponent ]
+      declarations: [ SubNavComponent ],
+        imports: [
+            TranslateModule.forRoot(),
+        ],
+        providers: [
+          ProjectMenuService,
+        ],
     })
     .compileComponents();
   }));

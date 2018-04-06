@@ -111,12 +111,12 @@
       "other": "OTHER"
     },
     "dashboard": {
-      "subMenu": [
-        {"name": "Project"},
-        {"name": "Budget"},
-        {"name": "Todo"},
-        {"name": "sms"}
-      ]
+      "subMenu": {
+        "proj": "Project",
+        "bud": "Budget",
+        "ts": "Tasks",
+        "sms": "SMS"
+      }
     }
   }
 }

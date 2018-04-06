@@ -2,7 +2,7 @@
   <nav class="project-sub-nav">
     <ul>
       <li *ngFor="let item of subMenu; let i = index">
-        <a (click)="activeSubMenu(i)" class="wed-btn-smX wed-btn-serviceX" [ngClass]="subMenuIndex === i ? 'sub-nav-btn-active' : 'sub-nav-btn'">
+        <a routerLink={{item.link}} (click)="activeSubMenu(i)" class="wed-btn-smX wed-btn-serviceX" [ngClass]="subMenuIndex === i ? 'sub-nav-btn-active' : 'sub-nav-btn'">
           {{item.name | translate}}
         </a>
       </li>

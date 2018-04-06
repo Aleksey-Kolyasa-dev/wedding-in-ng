@@ -28,7 +28,7 @@ describe('LoginComponent', () => {
                 BrowserAnimationsModule,
                 HttpClientModule,
                 RouterTestingModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [LoginComponent],
             providers: [

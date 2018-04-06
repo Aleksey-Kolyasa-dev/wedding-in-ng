@@ -18,7 +18,7 @@ describe('MainProjectsPanelComponent', () => {
                 SharedModule,
                 HttpClientModule,
                 RouterTestingModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [MainProjectsPanelComponent],
             providers: [

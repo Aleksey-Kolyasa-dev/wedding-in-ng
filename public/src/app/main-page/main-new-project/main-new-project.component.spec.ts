@@ -21,7 +21,7 @@ describe('MainNewProjectComponent', () => {
             declarations: [MainNewProjectComponent],
             imports: [
                 SharedModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
                 FormsModule,
                 ReactiveFormsModule,
                 HttpClientModule,

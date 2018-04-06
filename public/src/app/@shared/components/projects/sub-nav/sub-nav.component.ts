@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ProjectMenuService} from '../../../../@services/project/project-menu.service';
+import {SubMenu} from '../../../../@interfaces/menu';
 
 @Component({
     selector: 'app-sub-nav',
@@ -7,21 +9,22 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SubNavComponent implements OnInit {
     subMenuIndex: number;
-    subMenu = [
-        { name: 'PROJ.dashboard.subMenu[0].name'},
-        { name: 'PROJ.dashboard.subMenu[1].name'},
-        { name: 'PROJ.dashboard.subMenu[2].name'},
-        { name: 'PROJ.dashboard.subMenu[3].name'},
-    ];
+    subMenu: SubMenu[];
 
-    constructor() {
+    constructor(private projectMenuService: ProjectMenuService) {
     }
 
     ngOnInit() {
         this.activeSubMenu(0);
+        this.initSubMenu(0);
     }
 
     activeSubMenu(i: number): void {
         this.subMenuIndex = i;
     }
+
+    initSubMenu(index: number) {
+        this.subMenu = this.projectMenuService.getSubMenu(index);
+    }
+
 }

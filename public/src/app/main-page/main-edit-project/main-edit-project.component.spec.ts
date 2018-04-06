@@ -21,7 +21,7 @@ describe('MainEditProjectComponent', () => {
       declarations: [ MainEditProjectComponent ],
         imports: [
             SharedModule,
-            TranslateModule.forChild(),
+            TranslateModule.forRoot(),
             FormsModule,
             ReactiveFormsModule,
             HttpClientModule,

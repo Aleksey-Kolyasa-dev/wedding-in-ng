@@ -14,7 +14,7 @@ describe('StartHeaderComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 SharedModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [StartHeaderComponent],
             providers: [BsLocaleService],

@@ -25,7 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule,
         AuthRoutingModule,
         SharedModule,
-        TranslateModule.forChild({
+        TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: createTranslateLoader,

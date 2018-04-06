@@ -13,7 +13,7 @@ describe('AuthMenuComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 SharedModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [AuthMenuComponent],
             schemas: [NO_ERRORS_SCHEMA],

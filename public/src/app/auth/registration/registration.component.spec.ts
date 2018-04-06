@@ -27,7 +27,7 @@ describe('RegistrationComponent', () => {
                 BrowserAnimationsModule,
                 HttpClientModule,
                 RouterTestingModule,
-                TranslateModule.forChild(),
+                TranslateModule.forRoot(),
             ],
             declarations: [RegistrationComponent],
             providers: [
