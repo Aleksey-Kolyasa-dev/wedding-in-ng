@@ -9,6 +9,9 @@ const routes: Routes = [
         component: DashboardComponent,
         children: [
             {path: 'budget', component: DashboardComponent},
+            {path: 'info', component: DashboardComponent},
+            {path: 'tasks', component: DashboardComponent},
+            {path: 'sms', component: DashboardComponent},
         ]
     },
 ];

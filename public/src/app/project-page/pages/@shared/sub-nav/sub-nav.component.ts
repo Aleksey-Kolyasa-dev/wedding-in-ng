@@ -26,5 +26,4 @@ export class SubNavComponent implements OnInit {
     initSubMenu(index: number) {
         this.subMenu = this.projectMenuService.getSubMenu(index);
     }
-
 }
