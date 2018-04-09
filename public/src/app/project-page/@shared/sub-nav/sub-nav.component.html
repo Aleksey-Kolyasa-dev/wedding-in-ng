@@ -1,11 +1,21 @@
-<div class="wed-panel-def panel-animated-lt" style="margin-top: 3px">
-  <nav class="project-sub-nav">
-    <ul>
-      <li *ngFor="let item of subMenu; let i = index">
-        <a routerLink={{item.link}} (click)="activeSubMenu(i)" class="wed-btn-smX wed-btn-serviceX" [ngClass]="subMenuIndex === i ? 'sub-nav-btn-active' : 'sub-nav-btn'">
-          {{item.name | translate}}
-        </a>
-      </li>
-    </ul>
-  </nav>
+<div class="wed-panel-def panel-animated-lt pt-2 pb-2" style="margin-top: 3px">
+    <div class="sub-nav-block">
+        <nav class="project-sub-nav">
+            <ul>
+                <li *ngFor="let item of subMenu; let i = index">
+                    <a routerLink={{item.link}}
+                       (click)="activeSubMenu(i)"
+                       class="wed-btn-smX wed-btn-serviceX"
+                       [ngClass]="subMenuIndex === i ? 'sub-nav-btn-active' : 'sub-nav-btn'">
+                        {{item.name | translate}}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="nav-info-block">
+            <h4>{{(subMenu[1].name | translate).toUpperCase()}}</h4>
+            <span>> {{(subMenu[1].name | translate)}}</span>
+        </div>
+    </div>
+
 </div>

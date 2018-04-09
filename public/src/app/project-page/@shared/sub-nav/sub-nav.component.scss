@@ -1,3 +1,4 @@
+@import "../../../../assets/styles/colors";
 .project-sub-nav {
   $size: 10px;
   ul {
@@ -42,4 +43,24 @@
       }
     }
   }
+}
+
+.nav-info-block {
+  h4 {
+    margin-bottom: 0;
+    letter-spacing: 3px;
+    font-style: italic;
+    color: $wed-text-header;
+  }
+  span {
+    float: right;
+    font-weight: 600;
+    color: $wed-text-service;
+  }
+}
+
+.sub-nav-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
