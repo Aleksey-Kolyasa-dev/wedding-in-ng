@@ -108,7 +108,8 @@
       "tr": "TRANSFER",
       "dress": "DRESSCOAT",
       "party": "PARTY",
-      "other": "OTHER"
+      "other": "OTHER",
+      "back": "Projects List"
     },
     "dashboard": {
       "subMenu": {
