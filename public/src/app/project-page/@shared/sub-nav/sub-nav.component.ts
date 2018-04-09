@@ -7,8 +7,9 @@ import {SubMenu} from '../../../@interfaces/menu';
     styleUrls: ['./sub-nav.component.scss']
 })
 export class SubNavComponent implements OnInit {
+    @Input() subMenuConfig: any;
     subMenuIndex: number;
-    @Input() subMenu: SubMenu[];
+    subMenuItem: SubMenu;
 
     constructor() {
     }
@@ -19,6 +20,6 @@ export class SubNavComponent implements OnInit {
 
     activeSubMenu(i: number): void {
         this.subMenuIndex = i;
+        this.subMenuItem = this.subMenuConfig.subMenu[i];
     }
-
 }

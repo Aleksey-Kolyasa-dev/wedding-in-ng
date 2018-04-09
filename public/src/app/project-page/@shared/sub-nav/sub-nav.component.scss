@@ -46,6 +46,15 @@
 }
 
 .nav-info-block {
+  > div {
+    display: block;
+  }
+
+  > div:last-of-type {
+    float: right;
+    padding-right: 5px;
+  }
+
   h4 {
     margin-bottom: 0;
     letter-spacing: 3px;
@@ -53,7 +62,7 @@
     color: $wed-text-header;
   }
   span {
-    float: right;
+    font-style: italic;
     font-weight: 600;
     color: $wed-text-service;
   }

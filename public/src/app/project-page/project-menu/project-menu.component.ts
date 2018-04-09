@@ -24,5 +24,6 @@ export class ProjectMenuComponent implements OnInit {
 
     activeMenu(i: number): void {
         this.menuIndex = i;
+        this.projectMenuService.setCurrentMenuItem(this.menu[i]);
     }
 }

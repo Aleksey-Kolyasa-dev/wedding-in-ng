@@ -2,7 +2,7 @@
     <div class="sub-nav-block">
         <nav class="project-sub-nav">
             <ul>
-                <li *ngFor="let item of subMenu; let i = index">
+                <li *ngFor="let item of subMenuConfig.subMenu; let i = index">
                     <a routerLink={{item.link}}
                        (click)="activeSubMenu(i)"
                        class="wed-btn-smX wed-btn-serviceX"
@@ -13,8 +13,13 @@
             </ul>
         </nav>
         <div class="nav-info-block">
-            <h4>{{(subMenu[1].name | translate).toUpperCase()}}</h4>
-            <span>> {{(subMenu[1].name | translate)}}</span>
+            <div>
+                <h4>{{(subMenuConfig.menu.name | translate).toUpperCase()}}</h4>
+            </div>
+            <div>
+                <span> <span class="fa fa-angle-double-right mr-1"></span>{{subMenuItem.name | translate}}</span>
+            </div>
+
         </div>
     </div>
 

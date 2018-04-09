@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {ProjectMenuService} from '../../../@services/project/project-menu.service';
-import {SubMenu} from '../../../@interfaces/menu';
+import {Menu, SubMenu} from '../../../@interfaces/menu';
 
 @Component({
     selector: 'app-dashboard',
@@ -21,7 +21,8 @@ import {SubMenu} from '../../../@interfaces/menu';
 })
 export class DashboardComponent implements OnInit {
     anime = '';
-    subMenuConfig: SubMenu[];
+    subMenuConfig: any = {};
+
     constructor(private projectMenuService: ProjectMenuService) {
     }
 
@@ -31,7 +32,10 @@ export class DashboardComponent implements OnInit {
     }
 
     initSubMenu(index: number) {
-        this.subMenuConfig = this.projectMenuService.getSubMenu(index);
+        this.subMenuConfig = {
+            menu: this.projectMenuService.getCurrentMenuItem(),
+            subMenu: this.projectMenuService.getSubMenu(index),
+        }
     }
 
     fadeIn() {
