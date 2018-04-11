@@ -1,16 +1,35 @@
 <!--APP-STATUS-BAR-->
-<div class="wed-panel-def">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
-
-</div>
+<app-status-bar></app-status-bar>
 
 <!--APP-BODY-->
 <div class="wed-panel-def panel-animated-lt" style="height: 800px">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum et praesentium velit vero?
-  Assumenda exercitationem ipsam quasi repudiandae. Corporis debitis eos est hic in ipsum molestiae
-  quaerat quas, quisquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis
-  dignissimos eius eos ex expedita, ipsum modi necessitatibus nihil nisi odio quidem quis sapiente
-  sequi sunt? Magni nam officiis quos?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-  cupiditate dolores doloribus eaque, eligendi et iure libero maxime minus nemo nisi, odio repellendus
-  rerum sapiente, voluptatem! Architecto corporis ipsa suscipit.
+  <div class="row">
+    <div class="col-3">
+      <div class="tx-panel">
+        <header>
+          <h3>CURRENCY</h3>
+        </header>
+        <section>
+          <div>
+            1 USD = 1 UAH
+          </div>
+          <div class="">
+            <a class="wed-btn-xs wed-btn-success ml-4">
+              Edit
+              <span class="fa fa-edit"></span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="currency-table"></div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="currency-table"></div>
+    </div>
+  </div>
+
 </div>

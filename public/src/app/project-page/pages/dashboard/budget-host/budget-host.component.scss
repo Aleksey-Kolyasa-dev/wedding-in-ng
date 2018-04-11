@@ -1,0 +1,17 @@
+@import "../../../../../assets/styles/colors";
+  $size: 10px;
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $wed-text-header;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $wed-text-service;
+    font-size: 150%;
+    font-weight: 600;
+  }

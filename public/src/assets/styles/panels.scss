@@ -60,4 +60,13 @@
     }
   }
 
+  .tx-panel {
+    $size: 10px;
+    width: 100%;
+    border-top: 2px solid rgba(33, 150, 243, 0.54);
+    border-bottom: 2px solid rgba(33, 150, 243, 0.54);
+    min-height: $size*5;
+    padding: $size*1.5;
+  }
+
 }

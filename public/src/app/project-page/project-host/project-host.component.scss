@@ -2,11 +2,12 @@
   position: absolute;
   top:-17px;
   left: -115px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   transition: all 0.6s;
   &:hover {
-    left: -5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    left: -15px;
+
     span {
       opacity: 0.4;
     }

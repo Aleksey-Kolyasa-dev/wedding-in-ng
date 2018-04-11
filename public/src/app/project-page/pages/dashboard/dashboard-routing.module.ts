@@ -7,11 +7,11 @@ const routes: Routes = [
     {
         path: '', component: DashboardComponent,
         children: [
-            {path: '**', redirectTo: 'budget'},
             {path: 'budget', component: BudgetHostComponent},
             {path: 'info', component: DashboardComponent},
             {path: 'tasks', component: DashboardComponent},
             {path: 'sms', component: DashboardComponent},
+            {path: '**', redirectTo: 'budget'},
         ]
     },
 ];
