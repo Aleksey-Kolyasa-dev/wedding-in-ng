@@ -10,6 +10,7 @@ import {ToastService} from '../../@services/toast.service';
 import {ToasterService} from 'angular2-toaster';
 import {TokenService} from '../../@services/auth/token.service';
 import {EventsService} from '../../@services/events.service';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ProjectHostComponent', () => {
   let component: ProjectHostComponent;
@@ -22,6 +23,7 @@ describe('ProjectHostComponent', () => {
             BrowserAnimationsModule,
             HttpClientModule,
             RouterTestingModule,
+            TranslateModule.forRoot(),
         ],
         schemas: [NO_ERRORS_SCHEMA],
         providers: [

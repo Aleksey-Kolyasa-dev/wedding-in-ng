@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
         this.subMenuConfig = {
             menu: this.projectMenuService.getCurrentMenuItem(),
             subMenu: this.projectMenuService.getSubMenu(index),
-        }
+        };
     }
 
     fadeIn() {
