@@ -9,6 +9,7 @@ const routes: Routes = [
         path: 'project/:id',
         component: ProjectHostComponent,
         children: [
+            {path: '**', redirectTo:'dashboard'},
             {path: 'dashboard', loadChildren: 'app/project-page/pages/dashboard/dashboard.module#DashboardModule'},
             {path: 'restaurant', component: ProjectHostComponent},
             {path: 'decorations', component: ProjectHostComponent},
