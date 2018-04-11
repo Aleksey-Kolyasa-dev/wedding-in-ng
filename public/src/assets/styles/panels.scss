@@ -60,6 +60,26 @@
     }
   }
 
+  @mixin tx-header() {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $wed-text-header;
+  }
+  @mixin tx-section() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $wed-text-service;
+    font-size: 150%;
+    font-weight: 600;
+  }
+  .tx-header {
+    @include tx-header();
+  }
+  .tx-section {
+    @include tx-section();
+  }
   .tx-panel {
     $size: 10px;
     width: 100%;
@@ -67,6 +87,13 @@
     border-bottom: 2px solid rgba(33, 150, 243, 0.54);
     min-height: $size*5;
     padding: $size*1.5;
+    header {
+      @include tx-header();
+    }
+    section {
+      @include tx-section();
+    }
   }
+
 
 }

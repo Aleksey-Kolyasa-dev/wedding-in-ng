@@ -20,7 +20,7 @@ const routes: Routes = [
             {path: 'dresscoat', component: ProjectHostComponent},
             {path: 'party', component: ProjectHostComponent},
             {path: 'other', component: ProjectHostComponent},
-            {path: '**', redirectTo:'dashboard'},
+            {path: '**', redirectTo: 'dashboard'},
         ]},
 ];
 
