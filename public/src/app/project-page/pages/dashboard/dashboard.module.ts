@@ -6,11 +6,12 @@ import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../../@shared/shared.module';
 import {ProjectPageModule} from '../../project-page.module';
 
-import {DashboardComponent, BudgetHostComponent} from './index';
+import {DashboardComponent, BudgetHostComponent, CurrencyComponent} from './index';
 
 const COMPONENTS: any[] = [
     DashboardComponent,
     BudgetHostComponent,
+    CurrencyComponent,
 ];
 
 

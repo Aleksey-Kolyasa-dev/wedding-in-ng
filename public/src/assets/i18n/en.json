@@ -1,4 +1,7 @@
 {
+  "common": {
+    "edit": "Edit"
+  },
   "header": {
     "auth-menu" : {
       "login": "Sign In",
@@ -21,7 +24,7 @@
         "fiance" : "fiance:",
         "fiancee": "fiancee:",
         "budget": "budget:",
-        "edit": "edit"
+        "edit": "Edit"
       }
     },
     "new": {
@@ -117,6 +120,11 @@
         "bud": "Budget",
         "ts": "Tasks",
         "sms": "SMS"
+      },
+      "budget": {
+        "currency": {
+          "label": "Currency"
+        }
       }
     }
   }

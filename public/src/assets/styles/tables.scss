@@ -1,0 +1,26 @@
+@mixin tables() {
+  .wed-table-a {
+    font-size: 110%;
+    font-weight: 600;
+    thead {
+      tr {
+        th {
+          color: $wed-text-header;
+          text-align: center;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          color: $wed-text-service;
+          text-align: center;
+        }
+        td.text-it {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

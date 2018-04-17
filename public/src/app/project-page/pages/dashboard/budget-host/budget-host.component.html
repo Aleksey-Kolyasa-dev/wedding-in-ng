@@ -1,35 +1,50 @@
 <!--APP-STATUS-BAR-->
-<app-status-bar></app-status-bar>
+<!--<app-status-bar></app-status-bar>-->
 
 <!--APP-BODY-->
-<div class="wed-panel-def panel-animated-lt" style="height: 800px">
+<div class="wed-panel-def panel-animated-lt p-4" style="height: 800px;">
   <div class="row">
-    <div class="col-3">
-      <div class="tx-panel">
-        <header>
-          <h3>CURRENCY</h3>
-        </header>
-        <section>
-          <div>
-            1 USD = 1 UAH
-          </div>
-          <div class="">
-            <a class="wed-btn-xs wed-btn-success ml-4">
-              Edit
-              <span class="fa fa-edit"></span>
-            </a>
-          </div>
-        </section>
-      </div>
-    </div>
-    <div class="col-9">
-      <div class="currency-table"></div>
+    <div class="col-md-6 col-lg-4 mb-4">
+        <app-currency></app-currency>
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col-12">
-      <div class="currency-table"></div>
-    </div>
+  <div class="row mt-2" style="justify-content: center">
+    <div class="col-12 mb-2">
+            <div class="tx-panel">
+                <div class="">
+                    <table class="table table-striped wed-table-a">
+                        <thead>
+                        <tr>
+                            <th><span class="fa fa-check-square-o"></span></th>
+                            <th class="text-left">CATEGORY</th>
+                            <th>PLAN</th>
+                            <th>PAID</th>
+                            <th>TO PAY</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let item of [1,2,3,4,5,6]">
+                            <td>
+                                <span class="fa fa-check"></span>
+                            </td>
+                            <td class="text-left text-it">
+                                RESTAURANT
+                            </td>
+                            <td>
+                                3 000.0 UAH / 1 300.0 USD
+                            </td>
+                            <td>
+                                3 000.0 UAH / 1 300.0 USD
+                            </td>
+                            <td>
+                                3 000.0 UAH / 1 300.0 USD
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
   </div>
 
 </div>
