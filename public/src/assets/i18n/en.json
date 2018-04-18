@@ -1,6 +1,7 @@
 {
   "common": {
-    "edit": "Edit"
+    "edit": "Edit",
+    "notes": "Notes"
   },
   "header": {
     "auth-menu" : {

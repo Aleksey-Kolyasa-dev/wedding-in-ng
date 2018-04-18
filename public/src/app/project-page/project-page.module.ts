@@ -6,13 +6,14 @@ import {SharedModule} from '../@shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {ProjectMenuService} from '../@services/project/project-menu.service';
 
-import {ProjectHostComponent, ProjectMenuComponent, SubNavComponent, StatusBarComponent} from './index';
+import {ProjectHostComponent, ProjectMenuComponent, SubNavComponent, StatusBarComponent, NotesComponent} from './index';
 
 const COMPONENTS: any[] = [
     ProjectHostComponent,
     ProjectMenuComponent,
     SubNavComponent,
     StatusBarComponent,
+    NotesComponent,
 ];
 
 @NgModule({

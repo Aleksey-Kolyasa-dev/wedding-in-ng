@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-budget-host',
-  templateUrl: './budget-host.component.html',
-  styleUrls: ['./budget-host.component.scss']
+    selector: 'app-budget-host',
+    templateUrl: './budget-host.component.html',
+    styleUrls: ['./budget-host.component.scss']
 })
 export class BudgetHostComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+    }
 }
