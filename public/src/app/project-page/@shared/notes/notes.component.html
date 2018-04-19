@@ -1,18 +1,55 @@
 <!--NOTES-->
 <div class="notes-block" [ngClass]="notesActive ? 'notes-block-show' : 'notes-block-hide'">
-  <div>
     <div>
-      <button class="wed-btn-sm wed-btn-primary btn-block m-0"
-              (click)="notesToggle()">
-        <span class="notes-label">{{"common.notes" | translate}}</span>
-      </button>
+        <div>
+            <button class="wed-btn-sm wed-btn-primary btn-block m-0 note-btn"
+                    (click)="notesToggle()">
+                <span class="notes-label">{{"common.notes" | translate}}</span>
+            </button>
+        </div>
+        <div>
+            <div class="wed-panel-def">
+                <section class="notes-body">
+                    <form>
+                        <div class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Recipient's username"
+                                   aria-label="Recipient's username"
+                                   aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="button">
+                                    <span class="fa fa-plus"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="notes-list mt-2 pr-2" style="display: block; height: 400px; overflow-y: scroll">
+                        <ul class="p-1">
+                            <li *ngFor="let item of [1,2,3,4,5]" class="mb-3 mt-2 alert-success p-2">
+                                <div style="display: flex; justify-content: space-between">
+                                    <div>
+                                        {{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}
+                                    </div>
+                                    <button class="wed-btn-xs wed-btn-default">
+                                        <span class="fa fa-close"></span>
+                                    </button>
+                                    <div *ngIf="false" class="btn-group">
+                                        <button class="wed-btn-xs wed-btn-danger">confirm</button>
+                                        <button class="wed-btn-xs wed-btn-primary">cancel</button>
+                                    </div>
+                                </div>
+                                <hr class="m-0">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam odio omnis quas qui quisquam rerum tempore.
+                            </span>
+
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </section>
+            </div>
+        </div>
     </div>
-    <div>
-      <div class="wed-panel-def">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores autem blanditiis cumque dignissimos excepturi incidunt ipsam nisi praesentium recusandae sed! Adipisci aperiam eos maxime nostrum nulla obcaecati porro quidem ut!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dignissimos doloremque ducimus eos est eveniet harum incidunt inventore magnam, molestiae, necessitatibus neque nobis numquam repudiandae tempore velit vitae voluptas!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque excepturi in ipsam iure, labore minima molestiae necessitatibus qui sunt. Accusamus adipisci alias architecto dolor hic nobis odio porro reiciendis!
-      </div>
-    </div>
-  </div>
 </div>

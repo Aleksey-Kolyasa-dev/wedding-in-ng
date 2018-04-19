@@ -2,7 +2,7 @@
   z-index: 0;
   display: flex;
   position: fixed;
-  top: 30%;
+  top: 35%;
   transition: all 0.6s;
 
   > div {
@@ -11,26 +11,59 @@
 
   div.wed-panel-def {
     border-top-left-radius: 0;
-  }
-
-  button {
+    box-shadow: 10px 15px 20px rgba(75, 74, 76, 0.78);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  button.note-btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 10px 10px 15px rgba(75, 74, 76, 0.78);
     padding: 15px;
+  }
+
+  form {
+    input {
+    }
   }
 
 }
 
 .notes-block-show {
-  left: 40%;
-
-  div.wed-panel-def {
-  }
+  left: 35%;
 }
+
 .notes-block-hide {
   right: 0;
+  //left:35%;
 
   div.wed-panel-def {
     display: none;
   }
+}
+
+.notes-body {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: #464646;
+    transition: all 0.6s;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1eee6;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(135, 200, 255, 0.76);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #79b6ea;
+  }
+
 }
