@@ -1,0 +1,28 @@
+@mixin scroll-bars() {
+  @mixin scroll-bar($width, $bg-main, $bg-track, $bg-thumb, $bg-thumb-hover) {
+    /* width */
+    ::-webkit-scrollbar {
+      width: $width;
+      background: $bg-main;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: $bg-track;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background:$bg-thumb; // rgba(135, 200, 255, 0.76);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: $bg-thumb-hover;// #79b6ea;
+    }
+  }
+
+  .scroll-bar-primary {
+    @include scroll-bar(5px, #464646, #f1eee6, rgba(135, 200, 255, 0.76), #79b6ea);
+  }
+}

@@ -6,6 +6,7 @@
 @import "panels";
 @import "positioning";
 @import "tables";
+@import "scroll-bars";
 
 @mixin index(){
   @include backgrounds();
@@ -15,4 +16,5 @@
   @include fonts();
   @include forms();
   @include tables();
+  @include scroll-bars();
 }

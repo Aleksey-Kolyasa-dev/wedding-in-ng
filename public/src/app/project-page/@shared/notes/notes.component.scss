@@ -28,6 +28,11 @@
     }
   }
 
+  li {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(75, 74, 76, 0.78);
+  }
+
 }
 
 .notes-block-show {
@@ -43,27 +48,30 @@
   }
 }
 
+
 .notes-body {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 5px;
-    background: #464646;
-    transition: all 0.6s;
-  }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1eee6;
-  }
+  .notes-list {
+    display: block;
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 15px;
+    padding-right: 15px;
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(135, 200, 255, 0.76);
-  }
+    ul {
+      padding: 10px;
+      list-style: none;
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #79b6ea;
-  }
+      li {
+        margin: 20px auto;
+        padding: 15px 15px 15px 25px;
 
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
 }

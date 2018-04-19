@@ -9,28 +9,31 @@
         </div>
         <div>
             <div class="wed-panel-def">
-                <section class="notes-body">
-                    <form>
-                        <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   placeholder="Recipient's username"
-                                   aria-label="Recipient's username"
-                                   aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-success" type="button">
-                                    <span class="fa fa-plus"></span>
-                                </button>
+                <section class="notes-body scroll-bar-primary">
+                    <!--FORM-->
+                    <form class="project-form">
+                        <div class="form-content">
+                            <div class="input-group">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Recipient's username"
+                                       aria-label="Recipient's username"
+                                       aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn wed-btn-success m-0 pl-3 pr-3" type="button">
+                                        <span class="fa fa-plus"></span>
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
                     </form>
-                    <div class="notes-list mt-2 pr-2" style="display: block; height: 400px; overflow-y: scroll">
-                        <ul class="p-1">
-                            <li *ngFor="let item of [1,2,3,4,5]" class="mb-3 mt-2 alert-success p-2">
-                                <div style="display: flex; justify-content: space-between">
-                                    <div>
-                                        {{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}
-                                    </div>
+                    <!--BODY-->
+                    <div class="notes-list">
+                        <ul>
+                            <li *ngFor="let item of [1,2,3,4,5]" class="alert alert-success">
+                                <header>
+                                    <span>{{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}</span>
                                     <button class="wed-btn-xs wed-btn-default">
                                         <span class="fa fa-close"></span>
                                     </button>
@@ -38,16 +41,14 @@
                                         <button class="wed-btn-xs wed-btn-danger">confirm</button>
                                         <button class="wed-btn-xs wed-btn-primary">cancel</button>
                                     </div>
-                                </div>
+                                </header>
                                 <hr class="m-0">
-                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam odio omnis quas qui quisquam rerum tempore.
-                            </span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam odio omnis quas qui quisquam rerum tempore.
+                            </p>
 
                             </li>
                         </ul>
-
                     </div>
-
                 </section>
             </div>
         </div>
