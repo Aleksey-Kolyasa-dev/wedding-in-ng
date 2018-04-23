@@ -1,7 +1,6 @@
 {
   "common": {
-    "edit": "Edit",
-    "notes": "Notes"
+    "edit": "Edit"
   },
   "header": {
     "auth-menu" : {
@@ -114,6 +113,10 @@
       "party": "PARTY",
       "other": "OTHER",
       "back": "Projects List"
+    },
+    "notes": {
+      "label": "Notes",
+      "pl": "Create a new note"
     },
     "dashboard": {
       "subMenu": {

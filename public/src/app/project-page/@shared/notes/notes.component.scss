@@ -1,3 +1,4 @@
+@import "../../../../assets/styles/colors";
 .notes-block {
   z-index: 0;
   display: flex;
@@ -19,24 +20,14 @@
   button.note-btn {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    box-shadow: 10px 10px 15px rgba(75, 74, 76, 0.78);
+    box-shadow: 10px 10px 15px #4b4a4c;
     padding: 15px;
-  }
-
-  form {
-    input {
-    }
-  }
-
-  li {
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(75, 74, 76, 0.78);
   }
 
 }
 
 .notes-block-show {
-  left: 35%;
+  left: 45%;
 }
 
 .notes-block-hide {
@@ -51,6 +42,14 @@
 
 .notes-body {
 
+  .nones-header {
+    h5 {
+      text-align: right;
+      font-style: italic;
+      color: $wed-text-header;
+    }
+    border-bottom: 2px solid $wed-primary;
+  }
   .notes-list {
     display: block;
     height: 400px;
@@ -62,9 +61,13 @@
       padding: 10px;
       list-style: none;
 
+      li:first-of-type {
+        margin-top: 0;
+      }
       li {
         margin: 20px auto;
-        padding: 15px 15px 15px 25px;
+        padding: 8px 15px 15px 25px;
+        border-radius: 5px;
 
         header {
           display: flex;

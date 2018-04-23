@@ -1,0 +1,41 @@
+@mixin shadows() {
+  @mixin b-shadow($index, $color) {
+    box-shadow: $index $index $index*2 $color;
+  }
+  @mixin t-shadow($index, $color) {
+    text-shadow: $index $index $index*2 $color;
+  }
+
+  .b-shadow-sm {
+    @include b-shadow(5px, #4b4a4c);
+  }
+
+  .b-shadow-md {
+    @include b-shadow(10px, #4b4a4c);
+  }
+
+  .shadow-effect {
+    position: relative;
+    &:before,
+    &:after {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 12px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width: 300px;
+      background: #3b3b3b;
+      box-shadow: 0 20px 20px #3b3b3b;
+      transform: rotate(-5deg);
+    }
+
+    &:after {
+      transform: rotate(5deg);
+      right: 10px;
+      left: auto;
+    }
+  }
+}
+

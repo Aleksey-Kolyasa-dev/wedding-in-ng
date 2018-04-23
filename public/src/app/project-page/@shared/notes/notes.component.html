@@ -4,36 +4,47 @@
         <div>
             <button class="wed-btn-sm wed-btn-primary btn-block m-0 note-btn"
                     (click)="notesToggle()">
-                <span class="notes-label">{{"common.notes" | translate}}</span>
+                <span class="notes-label">{{"PROJ.notes.label" | translate}}</span>
             </button>
         </div>
         <div>
             <div class="wed-panel-def">
                 <section class="notes-body scroll-bar-primary">
                     <!--FORM-->
-                    <form class="project-form">
-                        <div class="form-content">
-                            <div class="input-group">
-                                <input type="text"
-                                       class="form-control"
-                                       placeholder="Recipient's username"
-                                       aria-label="Recipient's username"
-                                       aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn wed-btn-success m-0 pl-3 pr-3" type="button">
-                                        <span class="fa fa-plus"></span>
-                                    </button>
+                    <div class="col-12">
+                        <header class="nones-header">
+                            <h5>
+                                Budget
+                                <span class="fa fa-sticky-note-o"></span>
+                            </h5>
+                        </header>
+                        <form class="project-form mb-1">
+                            <div class="form-content">
+                                <div class="input-group">
+                                    <input type="text"
+                                           class="form-control form-control-success border-right-0"
+                                           [placeholder]="'PROJ.notes.pl' | translate"
+                                           aria-label="Recipient's username"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button disabled='disabled' class="btn wed-btn-success m-0 pl-3 pr-3"
+                                                type="submit">
+                                            <span class="fa fa-plus"></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                     <!--BODY-->
                     <div class="notes-list">
                         <ul>
-                            <li *ngFor="let item of [1,2,3,4,5]" class="alert alert-success">
+                            <li *ngFor="let item of [1,2,3,4,5]" class="alert alert-success shadow-effect">
                                 <header>
-                                    <span>{{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}</span>
+                                    <span>
+                                        <span class="fa fa-map-pin"></span>
+                                        {{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}
+                                    </span>
                                     <button class="wed-btn-xs wed-btn-default">
                                         <span class="fa fa-close"></span>
                                     </button>
@@ -43,8 +54,10 @@
                                     </div>
                                 </header>
                                 <hr class="m-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam odio omnis quas qui quisquam rerum tempore.
-                            </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi
+                                    cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam
+                                    odio omnis quas qui quisquam rerum tempore.
+                                </p>
 
                             </li>
                         </ul>

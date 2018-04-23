@@ -51,6 +51,12 @@
     background: rgba(255, 255, 255, 0.8);
     padding: $index / 4;
   }
+  .wed-panel-silver{
+    display: inline-block;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #E5E5E5 0%, #fff 30%, #E5E5E5 150%);
+  }
 
   .panel-animated-lt {
     margin: 10px auto;
@@ -94,6 +100,5 @@
       @include tx-section();
     }
   }
-
 
 }
