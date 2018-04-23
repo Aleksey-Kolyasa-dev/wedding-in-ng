@@ -2,6 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {BudgetHostComponent} from './budget-host.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('BudgetHostComponent', () => {
     let component: BudgetHostComponent;
@@ -10,7 +11,9 @@ describe('BudgetHostComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [BudgetHostComponent],
-            imports: [],
+            imports: [
+                TranslateModule.forRoot(),
+            ],
             schemas: [NO_ERRORS_SCHEMA],
         })
             .compileComponents();

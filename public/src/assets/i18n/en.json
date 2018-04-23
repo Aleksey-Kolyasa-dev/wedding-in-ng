@@ -104,7 +104,8 @@
       "cat": "Category",
       "plan": "Plan",
       "paid": "Paid",
-      "to-pay": "To pay"
+      "to-pay": "To pay",
+      "total": "Total"
     },
     "menu": {
       "dashboard": "DASHBOARD",

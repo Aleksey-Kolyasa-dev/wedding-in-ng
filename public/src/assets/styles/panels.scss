@@ -80,12 +80,20 @@
     font-size: 150%;
     font-weight: 600;
   }
+  @mixin tx-footer() {
+    color: $wed-text-header;
+    background: #f1eee6;
+  }
   .tx-header {
     @include tx-header();
   }
   .tx-section {
     @include tx-section();
   }
+  .tx-footer {
+    @include tx-footer();
+  }
+
   .tx-panel {
     $size: 10px;
     width: 100%;
@@ -98,6 +106,12 @@
     }
     section {
       @include tx-section();
+    }
+    .footer {
+      @include tx-footer();
+      td {
+        @include tx-footer();
+      }
     }
   }
 
