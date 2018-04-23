@@ -100,6 +100,12 @@
     }
   },
   "PROJ": {
+    "common": {
+      "cat": "Category",
+      "plan": "Plan",
+      "paid": "Paid",
+      "to-pay": "To pay"
+    },
     "menu": {
       "dashboard": "DASHBOARD",
       "rest": "RESTAURANT",
