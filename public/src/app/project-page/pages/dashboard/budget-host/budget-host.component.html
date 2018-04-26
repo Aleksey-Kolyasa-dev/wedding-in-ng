@@ -11,57 +11,7 @@
         </div>
         <div class="row mt-2">
             <div class="col-12 mb-2">
-                <div class="tx-panel">
-                    <div>
-                        <table class="table table-striped wed-table-a">
-                            <!--header-->
-                            <thead>
-                            <tr>
-                                <th><span class="fa fa-check-square-o"></span></th>
-                                <th class="text-left">{{("PROJ.common.cat" | translate).toUpperCase()}}</th>
-                                <th>{{("PROJ.common.plan" | translate).toUpperCase()}}</th>
-                                <th>{{("PROJ.common.paid" | translate).toUpperCase()}}</th>
-                                <th>{{("PROJ.common.to-pay" | translate).toUpperCase()}}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <!--body-->
-                            <tr *ngFor="let item of [1,2,3,4,5,6]">
-                                <td>
-                                    <span class="fa fa-check"></span>
-                                </td>
-                                <td class="text-left text-it">
-                                    RESTAURANT
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                            </tr>
-                            <!--footer-->
-                            <tr class="footer">
-                                <td colspan="2">
-                                    <span>{{("PROJ.common.total" | translate).toUpperCase()}}</span>
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                                <td>
-                                    3 000.0 UAH / 1 300.0 USD
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <app-cat-table></app-cat-table>
             </div>
         </div>
     </div>
