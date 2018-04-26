@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormBuilder} from "@angular/forms";
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
     selector: 'app-currency-modal',
@@ -10,7 +10,7 @@ import {FormBuilder} from "@angular/forms";
 export class CurrencyModalComponent implements OnInit {
 
     constructor(private activeModal: NgbActiveModal,
-                private formBuilder: FormBuilder,) {
+                private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {

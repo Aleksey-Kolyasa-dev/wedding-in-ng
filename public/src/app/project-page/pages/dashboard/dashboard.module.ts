@@ -27,7 +27,6 @@ const COMPONENTS: any[] = [
         TranslateModule,
         DashboardRoutingModule,
         ProjectPageModule,
-        // NgbModalModule,
     ],
     declarations: [COMPONENTS],
     providers: [
