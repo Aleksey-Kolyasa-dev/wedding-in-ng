@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CurrencyComponent } from './currency.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 
 describe('CurrencyComponent', () => {
   let component: CurrencyComponent;
@@ -12,6 +13,7 @@ describe('CurrencyComponent', () => {
       declarations: [ CurrencyComponent ],
         imports: [
             TranslateModule.forRoot(),
+            NgbModalModule.forRoot(),
         ]
     })
     .compileComponents();

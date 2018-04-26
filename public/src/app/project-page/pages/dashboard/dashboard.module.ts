@@ -6,13 +6,15 @@ import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../../@shared/shared.module';
 import {ProjectPageModule} from '../../project-page.module';
 
-import {DashboardComponent, BudgetHostComponent, CurrencyComponent, CatTableComponent} from './index';
+import {DashboardComponent, BudgetHostComponent, CurrencyComponent, CatTableComponent, CurrencyModalComponent} from './index';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 const COMPONENTS: any[] = [
     DashboardComponent,
     BudgetHostComponent,
     CurrencyComponent,
     CatTableComponent,
+    CurrencyModalComponent,
 ];
 
 
@@ -25,8 +27,13 @@ const COMPONENTS: any[] = [
         TranslateModule,
         DashboardRoutingModule,
         ProjectPageModule,
+        // NgbModalModule,
     ],
     declarations: [COMPONENTS],
+    providers: [
+        NgbModal,
+    ],
+    entryComponents: [CurrencyModalComponent],
     exports: [COMPONENTS],
 })
 export class DashboardModule {

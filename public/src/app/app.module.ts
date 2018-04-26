@@ -24,6 +24,7 @@ import {TokenInterceptor} from './@services/auth/token.interceptor';
 import {UserService} from './@services/user/user.service';
 import {ProjectService} from './@services/project/project.service';
 import {EventsService} from './@services/events.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -49,6 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        NgbModule.forRoot(),
         AppRoutingModule,
     ],
     providers: [
