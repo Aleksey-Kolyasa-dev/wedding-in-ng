@@ -1,11 +1,14 @@
 <app-fade-in-animation>
-    <div class="wed-panel-def">
-        <div class="modal-headers">
-            <h5>Add New Project</h5>
-            <button class="close fa fa-close" aria-label="Close" (click)="closeModal()"></button>
-        </div>
+    <div class="modal-panel-def">
+        <header class="modal-headers">
+            <h5>{{("PROJ.dashboard.budget.currency.label" | translate).toUpperCase()}}</h5>
+            <a class="wed-close" aria-label="Close" (click)="closeModal()">
+                <span class="fa fa-close"></span>
+            </a>
+        </header>
+        <hr>
         <div class="modal-bodys">
-            <button (click)="submit()">OK</button>
+            <button (click)="submit()">{{"common.edit" | translate}}</button>
             <!--<form novalidate [formGroup]="newProjectForm" (ngSubmit)="onSubmit(newProjectForm)">-->
             <!--<div class="row">-->
             <!--&lt;!&ndash;RIGHT COLUMN *START*&ndash;&gt;-->

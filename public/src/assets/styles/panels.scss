@@ -1,4 +1,16 @@
 @mixin panels() {
+  @mixin panel-def() {
+    $index: 4rem;
+    $bg-color: rgba(255, 255, 255, 0.6);
+    $brd-r: $index / 8;
+    border-radius: $brd-r;
+    background: rgba(255, 255, 255, 0.8);
+    padding: $index / 4;
+  }
+  @mixin modal-panel-def() {
+
+  }
+
   .auth-panel {
     $index: 4rem;
     background: rgba(255, 255, 255, 0.8);
@@ -44,12 +56,7 @@
   }
 
   .wed-panel-def {
-    $index: 4rem;
-    $bg-color: rgba(255, 255, 255, 0.6);
-    $brd-r: $index / 8;
-    border-radius: $brd-r;
-    background: rgba(255, 255, 255, 0.8);
-    padding: $index / 4;
+    @include panel-def();
   }
   .wed-panel-silver{
     display: inline-block;
@@ -57,18 +64,52 @@
     border-radius: 5px;
     background: linear-gradient(45deg, #E5E5E5 0%, #fff 30%, #E5E5E5 150%);
   }
-
-  @mixin wed-alert-aqua() {
-    color: rgb(22, 116, 118);
-    background: rgba(49, 191, 197, 0.25);
-  }
-
   .panel-animated-lt {
     margin: 10px auto;
     transition: all 0.8s;
     &:hover {
       margin: 15px auto;
     }
+  }
+
+  .modal-panel-def {
+    @include panel-def();
+    border: 3px solid $wed-primary;
+    header {
+      color: $wed-text-header;
+    }
+    a.wed-close {
+      display: block;
+      position: absolute;
+      background: #ffffffe8;
+      padding: 0 6px 3px 6px;
+      top: -16px;
+      right: 8px;
+      border-radius: 45%;
+      border: 3px solid $wed-primary;
+      transition: all 0.4s;
+      span {
+        color: $wed-primary !important;
+      }
+      &:hover {
+        background: rgba(33, 150, 243, 0.8);
+        span {
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+  // TX-PANEL
+  @mixin wed-alert-aqua() {
+    color: rgb(22, 116, 118);
+    background: rgba(49, 191, 197, 0.25);
   }
 
   @mixin tx-header() {
@@ -88,6 +129,7 @@
   @mixin tx-footer() {
     @include wed-alert-aqua();
   }
+
   .tx-header {
     @include tx-header();
   }

@@ -5,6 +5,7 @@ import {SharedModule} from '../../../../../../@shared/shared.module';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('CurrencyModalComponent', () => {
     let component: CurrencyModalComponent;
@@ -18,6 +19,7 @@ describe('CurrencyModalComponent', () => {
                 BrowserAnimationsModule,
                 FormsModule,
                 ReactiveFormsModule,
+                TranslateModule.forRoot(),
             ],
             providers: [
                 NgbActiveModal,
