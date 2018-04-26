@@ -1,129 +1,134 @@
-<div class="modal-header">
-  <h5>Add New Project</h5>
-  <button class="close ion-close" aria-label="Close" (click)="closeModal()"></button>
-</div>
-<div class="modal-body">
-  <!--<form novalidate [formGroup]="newProjectForm" (ngSubmit)="onSubmit(newProjectForm)">-->
-    <!--<div class="row">-->
-      <!--&lt;!&ndash;RIGHT COLUMN *START*&ndash;&gt;-->
-      <!--<div class="col-6">-->
-        <!--<h5>Project Name*</h5>-->
-        <!--<div class="form-group">-->
-        <!--</div>-->
+<app-fade-in-animation>
+    <div class="wed-panel-def">
+        <div class="modal-headers">
+            <h5>Add New Project</h5>
+            <button class="close fa fa-close" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-bodys">
+            <button (click)="submit()">OK</button>
+            <!--<form novalidate [formGroup]="newProjectForm" (ngSubmit)="onSubmit(newProjectForm)">-->
+            <!--<div class="row">-->
+            <!--&lt;!&ndash;RIGHT COLUMN *START*&ndash;&gt;-->
+            <!--<div class="col-6">-->
+            <!--<h5>Project Name*</h5>-->
+            <!--<div class="form-group">-->
+            <!--</div>-->
 
-        <!--<h5 class="mt-4">Project Description*</h5>-->
-        <!--<div class="form-group">-->
+            <!--<h5 class="mt-4">Project Description*</h5>-->
+            <!--<div class="form-group">-->
             <!--<textarea-->
-                    <!--formControlName="description"-->
-                    <!--class="form-control"-->
-                    <!--placeholder="Add description"-->
-                    <!--rows="14"-->
-                    <!--[class.form-control-danger]="newProjectForm.get('description').invalid && newProjectForm.get('description').touched"-->
-                    <!--[class.form-control-success]="newProjectForm.get('description').valid && newProjectForm.get('description').touched">-->
+            <!--formControlName="description"-->
+            <!--class="form-control"-->
+            <!--placeholder="Add description"-->
+            <!--rows="14"-->
+            <!--[class.form-control-danger]="newProjectForm.get('description').invalid && newProjectForm.get('description').touched"-->
+            <!--[class.form-control-success]="newProjectForm.get('description').valid && newProjectForm.get('description').touched">-->
             <!--</textarea>-->
-          <!--<div-->
-                  <!--*ngIf="newProjectForm.get('description').hasError('required') && newProjectForm.get('description').touched"-->
-                  <!--class="alert alert-danger err-block" role="alert">-->
+            <!--<div-->
+            <!--*ngIf="newProjectForm.get('description').hasError('required') && newProjectForm.get('description').touched"-->
+            <!--class="alert alert-danger err-block" role="alert">-->
             <!--Description field is required!-->
-          <!--</div>-->
-        <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
 
-        <!--<div class="row mt-4 on-board-form">-->
-          <!--<div class="col-3 mr-4">-->
+            <!--<div class="row mt-4 on-board-form">-->
+            <!--<div class="col-3 mr-4">-->
             <!--<h5>Secretary*</h5>-->
-          <!--</div>-->
-          <!--<div class="col-8">-->
-            <!--<div class="form-group">-->
-              <!--<select class="form-control"-->
-                      <!--formControlName="secretary"-->
-                      <!--[class.form-control-danger]="isSecretaryDisabled"-->
-                      <!--(focus)="isCrewSelectedFirst()">-->
-                <!--<option *ngFor="let secretary of selectedCrewBuffer" [ngValue]="secretary">{{secretary.email}}</option>-->
-              <!--</select>-->
             <!--</div>-->
-          <!--</div>-->
-          <!--<div *ngIf="isSecretaryDisabled"-->
-               <!--class="alert alert-danger err-block col-10" role="alert">-->
+            <!--<div class="col-8">-->
+            <!--<div class="form-group">-->
+            <!--<select class="form-control"-->
+            <!--formControlName="secretary"-->
+            <!--[class.form-control-danger]="isSecretaryDisabled"-->
+            <!--(focus)="isCrewSelectedFirst()">-->
+            <!--<option *ngFor="let secretary of selectedCrewBuffer" [ngValue]="secretary">{{secretary.email}}</option>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div *ngIf="isSecretaryDisabled"-->
+            <!--class="alert alert-danger err-block col-10" role="alert">-->
             <!--Select Employees First!-->
-          <!--</div>-->
-        <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
 
-      <!--</div>-->
-      <!--&lt;!&ndash;RIGHT COLUMN *END*&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;RIGHT COLUMN *END*&ndash;&gt;-->
 
-      <!--&lt;!&ndash;LEFT COLUMN *START*&ndash;&gt;-->
-      <!--<div class="col-6">-->
-        <!--<h5>Project Start Date*</h5>-->
-        <!--<div class="row">-->
-          <!--<div class="input-group col-12">-->
-          <!--</div>-->
-        <!--</div>-->
+            <!--&lt;!&ndash;LEFT COLUMN *START*&ndash;&gt;-->
+            <!--<div class="col-6">-->
+            <!--<h5>Project Start Date*</h5>-->
+            <!--<div class="row">-->
+            <!--<div class="input-group col-12">-->
+            <!--</div>-->
+            <!--</div>-->
 
-        <!--<h5 class="mt-5">Approximate Project Duration*</h5>-->
-        <!--<div class="row wrapper">-->
-          <!--<div class="demo-radio col-12" *ngFor="let duration of durationVariants">-->
+            <!--<h5 class="mt-5">Approximate Project Duration*</h5>-->
+            <!--<div class="row wrapper">-->
+            <!--<div class="demo-radio col-12" *ngFor="let duration of durationVariants">-->
             <!--<label class="custom-control custom-radio">-->
-              <!--<input type="radio" class="custom-control-input" value={{duration.value}} formControlName="duration"-->
-                     <!--name="duration">-->
-              <!--<span class="custom-control-indicator"></span>-->
-              <!--<span class="custom-control-description">{{duration.label}}</span>-->
+            <!--<input type="radio" class="custom-control-input" value={{duration.value}} formControlName="duration"-->
+            <!--name="duration">-->
+            <!--<span class="custom-control-indicator"></span>-->
+            <!--<span class="custom-control-description">{{duration.label}}</span>-->
             <!--</label>-->
-          <!--</div>-->
-        <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
 
-        <!--<h5 class="mt-4">Access to Project Employees*</h5>-->
-        <!--<div class="input-group search-block">-->
-          <!--<input type="text" class="form-control" (change)="isEmpty(crewInput.value)" #crewInput placeholder="Search by email">-->
-          <!--<span class="input-group-btn">-->
-                <!--<button class="btn btn-outline-secondary" (click)="employeesSearch(crewInput.value)" type="button">-->
-                  <!--<i class="nb-search"></i>-->
-                <!--</button>-->
-              <!--</span>-->
-        <!--</div>-->
-        <!--<div class="form-control input-group search-list" [class.flashing]="isFlashing">-->
-          <!--<div class="selected" *ngFor="let selected of selectedCrewBuffer">-->
+            <!--<h5 class="mt-4">Access to Project Employees*</h5>-->
+            <!--<div class="input-group search-block">-->
+            <!--<input type="text" class="form-control" (change)="isEmpty(crewInput.value)" #crewInput placeholder="Search by email">-->
+            <!--<span class="input-group-btn">-->
+            <!--<button class="btn btn-outline-secondary" (click)="employeesSearch(crewInput.value)" type="button">-->
+            <!--<i class="nb-search"></i>-->
+            <!--</button>-->
+            <!--</span>-->
+            <!--</div>-->
+            <!--<div class="form-control input-group search-list" [class.flashing]="isFlashing">-->
+            <!--<div class="selected" *ngFor="let selected of selectedCrewBuffer">-->
             <!--<div>-->
-              <!--<span>{{selected.email}}</span>-->
-              <!--<button class="close ion-close" aria-label="Close" (click)="deselectedCrew(selected)"></button>-->
+            <!--<span>{{selected.email}}</span>-->
+            <!--<button class="close ion-close" aria-label="Close" (click)="deselectedCrew(selected)"></button>-->
             <!--</div>-->
-          <!--</div>-->
-          <!--<ul>-->
+            <!--</div>-->
+            <!--<ul>-->
             <!--<li *ngFor="let crew of crewList | async as crewListSync; let i = index">-->
-              <!--<label class="custom-control custom-checkbox">-->
-                <!--<input type="checkbox" class="custom-control-input" (change)="selectedCrew(crew, i, crewListSync)"-->
-                       <!--name="crew">-->
-                <!--<span class="custom-control-indicator"></span>-->
-                <!--<span class="custom-control-description">{{crew.email}}</span>-->
-              <!--</label>-->
+            <!--<label class="custom-control custom-checkbox">-->
+            <!--<input type="checkbox" class="custom-control-input" (change)="selectedCrew(crew, i, crewListSync)"-->
+            <!--name="crew">-->
+            <!--<span class="custom-control-indicator"></span>-->
+            <!--<span class="custom-control-description">{{crew.email}}</span>-->
+            <!--</label>-->
             <!--</li>-->
-          <!--</ul>-->
-        <!--</div>-->
-
-        <!--<div class="row mt-4 on-board-form">-->
-          <!--<div class="col-6">-->
-            <!--<h5>Onboarding Form*</h5>-->
-          <!--</div>-->
-          <!--<div class="col-6">-->
-            <!--<div class="form-group">-->
-              <!--<select class="form-control" formControlName="onBoardingForm">-->
-                <!--<option *ngFor="let form of onBoardingForms" [ngValue]="form">{{form.name}}</option>-->
-              <!--</select>-->
+            <!--</ul>-->
             <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--&lt;!&ndash;LEFT COLUMN *END*&ndash;&gt;-->
-    <!--</div>-->
 
-    <!--&lt;!&ndash;FOOTER *START*&ndash;&gt;-->
-    <!--<div class="row footer-content">-->
-    <!--</div>-->
-    <!--&lt;!&ndash;FOOTER *END*&ndash;&gt;-->
+            <!--<div class="row mt-4 on-board-form">-->
+            <!--<div class="col-6">-->
+            <!--<h5>Onboarding Form*</h5>-->
+            <!--</div>-->
+            <!--<div class="col-6">-->
+            <!--<div class="form-group">-->
+            <!--<select class="form-control" formControlName="onBoardingForm">-->
+            <!--<option *ngFor="let form of onBoardingForms" [ngValue]="form">{{form.name}}</option>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;LEFT COLUMN *END*&ndash;&gt;-->
+            <!--</div>-->
 
-    <!--<button type="submit" class="btn btn-success btn-sm" [disabled]="">-->
-      <!--<i class="projects-add-new mr-1"></i>-->
-      <!--ADD NEW PROJECT-->
-    <!--</button>-->
-  <!--</form>-->
-  <h2>TEST</h2>
-</div>
+            <!--&lt;!&ndash;FOOTER *START*&ndash;&gt;-->
+            <!--<div class="row footer-content">-->
+            <!--</div>-->
+            <!--&lt;!&ndash;FOOTER *END*&ndash;&gt;-->
+
+            <!--<button type="submit" class="btn btn-success btn-sm" [disabled]="">-->
+            <!--<i class="projects-add-new mr-1"></i>-->
+            <!--ADD NEW PROJECT-->
+            <!--</button>-->
+            <!--</form>-->
+            <h2>TEST</h2>
+        </div>
+    </div>
+</app-fade-in-animation>

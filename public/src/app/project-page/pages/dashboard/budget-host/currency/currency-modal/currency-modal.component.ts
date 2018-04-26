@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
     selector: 'app-currency-modal',
@@ -7,14 +9,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CurrencyModalComponent implements OnInit {
 
-    constructor() {
+    constructor(private activeModal: NgbActiveModal,
+                private formBuilder: FormBuilder,) {
     }
 
     ngOnInit() {
     }
 
     closeModal() {
-        console.log('closed');
+        this.activeModal.close('CLOSED');
+    }
+    submit() {
+        this.activeModal.dismiss('OKKK');
     }
 
 }

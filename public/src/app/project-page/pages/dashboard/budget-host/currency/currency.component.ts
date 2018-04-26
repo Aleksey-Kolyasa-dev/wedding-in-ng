@@ -17,14 +17,13 @@ export class CurrencyComponent implements OnInit {
   setCurrency() {
       this.modalService
           .open(CurrencyModalComponent, {
-              size: 'lg',
-              container: 'app-fade-in-animation',
+              size: 'sm',
           })
           .result.then((data) => {
-          alert('OK');
+          console.log(data);
       })
           .catch((error) => {
-              alert('ERR');
+              console.log(error);
           });
   }
 
