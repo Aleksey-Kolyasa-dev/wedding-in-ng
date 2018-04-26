@@ -58,6 +58,11 @@
     background: linear-gradient(45deg, #E5E5E5 0%, #fff 30%, #E5E5E5 150%);
   }
 
+  @mixin wed-alert-aqua() {
+    color: rgb(22, 116, 118);
+    background: rgba(49, 191, 197, 0.25);
+  }
+
   .panel-animated-lt {
     margin: 10px auto;
     transition: all 0.8s;
@@ -81,8 +86,7 @@
     font-weight: 600;
   }
   @mixin tx-footer() {
-    color: $wed-text-header;
-    background: #f1eee6;
+    @include wed-alert-aqua();
   }
   .tx-header {
     @include tx-header();
