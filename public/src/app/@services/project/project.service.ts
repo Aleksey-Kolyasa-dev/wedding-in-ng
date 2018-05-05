@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-// import 'rxjs/add/operator/map';
 import {PROJECT_BASE_URL} from '../../@constants/api.constant';
 import {Project} from '../../@interfaces/project';
 

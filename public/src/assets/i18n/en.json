@@ -1,11 +1,12 @@
 {
   "common": {
-    "edit": "Edit"
+    "edit": "Edit",
+    "save": "Save"
   },
   "header": {
-    "auth-menu" : {
+    "auth-menu": {
       "login": "Sign In",
-      "register" : "Sign Up"
+      "register": "Sign Up"
     }
   },
   "MAIN": {
@@ -17,11 +18,11 @@
     "pr-panel": {
       "nav": {
         "new": "New project",
-        "arch" : "Archive"
+        "arch": "Archive"
       },
       "pr-list": {
         "wedding": "Wedding",
-        "fiance" : "fiance:",
+        "fiance": "fiance:",
         "fiancee": "fiancee:",
         "budget": "budget:",
         "edit": "Edit"
@@ -134,7 +135,27 @@
       },
       "budget": {
         "currency": {
-          "label": "Currency"
+          "label": "Currency",
+          "form": {
+            "natMoney": {
+              "label": "National Money",
+              "pl": "UAH, RUB, BLR ...",
+              "err": {
+                "req": "Field is required",
+                "max": null,
+                "pattern": null
+              }
+            },
+            "index": {
+              "label": "1 USD = ",
+              "pl": "enter currency index",
+              "err": {
+                "req": "Field is required",
+                "max": null,
+                "pattern": null
+              }
+            }
+          }
         }
       }
     }

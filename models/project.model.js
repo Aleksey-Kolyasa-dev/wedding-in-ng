@@ -15,6 +15,14 @@ const ProjectSchema = new Schema({
 		type: Number,
 		required: true,
 	},
+	nationalMoney: {
+		type: String,
+		default: 'NNN',
+	},
+	currencyIndex: {
+		type: Number,
+		default: 1,
+	},
 	weddingDate: {
 		type: Date,
 		required: true,

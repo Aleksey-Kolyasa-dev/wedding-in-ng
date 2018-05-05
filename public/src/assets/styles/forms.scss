@@ -87,4 +87,37 @@
       }
     }
   }
+
+  .general-form {
+    margin-top: 2rem;
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    div.general-form-content {
+
+      h5 {
+        color: $wed-text-service;
+      }
+      input,
+      textarea {
+        font-size: 120%;
+        font-weight: 600;
+        color: #464646;
+        border: 2px solid #eef0f4;
+        text-align: center;
+        background: #feffff;
+        &::placeholder {
+          color: #9ea5ad;
+          font-weight: normal;
+        }
+      }
+    }
+    button[type=submit] {
+      &:disabled {
+        cursor: not-allowed !important;
+      }
+    }
+  }
 }

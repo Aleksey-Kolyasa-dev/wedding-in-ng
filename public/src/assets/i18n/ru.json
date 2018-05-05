@@ -1,6 +1,7 @@
 {
   "common": {
-    "edit": "Изменить"
+    "edit": "Изменить",
+    "save": "Сохранить"
   },
   "header": {
     "auth-menu" : {
@@ -134,7 +135,27 @@
       },
       "budget": {
         "currency": {
-          "label": "Курс Валют"
+          "label": "Курс Валют",
+          "form": {
+            "natMoney": {
+              "label": "Национальная Валюта",
+              "pl": "UAH, RUB, BLR ...",
+              "err": {
+                "req": "Поле обязательно",
+                "max": null,
+                "pattern": null
+              }
+            },
+            "index": {
+              "label": "1 USD = ",
+              "pl": "введите курс валют",
+              "err": {
+                "req": "Поле обязательно",
+                "max": null,
+                "pattern": null
+              }
+            }
+          }
         }
       }
     }
