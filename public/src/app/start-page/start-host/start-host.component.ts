@@ -30,10 +30,11 @@ export class StartHostComponent implements OnInit {
         this.isLoggedIn();
     }
 
+    // TODO:
     isLoggedIn() {
         this.tokenService.isTokenSet()
-            // ? this.router.navigate(['/main'])
-            ? this.router.navigate(['/project/5a5e59ee0d84ab25442489f9/dashboard'])
+            ? this.router.navigate(['/main'])
+            // ? this.router.navigate(['/project/5a5e59ee0d84ab25442489f9/dashboard'])
             : this.fadeIn();
     }
 

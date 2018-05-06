@@ -27,7 +27,7 @@
                 <ul *ngIf="projects.length && !archiveView" class="col-11 w-projects-list">
                     <li *ngFor="let project of projects | orderByWeddingDate">
                         <div>
-                            <a routerLink="{{'../' + 'project/' + project._id + '/dashboard'}}">
+                            <a (click)="goToProject(project._id)">
                                 <span>
                                     {{ "MAIN.pr-panel.pr-list.wedding" | translate}}
                                     {{project.weddingDate | date : 'dd.MM.yyyy'}},

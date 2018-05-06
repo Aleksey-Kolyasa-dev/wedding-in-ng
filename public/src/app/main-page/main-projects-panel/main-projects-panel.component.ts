@@ -3,6 +3,7 @@ import {ProjectService} from '../../@services/project/project.service';
 import {Project} from '../../@interfaces/project';
 import {ToastService} from '../../@services/toast.service';
 import * as moment from 'moment';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-main-projects-panel',
@@ -16,7 +17,8 @@ export class MainProjectsPanelComponent implements OnInit {
     archiveView = false;
 
     constructor(private projectService: ProjectService,
-                private toastService: ToastService) {
+                private toastService: ToastService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -43,5 +45,9 @@ export class MainProjectsPanelComponent implements OnInit {
 
     showArchive(condition: boolean) {
         this.archiveView = condition;
+    }
+
+    goToProject(id: string) {
+        this.router.navigate([`../project/${id}/dashboard/ddd`]);
     }
 }
