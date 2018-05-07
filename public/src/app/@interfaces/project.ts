@@ -1,3 +1,5 @@
+// TODO: to correct interface dependencies
+
 export interface Project {
     fiance: string;
     fiancee: string;
@@ -7,4 +9,6 @@ export interface Project {
     telephone?: string;
     notes?: string;
     created?: Date;
+    nationalMoney?: string;
+    currencyIndex?: number;
 }

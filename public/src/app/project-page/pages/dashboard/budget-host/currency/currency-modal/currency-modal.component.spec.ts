@@ -6,6 +6,7 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslateModule} from '@ngx-translate/core';
+import {ProjectService} from "../../../../../../@services/project/project.service";
 
 describe('CurrencyModalComponent', () => {
     let component: CurrencyModalComponent;
@@ -23,6 +24,7 @@ describe('CurrencyModalComponent', () => {
             ],
             providers: [
                 NgbActiveModal,
+                ProjectService,
             ]
         })
             .compileComponents();

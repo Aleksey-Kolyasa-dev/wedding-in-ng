@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ProjectService} from "../../../../../../@services/project/project.service";
 
 @Component({
     selector: 'app-currency-modal',
@@ -11,11 +12,13 @@ export class CurrencyModalComponent implements OnInit {
     currencyForm: FormGroup;
 
     constructor(private activeModal: NgbActiveModal,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private projectService: ProjectService) {
         this.createForm();
     }
 
     ngOnInit() {
+        console.log(this.projectService.getCurrentProjectId());
     }
 
     createForm() {
@@ -42,11 +45,9 @@ export class CurrencyModalComponent implements OnInit {
     }
 
     onSubmit({value}) {
-        console.log(!isNaN(value.currencyIndex));
         if (value.nationalMoney && !isNaN(value.currencyIndex)) {
-
+            this.activeModal.dismiss(value);
         }
-        this.activeModal.dismiss('OKKK');
     }
 
 }

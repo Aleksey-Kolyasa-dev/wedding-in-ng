@@ -48,6 +48,7 @@ export class MainProjectsPanelComponent implements OnInit {
     }
 
     goToProject(id: string) {
+        this.projectService.setCurrentProjectId(id);
         this.router.navigate([`../project/${id}/dashboard/ddd`]);
     }
 }

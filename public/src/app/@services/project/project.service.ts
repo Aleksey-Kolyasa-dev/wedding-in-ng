@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {PROJECT_BASE_URL} from '../../@constants/api.constant';
 import {Project} from '../../@interfaces/project';
 
-
+let currentProjectId: string;
 
 @Injectable()
 export class ProjectService {
@@ -30,5 +30,15 @@ export class ProjectService {
 
     public removeProject(id: string): Observable<any> {
         return this.http.delete(`${PROJECT_BASE_URL}/${id}`);
+    }
+
+    public getCurrentProjectId(): string | null {
+        return currentProjectId
+        ? currentProjectId
+        : null;
+    }
+
+    public setCurrentProjectId(value: string){
+        currentProjectId = value;
     }
 }
