@@ -4,6 +4,8 @@ import {UserService} from '../../@services/user/user.service';
 import {AuthService} from '../../@services/auth/auth.service';
 import {EventsService} from '../../@services/events.service';
 import {User} from '../../@interfaces/user';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ProjectService} from '../../@services/project/project.service';
 
 @Component({
     selector: 'app-project-host',
@@ -27,7 +29,10 @@ export class ProjectHostComponent implements OnInit {
 
     constructor(private userService: UserService,
                 private authService: AuthService,
-                private eventsService: EventsService) {
+                private eventsService: EventsService,
+                private route: ActivatedRoute,
+                private router: Router,
+                private projectService: ProjectService) {
         // TODO:
         eventsService.eventListener$.subscribe(
             data => {
@@ -35,9 +40,11 @@ export class ProjectHostComponent implements OnInit {
                 // this.initCurrentUser();
             }).unsubscribe();
     }
+
     ngOnInit() {
         this.fadeIn();
         this.initCurrentUser();
+        this.setCurrentProjectId();
     }
 
     initCurrentUser() {
@@ -53,6 +60,19 @@ export class ProjectHostComponent implements OnInit {
                 this.authService.kickOff();
             }
         );
+    }
+
+    setCurrentProjectId() {
+        this.route.params.forEach(param => {
+            if (param && param.id) {
+                this.projectService.setCurrentProjectId(param.id);
+            }
+        });
+    }
+
+    backToProjects() {
+        this.router.navigate(['/main']);
+        this.projectService.setCurrentProjectId(null);
     }
 
     fadeIn() {

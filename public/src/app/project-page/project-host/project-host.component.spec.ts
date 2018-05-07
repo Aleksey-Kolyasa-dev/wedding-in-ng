@@ -11,6 +11,7 @@ import {ToasterService} from 'angular2-toaster';
 import {TokenService} from '../../@services/auth/token.service';
 import {EventsService} from '../../@services/events.service';
 import {TranslateModule} from '@ngx-translate/core';
+import {ProjectService} from '../../@services/project/project.service';
 
 describe('ProjectHostComponent', () => {
   let component: ProjectHostComponent;
@@ -33,6 +34,7 @@ describe('ProjectHostComponent', () => {
             ToasterService,
             TokenService,
             EventsService,
+            ProjectService,
         ],
     })
     .compileComponents();

@@ -6,7 +6,8 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslateModule} from '@ngx-translate/core';
-import {ProjectService} from "../../../../../../@services/project/project.service";
+import {ProjectService} from '../../../../../../@services/project/project.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('CurrencyModalComponent', () => {
     let component: CurrencyModalComponent;
@@ -17,6 +18,7 @@ describe('CurrencyModalComponent', () => {
             declarations: [CurrencyModalComponent],
             imports: [
                 SharedModule,
+                HttpClientModule,
                 BrowserAnimationsModule,
                 FormsModule,
                 ReactiveFormsModule,

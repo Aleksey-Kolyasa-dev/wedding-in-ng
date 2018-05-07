@@ -38,7 +38,7 @@ export class ProjectService {
         : null;
     }
 
-    public setCurrentProjectId(value: string){
+    public setCurrentProjectId(value: string | null): void {
         currentProjectId = value;
     }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ProjectService} from "../../../../../../@services/project/project.service";
+import {ProjectService} from '../../../../../../@services/project/project.service';
 
 @Component({
     selector: 'app-currency-modal',

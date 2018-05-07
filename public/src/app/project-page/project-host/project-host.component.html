@@ -5,7 +5,7 @@
         <section class="col-2">
             <app-project-menu></app-project-menu>
 
-            <a routerLink="/main" class="wed-btn-sm wed-btn-service back-to-projects">
+            <a (click)="backToProjects()" class="wed-btn-sm wed-btn-service back-to-projects">
                 <span class="fa fa-angle-double-left"> </span>
                 {{ "PROJ.menu.back" | translate}}
                 <span class="fa fa-list-ul"> </span>
