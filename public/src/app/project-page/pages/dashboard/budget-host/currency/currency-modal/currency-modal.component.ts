@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProjectService} from '../../../../../../@services/project/project.service';
+import {BudgetService} from "../../../../../../@services/project/pages/dashboard/budget.service";
+import {Currency} from "../../../../../../@interfaces/project";
 
 @Component({
     selector: 'app-currency-modal',
@@ -10,15 +12,32 @@ import {ProjectService} from '../../../../../../@services/project/project.servic
 })
 export class CurrencyModalComponent implements OnInit {
     currencyForm: FormGroup;
+    data: Currency;
 
     constructor(private activeModal: NgbActiveModal,
                 private fb: FormBuilder,
-                private projectService: ProjectService) {
+                private budgetService: BudgetService) {
         this.createForm();
     }
 
     ngOnInit() {
-        console.log(this.projectService.getCurrentProjectId());
+       this.dataInit();
+    }
+
+    dataInit() {
+        this.budgetService.getCurrency().subscribe(
+            data => {
+                this.data = data;
+                this.fillInForm(data);
+            }
+        );
+    }
+
+    fillInForm(data: Currency) {
+        this.currencyForm.patchValue({
+            nationalMoney: data.nationalMoney,
+            currencyIndex: data.currencyIndex,
+        });
     }
 
     createForm() {
@@ -46,7 +65,17 @@ export class CurrencyModalComponent implements OnInit {
 
     onSubmit({value}) {
         if (value.nationalMoney && !isNaN(value.currencyIndex)) {
-            this.activeModal.dismiss(value);
+            value.nationalMoney = value.nationalMoney.toUpperCase();
+
+            this.budgetService.setCurrency(value).subscribe(
+                () => {
+                    this.activeModal.dismiss();
+                },
+                (error) => {
+                    this.closeModal();
+                }
+            );
+
         }
     }
 

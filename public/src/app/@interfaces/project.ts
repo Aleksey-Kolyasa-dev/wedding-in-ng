@@ -12,3 +12,8 @@ export interface Project {
     nationalMoney?: string;
     currencyIndex?: number;
 }
+
+export interface Currency {
+    nationalMoney: string;
+    currencyIndex: number;
+}

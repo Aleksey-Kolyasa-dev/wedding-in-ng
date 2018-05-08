@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CurrencyModalComponent} from './currency-modal/currency-modal.component';
-import {ProjectService} from '../../../../../@services/project/project.service';
-import {Project} from '../../../../../@interfaces/project';
+import {Currency} from '../../../../../@interfaces/project';
+import {BudgetService} from "../../../../../@services/project/pages/dashboard/budget.service";
 
 @Component({
     selector: 'app-currency',
@@ -10,21 +10,20 @@ import {Project} from '../../../../../@interfaces/project';
     styleUrls: ['./currency.component.scss']
 })
 export class CurrencyComponent implements OnInit {
-    project: Project;
+    data: Currency;
 
     constructor(private modalService: NgbModal,
-                private projectService: ProjectService) {
+                private budgetService: BudgetService) {
     }
 
     ngOnInit() {
-        this.getProjectData();
+        this.getCurrencyData();
     }
 
-    getProjectData() {
-        const id = this.projectService.getCurrentProjectId();
-        this.projectService.getProject(id).subscribe(
-            project => {
-                this.project = project;
+    getCurrencyData() {
+        this.budgetService.getCurrency().subscribe(
+            data => {
+                this.data = data;
             }
         );
     }
@@ -34,12 +33,11 @@ export class CurrencyComponent implements OnInit {
             .open(CurrencyModalComponent, {
                 size: 'sm',
             })
-            .result.then((data) => {
-            this.getProjectData();
-        })
+            .result.then(() => {
+            this.getCurrencyData();
+            })
             .catch((error) => {
                 console.log(error);
             });
     }
-
 }

@@ -8,6 +8,7 @@ import {ProjectPageModule} from '../../project-page.module';
 
 import {DashboardComponent, BudgetHostComponent, CurrencyComponent, CatTableComponent, CurrencyModalComponent} from './index';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {BudgetService} from '../../../@services/project/pages/dashboard/budget.service';
 
 const COMPONENTS: any[] = [
     DashboardComponent,
@@ -31,6 +32,7 @@ const COMPONENTS: any[] = [
     declarations: [COMPONENTS],
     providers: [
         NgbModal,
+        BudgetService,
     ],
     entryComponents: [CurrencyModalComponent],
     exports: [COMPONENTS],

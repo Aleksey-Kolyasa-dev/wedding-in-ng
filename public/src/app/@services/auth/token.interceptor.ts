@@ -39,6 +39,8 @@ export class TokenInterceptor implements HttpInterceptor {
             if (err instanceof HttpErrorResponse) {
 
                 switch (err.status) {
+                    case 200:
+                        break;
                     case 401:
                         this.authService.kickOff();
                         break;
