@@ -17,3 +17,7 @@ export interface Currency {
     nationalMoney: string;
     currencyIndex: number;
 }
+export interface Note {
+    created: Date;
+    text: string;
+}

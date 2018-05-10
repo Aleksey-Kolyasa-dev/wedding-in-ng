@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./budget-host.component.scss']
 })
 export class BudgetHostComponent implements OnInit {
-
+    notesLink: 'dashboard/budget';
     constructor() {
     }
 
