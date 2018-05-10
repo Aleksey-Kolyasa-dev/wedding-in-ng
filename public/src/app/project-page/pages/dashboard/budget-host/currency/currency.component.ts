@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CurrencyModalComponent} from './currency-modal/currency-modal.component';
 import {Currency} from '../../../../../@interfaces/project';
-import {BudgetService} from "../../../../../@services/project/pages/dashboard/budget.service";
+import {BudgetService} from '../../../../../@services/project/pages/dashboard/budget.service';
 
 @Component({
     selector: 'app-currency',

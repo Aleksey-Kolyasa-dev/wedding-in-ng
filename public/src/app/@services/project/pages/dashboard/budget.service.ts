@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {CURRENCY_BASE_URL} from '../../../../@constants/api.constant';
 import {ProjectService} from '../../project.service';
-import {Currency} from "../../../../@interfaces/project";
+import {Currency} from '../../../../@interfaces/project';
 
 @Injectable()
 export class BudgetService {

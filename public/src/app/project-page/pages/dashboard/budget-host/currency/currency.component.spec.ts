@@ -6,7 +6,7 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {BudgetService} from '../../../../../@services/project/pages/dashboard/budget.service';
-import {ProjectService} from "../../../../../@services/project/project.service";
+import {ProjectService} from '../../../../../@services/project/project.service';
 
 describe('CurrencyComponent', () => {
   let component: CurrencyComponent;
