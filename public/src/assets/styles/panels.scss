@@ -7,9 +7,6 @@
     background: rgba(255, 255, 255, 0.8);
     padding: $index / 4;
   }
-  @mixin modal-panel-def() {
-
-  }
 
   .auth-panel {
     $index: 4rem;
@@ -72,6 +69,7 @@
     }
   }
 
+  // MODAL-PANEL
   .modal-panel-def {
     @include panel-def();
     border: 3px solid $wed-primary;
@@ -99,12 +97,6 @@
       }
     }
   }
-
-
-
-
-
-
 
   // TX-PANEL
   @mixin wed-alert-aqua() {

@@ -1,4 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {Note, NoteLink} from "../../../@interfaces/project";
+import {NotesService} from "../../../@services/project/notes.service";
 
 @Component({
     selector: 'app-notes',
@@ -6,17 +8,41 @@ import {Component, OnInit, Input} from '@angular/core';
     styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-    @Input() notesLink;
+    @Input() notesLink: NoteLink;
+    notesList: Note[];
     notesActive = false;
+    selected: string;
 
-    constructor() {
+    constructor(private noteService: NotesService) {
     }
 
     ngOnInit() {
+        this.getNotes();
+    }
+
+    getNotes() {
+        if (this.notesLink) {
+            this.noteService.getNotes(this.notesLink).subscribe(
+                notes => {
+                    this.notesList = notes;
+                    console.log(notes);
+                }
+            )
+        } else {
+            this.notesList = [];
+        }
     }
 
     notesToggle() {
         this.notesActive = !this.notesActive;
+    }
+
+    removeTriggerActivated(id) {
+        this.selected = id;
+    }
+
+    removeTriggerCancelled() {
+        this.selected = '';
     }
 
 }

@@ -39,6 +39,12 @@ const ProjectSchema = new Schema({
 	created: {
 		type: Date,
 	},
+	notesList: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: 'note',
+		},
+	],
 });
 
 exports.Project = mongoose.model(config.db.collections.project, ProjectSchema);

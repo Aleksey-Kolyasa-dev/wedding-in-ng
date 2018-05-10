@@ -14,7 +14,7 @@
                     <div class="col-12">
                         <header class="nones-header">
                             <h5>
-                                Budget
+                                {{notesLink.label | translate}}
                                 <span class="fa fa-sticky-note-o"></span>
                             </h5>
                         </header>
@@ -39,24 +39,26 @@
                     <!--BODY-->
                     <div class="notes-list">
                         <ul>
-                            <li *ngFor="let item of [1,2,3,4,5]" class="alert alert-success shadow-effect">
+                            <li *ngFor="let note of notesList; let i = index" class="alert alert-success shadow-effect">
                                 <header>
                                     <span>
                                         <span class="fa fa-map-pin"></span>
-                                        {{1233697894849 | date : "dd.MM.yyyy / hh:mm"}}
+                                        {{note.created | date : "dd.MM.yyyy / HH:mm"}}
                                     </span>
-                                    <button class="wed-btn-xs wed-btn-default">
-                                        <span class="fa fa-close"></span>
-                                    </button>
-                                    <div *ngIf="false" class="btn-group">
+
+                                    <div *ngIf="selected !== note._id">
+                                        <button class="wed-btn-xs wed-btn-default" (click)="removeTriggerActivated(note._id)">
+                                            <span class="fa fa-close"></span>
+                                        </button>
+                                    </div>
+                                    <div *ngIf="selected === note._id" class="btn-group">
                                         <button class="wed-btn-xs wed-btn-danger">confirm</button>
-                                        <button class="wed-btn-xs wed-btn-primary">cancel</button>
+                                        <button class="wed-btn-xs wed-btn-primary" (click)="removeTriggerCancelled()">cancel</button>
                                     </div>
                                 </header>
                                 <hr class="m-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis commodi
-                                    cupiditate dicta dolorem doloribus eos, esse ex fugiat, in ipsum molestias numquam
-                                    odio omnis quas qui quisquam rerum tempore.
+                                <p>
+                                    {{note.text}}
                                 </p>
 
                             </li>

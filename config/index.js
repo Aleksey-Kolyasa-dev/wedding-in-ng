@@ -10,6 +10,7 @@ exports.config = {
 		collections: {
 			user: 'user',
 			project: 'project',
+			note: 'note',
 		},
 	},
 	get _dbProd() {

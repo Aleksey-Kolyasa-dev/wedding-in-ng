@@ -17,7 +17,13 @@ export interface Currency {
     nationalMoney: string;
     currencyIndex: number;
 }
-export interface Note {
-    created: Date;
+
+export interface NoteLink {
+    category: string;
+    subCategory: string;
+    label: string;
+}
+export interface Note extends NoteLink{
     text: string;
+    created?: Date;
 }

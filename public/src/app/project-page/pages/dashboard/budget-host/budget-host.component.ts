@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NoteLink} from "../../../../@interfaces/project";
 
 @Component({
     selector: 'app-budget-host',
@@ -6,7 +7,11 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./budget-host.component.scss']
 })
 export class BudgetHostComponent implements OnInit {
-    notesLink: 'dashboard/budget';
+    notesLink: NoteLink = {
+        category: 'dashboard',
+        subCategory: 'budget',
+        label: 'PROJ.dashboard.subMenu.bud',
+    };
     constructor() {
     }
 
