@@ -5,9 +5,9 @@ const customError = require('../utils/errors');
 const moment = require('moment');
 
 exports.getNotes = async (req, res, next) => {
-	const { id, category, subCategory } = req.params;
+	const { projectId, category, subCategory } = req.params;
 	try {
-		await Project.findById(id)
+		await Project.findById(projectId)
 			.populate('notesList')
 			.then(
 				(project) => {
@@ -29,7 +29,7 @@ exports.newNote = async (req, res, next) => {
 	}
 
 	try {
-		const _project = await Project.findById(req.params['id']);
+		const _project = await Project.findById(req.params['projectId']);
 
 		const newNote = await new Note({
 			category: category,
@@ -48,6 +48,20 @@ exports.newNote = async (req, res, next) => {
 	} catch (err) {
 		// TODO: check
 		// next(customError(`Not found! \ Не найдено!`, 404));
+		next(err);
+	}
+};
+
+exports.removeNote = async (req, res, next) => {
+	const { projectId, noteId } = req.params;
+
+	try{
+		 const _note = await Note.remove({ _id: noteId });
+		const _project = await Project.findById(projectId);
+		_project.notesList = _project.notesList.map(note => note._id !== noteId);
+		_project.save();
+		res.send('OK');
+	} catch (err) {
 		next(err);
 	}
 };

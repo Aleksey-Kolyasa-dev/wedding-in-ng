@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Note, NoteLink} from "../../../@interfaces/project";
 import {NotesService} from "../../../@services/project/notes.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
     selector: 'app-notes',
@@ -9,15 +10,46 @@ import {NotesService} from "../../../@services/project/notes.service";
 })
 export class NotesComponent implements OnInit {
     @Input() notesLink: NoteLink;
+    notesForm: FormGroup;
     notesList: Note[];
     notesActive = false;
     selected: string;
 
-    constructor(private noteService: NotesService) {
+    constructor(private noteService: NotesService,
+                private fb: FormBuilder,) {
+        this.createForm();
     }
 
     ngOnInit() {
         this.getNotes();
+    }
+
+    createForm() {
+        this.notesForm = this.fb.group(
+            {
+                text: [
+                    '',
+                    Validators.compose([
+                        Validators.required,
+                    ]),
+                ],
+            }
+        );
+    }
+
+    onSubmit({value}) {
+        const note = {
+            category: this.notesLink.category,
+            subCategory: this.notesLink.subCategory || this.notesLink.category,
+            label: this.notesLink.label,
+            text: value.text,
+        };
+        this.noteService.postNote(note).subscribe(
+            success => {
+                console.log(success);
+                this.getNotes();
+            }
+        )
     }
 
     getNotes() {
@@ -25,7 +57,6 @@ export class NotesComponent implements OnInit {
             this.noteService.getNotes(this.notesLink).subscribe(
                 notes => {
                     this.notesList = notes;
-                    console.log(notes);
                 }
             )
         } else {
@@ -39,6 +70,15 @@ export class NotesComponent implements OnInit {
 
     removeTriggerActivated(id) {
         this.selected = id;
+    }
+
+    removeConfirmed(id) {
+        this.noteService.deleteNote(id).subscribe(
+            success => {
+                console.log(success);
+                this.getNotes();
+            }
+        );
     }
 
     removeTriggerCancelled() {

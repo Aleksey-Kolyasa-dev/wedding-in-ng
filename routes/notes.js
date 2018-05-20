@@ -2,8 +2,9 @@
 const Router = require('express').Router();
 const ctrl = require('../controllers/notes.controller');
 
-Router.get('/:id/:category/:subCategory', ctrl.getNotes);
-Router.post('/:id/:category/:subCategory', ctrl.newNote);
+Router.get('/:projectId/:category/:subCategory', ctrl.getNotes);
+Router.post('/:projectId', ctrl.newNote);
+Router.delete('/:projectId/:noteId', ctrl.removeNote);
 // Router.put('/budget/currency/:id', ctrl.setCurrency);
 
 

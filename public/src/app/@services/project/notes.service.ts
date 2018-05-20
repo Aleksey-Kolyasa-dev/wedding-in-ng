@@ -20,6 +20,6 @@ export class NotesService {
     }
 
     public deleteNote(noteId: string): Observable<any> {
-        return this.http.get(`${NOTES_BASE_URL}/${this.projectService.getCurrentProjectId()}/${noteId}/`);
+        return this.http.delete(`${NOTES_BASE_URL}/${this.projectService.getCurrentProjectId()}/${noteId}`);
     }
 }
