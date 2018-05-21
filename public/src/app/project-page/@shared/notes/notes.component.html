@@ -2,9 +2,11 @@
 <div class="notes-block" [ngClass]="notesActive ? 'notes-block-show' : 'notes-block-hide'">
     <div>
         <div>
-            <button class="wed-btn-sm wed-btn-primary btn-block m-0 note-btn"
+            <button class="wed-btn-sm btn-block m-0 note-btn"
+                    [ngClass]="notesActive ? 'wed-btn-danger' : 'wed-btn-primary'"
                     (click)="notesToggle()">
-                <span class="notes-label">{{"PROJ.notes.label" | translate}}</span>
+                <span class="fa fa-close" *ngIf="notesActive"></span>
+                <span>{{"PROJ.notes.label" | translate}}</span>
             </button>
         </div>
         <div>
@@ -25,14 +27,21 @@
                             <div class="form-content">
                                 <div class="input-group">
                                     <input type="text"
-                                           class="form-control form-control-success border-right-0"
-                                           [placeholder]="'PROJ.notes.pl' | translate"
                                            formControlName="text"
-                                           aria-label="Recipient's username"
-                                           aria-describedby="basic-addon2">
+                                           [placeholder]="'PROJ.notes.pl' | translate"
+                                           class="form-control form-control-success border-right-0"
+                                           [class.form-control-danger]="notesForm.get('text').invalid &&
+                                   notesForm.get('text').touched"
+                                           [class.form-control-success]="notesForm.get('text').valid ||
+                                   !notesForm.get('text').touched">
                                     <div class="input-group-append">
-                                        <button [disabled]='notesForm.invalid' class="btn wed-btn-success m-0 pl-3 pr-3"
-                                                type="submit">
+                                        <button type="submit"
+                                                [disabled]='notesForm.invalid'
+                                                class="btn m-0 pl-3 pr-3"
+                                                [class.wed-btn-danger]="notesForm.get('text').invalid &&
+                                   notesForm.get('text').touched"
+                                                [class.wed-btn-success]="notesForm.get('text').valid ||
+                                   !notesForm.get('text').touched">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </div>
@@ -40,24 +49,33 @@
                             </div>
                         </form>
                     </div>
+
                     <!--BODY-->
                     <div class="notes-list">
                         <ul>
-                            <li *ngFor="let note of notesList; let i = index" class="alert alert-success shadow-effect">
+                            <li *ngFor="let note of notesList | orderByNoteDate"
+                                class="alert alert-success shadow-effect">
                                 <header>
-                                    <span>
+                                    <div>
                                         <span class="fa fa-map-pin"></span>
                                         {{note.created | date : "dd.MM.yyyy / HH:mm"}}
-                                    </span>
+                                    </div>
 
                                     <div *ngIf="selected !== note._id">
-                                        <button class="wed-btn-xs wed-btn-default" (click)="removeTriggerActivated(note._id)">
+                                        <button class="wed-btn-xs wed-btn-default"
+                                                (click)="removeTriggerActivated(note._id)">
                                             <span class="fa fa-close"></span>
                                         </button>
                                     </div>
                                     <div *ngIf="selected === note._id" class="btn-group">
-                                        <button class="wed-btn-xs wed-btn-danger" (click)="removeConfirmed(note._id)">confirm</button>
-                                        <button class="wed-btn-xs wed-btn-primary" (click)="removeTriggerCancelled()">cancel</button>
+                                        <button class="wed-btn-xs wed-btn-danger"
+                                                (click)="removeConfirmed(note._id)">
+                                            confirm
+                                        </button>
+                                        <button class="wed-btn-xs wed-btn-primary"
+                                                (click)="removeTriggerCancelled()">
+                                            cancel
+                                        </button>
                                     </div>
                                 </header>
                                 <hr class="m-0">

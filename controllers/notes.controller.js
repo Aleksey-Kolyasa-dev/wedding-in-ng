@@ -44,10 +44,8 @@ exports.newNote = async (req, res, next) => {
 		_project.notesList.push(newNote._id);
 		_project.save();
 
-		res.sendStatus(200);
+		res.json(newNote);
 	} catch (err) {
-		// TODO: check
-		// next(customError(`Not found! \ Не найдено!`, 404));
 		next(err);
 	}
 };
@@ -55,12 +53,13 @@ exports.newNote = async (req, res, next) => {
 exports.removeNote = async (req, res, next) => {
 	const { projectId, noteId } = req.params;
 
-	try{
-		 const _note = await Note.remove({ _id: noteId });
+	try {
+		await Note.remove({ _id: noteId });
 		const _project = await Project.findById(projectId);
-		_project.notesList = _project.notesList.map(note => note._id !== noteId);
+		const index = _project.notesList.indexOf(noteId);
+		_project.notesList.splice(index, 1);
 		_project.save();
-		res.send('OK');
+		res.json(_project.notesList);
 	} catch (err) {
 		next(err);
 	}

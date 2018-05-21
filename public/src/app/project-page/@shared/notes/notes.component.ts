@@ -16,7 +16,7 @@ export class NotesComponent implements OnInit {
     selected: string;
 
     constructor(private noteService: NotesService,
-                private fb: FormBuilder,) {
+                private fb: FormBuilder) {
         this.createForm();
     }
 
@@ -44,10 +44,11 @@ export class NotesComponent implements OnInit {
             label: this.notesLink.label,
             text: value.text,
         };
+
         this.noteService.postNote(note).subscribe(
             success => {
-                console.log(success);
                 this.getNotes();
+                this.createForm();
             }
         )
     }

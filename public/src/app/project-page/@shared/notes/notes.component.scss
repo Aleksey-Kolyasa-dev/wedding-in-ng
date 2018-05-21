@@ -38,7 +38,6 @@
   }
 }
 
-
 .notes-body {
 
   .nones-header {
@@ -72,8 +71,20 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          div:first-of-type {
+            min-width: 280px;
+          }
         }
       }
+    }
+  }
+}
+
+form {
+  input {
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
     }
   }
 }

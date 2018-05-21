@@ -6,6 +6,13 @@ body {
   letter-spacing: 1px;
 }
 
+input,
+button,
+a {
+  &:focus{
+    outline: none !important;
+  }
+}
 .modal-content {
   background: none !important;
   border: 0 !important;
