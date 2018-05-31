@@ -5,7 +5,8 @@ const customError = require('../utils/errors');
 const moment = require('moment');
 
 exports.getNotes = async (req, res, next) => {
-	const { projectId, category, subCategory } = req.params;
+	const { projectId } = req.params;
+	const { category, subCategory } = req.query;
 	try {
 		await Project.findById(projectId)
 			.populate('notesList')

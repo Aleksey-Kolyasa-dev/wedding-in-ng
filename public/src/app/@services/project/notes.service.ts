@@ -13,7 +13,7 @@ export class NotesService {
 
     public getNotes(notesLink: NoteLink): Observable<any> {
         return this.http.get(
-            `${NOTES_BASE_URL}/${this.projectService.getCurrentProjectId()}/${notesLink.category}/${notesLink.subCategory}/`
+            `${NOTES_BASE_URL}/${this.projectService.getCurrentProjectId()}?category=${notesLink.category}&subCategory=${notesLink.subCategory}`
         );
     }
 
