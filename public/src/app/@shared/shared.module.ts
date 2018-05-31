@@ -3,7 +3,14 @@ import {CommonModule} from '@angular/common';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
 import {LanguageService} from '../@services/language.service';
 
-import {LanguageComponent, HeaderComponent, UserMenuComponent, FadeInAnimationComponent, OrderByWeddingDatePipe, OrderByNoteDatePipe} from './index';
+import {
+    LanguageComponent,
+    HeaderComponent,
+    UserMenuComponent,
+    FadeInAnimationComponent,
+    OrderByWeddingDatePipe,
+    OrderByNoteDatePipe
+} from './index';
 
 const COMPONENTS: any[] = [
     LanguageComponent,

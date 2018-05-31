@@ -23,7 +23,7 @@ export interface NoteLink {
     subCategory: string;
     label: string;
 }
-export interface Note extends NoteLink{
+export interface Note extends NoteLink {
     text: string;
     created?: Date;
 }

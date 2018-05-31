@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Note, NoteLink} from "../../../@interfaces/project";
-import {NotesService} from "../../../@services/project/notes.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Note, NoteLink} from '../../../@interfaces/project';
+import {NotesService} from '../../../@services/project/notes.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-notes',
@@ -50,7 +50,7 @@ export class NotesComponent implements OnInit {
                 this.getNotes();
                 this.createForm();
             }
-        )
+        );
     }
 
     getNotes() {
@@ -59,7 +59,7 @@ export class NotesComponent implements OnInit {
                 notes => {
                     this.notesList = notes;
                 }
-            )
+            );
         } else {
             this.notesList = [];
         }
@@ -76,14 +76,13 @@ export class NotesComponent implements OnInit {
     removeConfirmed(id) {
         this.noteService.deleteNote(id).subscribe(
             success => {
-                console.log(success);
                 this.getNotes();
             }
         );
     }
 
     removeTriggerCancelled() {
-        this.selected = '';
+        this.selected = null;
     }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NoteLink} from "../../../../@interfaces/project";
+import {NoteLink} from '../../../../@interfaces/project';
 
 @Component({
     selector: 'app-budget-host',
@@ -17,5 +17,4 @@ export class BudgetHostComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }

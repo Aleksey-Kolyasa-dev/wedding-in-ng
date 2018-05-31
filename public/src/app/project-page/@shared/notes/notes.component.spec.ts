@@ -3,10 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NotesComponent } from './notes.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {NotesService} from '../../../@services/project/notes.service';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {NO_ERRORS_SCHEMA} from "@angular/core";
-import {HttpModule} from "@angular/http";
-import {ProjectService} from "../../../@services/project/project.service";
+import {HttpClientModule} from '@angular/common/http';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {ProjectService} from '../../../@services/project/project.service';
 
 describe('NotesComponent', () => {
   let component: NotesComponent;
@@ -34,8 +33,7 @@ describe('NotesComponent', () => {
     fixture.detectChanges();
   });
 
-  //TODO:
-
+  // TODO:
   // it('should create', () => {
   //   expect(component).toBeTruthy();
   // });

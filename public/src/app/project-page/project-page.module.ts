@@ -7,7 +7,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {ProjectMenuService} from '../@services/project/project-menu.service';
 
 import {ProjectHostComponent, ProjectMenuComponent, SubNavComponent, StatusBarComponent, NotesComponent} from './index';
-import {NotesService} from "../@services/project/notes.service";
+import {NotesService} from '../@services/project/notes.service';
 
 const COMPONENTS: any[] = [
     ProjectHostComponent,
