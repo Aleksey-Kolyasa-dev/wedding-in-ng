@@ -2,6 +2,7 @@
 const moment = require('moment');
 const { Project } = require('../models/project.model');
 const { User } = require('../models/user.model');
+const { Note } = require('../models/note.model');
 const customError = require('../utils/errors');
 
 exports.newProject = async (req, res, next) => {
@@ -74,11 +75,16 @@ exports.updateProject = async (req, res, next) => {
 exports.removeProject = async (req, res, next) => {
 	const { id } = req.params;
 	try {
+		// Remove Project from User Projects List
 		const _user = await User.findById(req.user._id);
-
 		_user.projects.splice(_user.projects.indexOf(id), 1);
-
 		await _user.save();
+
+		// Remove All Linked Notes
+		const _project = await Project.findById(id);
+		await Note.remove({ _id: { $in: _project.notesList } });
+
+		// Remove Project
 		await Project.remove({ _id: id });
 
 		res.json('ok');
