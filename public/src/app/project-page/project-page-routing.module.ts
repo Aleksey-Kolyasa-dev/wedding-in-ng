@@ -3,10 +3,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
 import {ProjectHostComponent} from './index';
+import {ProjectHostGuard} from '../@services/guards/project/project-host-guard.service';
 
 const routes: Routes = [
     {
         path: 'project/:id',
+        canActivate: [ProjectHostGuard],
         component: ProjectHostComponent,
         children: [
             {path: 'dashboard', loadChildren: 'app/project-page/pages/dashboard/dashboard.module#DashboardModule'},

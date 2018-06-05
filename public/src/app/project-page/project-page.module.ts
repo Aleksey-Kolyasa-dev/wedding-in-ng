@@ -8,6 +8,7 @@ import {ProjectMenuService} from '../@services/project/project-menu.service';
 
 import {ProjectHostComponent, ProjectMenuComponent, SubNavComponent, StatusBarComponent, NotesComponent} from './index';
 import {NotesService} from '../@services/project/notes.service';
+import {ProjectHostGuard} from '../@services/guards/project/project-host-guard.service';
 
 const COMPONENTS: any[] = [
     ProjectHostComponent,
@@ -31,6 +32,7 @@ const COMPONENTS: any[] = [
     providers: [
         ProjectMenuService,
         NotesService,
+        ProjectHostGuard,
     ],
 })
 export class ProjectPageModule {

@@ -20,7 +20,7 @@ export class ProjectService {
         return this.http.get(`${PROJECT_BASE_URL}/`);
     }
 
-    public getProject(id: string): Observable<any> {
+    public getSingleProject(id: string): Observable<any> {
         return this.http.get(`${PROJECT_BASE_URL}/${id}`);
     }
 

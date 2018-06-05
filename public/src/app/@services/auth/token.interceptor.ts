@@ -48,6 +48,11 @@ export class TokenInterceptor implements HttpInterceptor {
                         this.toastService.error(`Forbidden! \ Доступ запрещен!`);
                         break;
                     case 404:
+                        if (err.error && err.error === 'Project not found!  Проект не найден!') {
+                            this.router.navigate(['/main']);
+                            this.toastService.error(err.error);
+                            break;
+                        }
                         this.toastService.error(`Not found! \ Не найдено!`);
                         break;
                     case 500:

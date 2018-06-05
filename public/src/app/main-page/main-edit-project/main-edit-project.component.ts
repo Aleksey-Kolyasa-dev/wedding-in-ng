@@ -81,7 +81,7 @@ export class MainEditProjectComponent implements OnInit {
 
     loadProject() {
         this.activatedRoute.params.forEach(({id}: Params) => {
-            this.projectService.getProject(id).subscribe(
+            this.projectService.getSingleProject(id).subscribe(
                 project => {
                     this.fillInForm(project);
                     this.id = project._id;
