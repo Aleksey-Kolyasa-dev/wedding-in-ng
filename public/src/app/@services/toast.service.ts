@@ -15,8 +15,16 @@ export class ToastService {
         bodyOutputType: BodyOutputType.TrustedHtml;
     };
 
-    toast(body: string): void {
+    black(body: string): void {
         this.pop('default', this.getMessage(body));
+    }
+
+    wait(body: string): void {
+        this.pop('wait', this.getMessage(body));
+    }
+
+    info(body: string): void {
+        this.pop('info', this.getMessage(body));
     }
 
     success(body: string): void {

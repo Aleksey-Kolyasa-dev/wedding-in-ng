@@ -1,9 +1,24 @@
+// Alpha colours
 $wed-danger: rgba(179, 5, 5, 0.39);
 $wed-warning: rgba(255, 152, 0, 0.59);
 $wed-success: rgba(25, 218, 51, 0.54);
 $wed-primary: rgba(33, 150, 243, 0.54);
 $wed-service: rgba(103, 58, 183, 0.64);
 $wed-default: rgba(120, 123, 126, 0.56);
+
+// Hard colours
+$wed-hd-danger: #ff4c6a;
+$wed-hd-warning: #ffa100;
+$wed-hd-success: #40dc7e;
+$wed-hd-primary: #4ca6ff;
+$wed-hd-service: #8a7fff;
+
+// Gradient colours
+$wed-grd-danger: linear-gradient(to right,#ff4ca6,#ff4c6a);
+$wed-grd-warning: linear-gradient(to right,#fc0,#ffa100);
+$wed-grd-success: linear-gradient(to right,#40dcb2,#40dc7e);
+$wed-grd-primary: linear-gradient(to right,#4cc4ff,#4ca6ff);
+$wed-grd-service: linear-gradient(to right,#b57fff,#8a7fff);
 
 
 /*TEXT*/

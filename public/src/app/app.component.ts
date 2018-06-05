@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
             newestOnTop: true,
             tapToDismiss: true,
             preventDuplicates: false,
-            animation: 'fade',
+            animation: 'flyRight',
             limit: 5,
             mouseoverTimerStop: true,
         });

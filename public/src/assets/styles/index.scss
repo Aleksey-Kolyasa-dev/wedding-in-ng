@@ -6,6 +6,7 @@
 @import "panels";
 @import "positioning";
 @import "tables";
+@import "toaster.custom";
 @import "scroll-bars";
 @import "shadows";
 
@@ -17,6 +18,7 @@
   @include fonts();
   @include forms();
   @include tables();
+  @include toaster-custom();
   @include scroll-bars();
   @include shadows();
 }

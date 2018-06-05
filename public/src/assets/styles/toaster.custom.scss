@@ -1,0 +1,19 @@
+@import "colors";
+@mixin toaster-custom() {
+
+  .toast-error {
+    background-color: $wed-hd-danger !important;
+  }
+  .toast-warning {
+    background-color: $wed-hd-warning !important;
+  }
+  .toast-success {
+    background-color: $wed-hd-success !important;
+  }
+  .toast-info {
+    background-color: $wed-hd-primary !important;
+  }
+  .toast-wait {
+    background-color: $wed-hd-service !important;
+  }
+}
